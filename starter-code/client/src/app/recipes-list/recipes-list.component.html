@@ -1,0 +1,9 @@
+<section>
+  <ul>
+    <li *ngFor="let dish of dishes" [ngStyle]="{'background-image': 'url('+dish.image+')'}">
+      <a [routerLink]="['/home/', dish._id]">
+        <h4 class="name-dish">{{dish.name}}</h4>
+      </a>
+    </li>
+  </ul>
+</section>
