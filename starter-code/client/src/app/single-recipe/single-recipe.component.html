@@ -1,0 +1,16 @@
+<div *ngIf = 'dish'>
+  <h3>{{dish.name}}</h3>
+  <img width="300" src="{{dish.image}}">
+  <p style='font-size: 10px;'>{{dish.description}}</p>
+</div>
+
+<h4>Ingredients</h4>
+<div class="" *ngFor = 'let ingredient of ingredients'>
+  <p>{{ingredient.name}}</p>
+  <form method="post" action=''>
+    <input type="text" name='quantity' placeholder='quantity'>
+    <button>Add</button>
+  </form>
+</div>
+
+<a [routerLink]="['/']">Back to home</a>
