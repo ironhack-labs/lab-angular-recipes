@@ -1,0 +1,13 @@
+<p>
+  dishes works!
+</p>
+
+<button type="button" name="button" (click)="listAll()">Click Me</button>
+
+<div *ngFor='let log of items'>
+<p>{{log.name}}</p>
+<p>{{log.description}}</p>
+<img src="{{log.image}}"/>
+<a [routerLink]="['log._id']"> View Details </a>
+
+</div>
