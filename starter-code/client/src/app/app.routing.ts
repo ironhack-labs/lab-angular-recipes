@@ -6,6 +6,6 @@ import { OneDishComponent } from './one-dish/one-dish.component';
 
 export const routes: Routes = [
     { path: '', component: RecipeListComponent },
-    { path: '**', redirectTo: '' },
     { path: 'dishes/:id', component: OneDishComponent },
+    { path: '**', redirectTo: '' }
 ];
