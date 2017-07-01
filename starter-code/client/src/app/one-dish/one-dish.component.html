@@ -1,7 +1,7 @@
 <div *ngIf="dish">
   <h1>{{ dish.name }}</h1>
   <p>{{ dish.description }}</p>
-  <img [src]="[dish.image]">
+  <img [src]="[dish.image]" width="200px">
 </div>
 
 <a [routerLink]="['']">Home</a>

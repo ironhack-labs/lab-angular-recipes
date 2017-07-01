@@ -1,0 +1,7 @@
+<div *ngFor="let ingredient of ingredients">
+  <h1>{{ ingredient.name }}</h1>
+  <p>{{ ingredient.description }}</p>
+  <img [src]="[ingredient.image]" width="200px">
+</div>
+
+<a [routerLink]="['']">Home</a>
