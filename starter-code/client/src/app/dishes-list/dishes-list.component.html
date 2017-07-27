@@ -1,0 +1,7 @@
+<h2>List of dishes:</h2>
+
+<div *ngFor="let dish of dishes | async">
+  <p>{{dish.name}}</p>
+  <img class="food-pic" src="{{dish.image}}">
+  <a [routerLink]="['dish', dish._id]"> View Details </a>
+</div>

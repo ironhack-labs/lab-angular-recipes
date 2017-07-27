@@ -1,0 +1,24 @@
+<p>
+  single-dish works!
+</p>
+
+
+<h1> Recipy details </h1>
+    <a [routerLink]="['/']"> Back to dishes list </a>
+
+<div *ngIf="dish">
+
+  <div class="dish-info">
+    <h2> {{dish.name}}</h2>
+    <img class="food-pic" src="{{dish.image}}" alt="">
+    <h3> {{dish.description}} </h3>
+  </div>
+<h3>Ingredients</h3>
+  <ul *ngFor="let ingredient of ingredientsList | async">
+    <li>{{ingredient.name}}</li>
+    <label for="quantity">quantity:</label>
+      <input type="number" name="quantity" #dish>
+      <button type="button" name="button" (click)="addIngredient(ingredient._id,dish.value)">add</button>
+  </ul>
+
+</div>
