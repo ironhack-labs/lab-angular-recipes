@@ -1,0 +1,14 @@
+.position {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div {
+  text-align: center;
+  margin: 5px;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+}
