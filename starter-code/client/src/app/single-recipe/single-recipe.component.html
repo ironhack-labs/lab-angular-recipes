@@ -1,0 +1,12 @@
+<h1> Recipe details </h1>
+    <a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="dish"> <!-- IMPORTANT ngIF para que no de error hasta que no se resuelva la promesa -->
+  <div class="dish-info">
+    <h2> {{ dish.name }}&nbsp;</h2>
+    <div class="img-container">
+      <img src="{{ dish.image }}" alt="{{ dish.image }}">
+    </div>
+    <p> {{dish.description}}</p>
+  </div>
+</div>

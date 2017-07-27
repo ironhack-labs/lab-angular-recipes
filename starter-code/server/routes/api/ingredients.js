@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   Ingredient.findById(req.params.id, (err, ingredient) => {
     if (err)         { return res.status(500).json(err); }
-    if (!ingredient) { return res.status(404).json(new Error("404")) }
+    if (!ingredient) { return res.status(404).json(new Error("404")); }
 
     return res.json(ingredient);
   });
