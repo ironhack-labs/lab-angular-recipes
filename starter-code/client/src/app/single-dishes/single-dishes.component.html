@@ -1,0 +1,26 @@
+
+<h1> Recipes details </h1>
+    <a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="dishes">
+  <div class="dishes-thumbnail">
+    <img height="300" [src]="dishes.image" />
+  </div>
+
+  <div class="dishes-info">
+    <h2> {{ dishes.name }}&nbsp;</h2>
+    <p> {{ dishes.description }} </p>
+  </div>
+
+
+  <h3>Ingredients:</h3>
+     <ul *ngFor="let ingredients of ingredient | async">
+       <li>{{ingredient.name}}</li>
+       <!--<label for="quantity">quantity:</label>
+       <input type="number" name="quantity" #recipe>
+     </ul>
+     <h3>List of ingredient:</h3>
+     <ul *ngFor="let ingredients of recipe.ingredients">
+       <li>{{ingredient.ingredientId}} x {{ingredient.quantity}}</li>
+     </ul>
+   </div> -->

@@ -1,0 +1,10 @@
+
+<h3> Dishes List </h3>
+<div>
+  <div *ngFor="let dishes of dishes | async" class="blocky">
+    <img height=150 [src]="dishes.image" />
+    <h3> {{ dishes.name }} </h3>
+    <p> {{ dishes.description }} </p>
+    <a [routerLink]="['dishes', dishes._id]"> View Details </a>
+  </div>
+</div>
