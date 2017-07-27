@@ -1,0 +1,10 @@
+
+<h1> - Dishes List - </h1>
+    <div>
+      <div *ngFor="let dishes of dishesArray">
+        <h1> {{ dishes.name }} </h1>
+        <p> {{ dishes.description }} </p>
+        <img style="height:200px;" [src] ="dishes.image">
+        <a [routerLink]="['dishes', dishes._id]"> View Details </a>
+      </div>
+    </div>
