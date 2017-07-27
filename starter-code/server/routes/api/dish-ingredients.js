@@ -15,8 +15,8 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
     .populate('ingredients.ingredientId')
     .exec(
      (err, dish) => {
-      if (err)    { return res.status(500).json(err) };
-      if (!dish)  { return res.status(404).json(new Error('404')) };
+      if (err)    { return res.status(500).json(err); }
+      if (!dish)  { return res.status(404).json(new Error('404')); }
 
       let possibleIngred = dish.ingredients.filter(ingred => {
          return ingred.ingredientId._id.toString() === id;
@@ -25,17 +25,17 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
       if (possibleIngred){
         possibleIngred.quantity += quantity;
       } else {
-        possibleIngred = { ingredientId: id, quantity: quantity }
+        possibleIngred = { ingredientId: id, quantity: quantity };
         dish.ingredients.push(possibleIngred);
       }
 
 
       dish.save( (err) => {
-        if (err) { return res.status(500).json(err) }
+        if (err) { return res.status(500).json(err); }
 
-        return res.status(200).json(dish)
+        return res.status(200).json(dish);
       });
-    })
+    });
 });
 
 module.exports = router;
