@@ -1,0 +1,18 @@
+<div class="dish-detail card">
+  <h1>{{name}}</h1>
+  <a [routerLink]="['/dish']">Go back</a>
+  <img src="{{image}}" alt="">
+  <p>{{description}}</p>
+  <div>
+    <ul>
+      <li *ngFor='let ingredient of ingredients'>
+        <span>
+          {{ingredient.name}}
+        </span>
+        <button (click)='incrementIngredient(ingredient)'> + </button>
+        <input type="text" [(ngModel)]='ingredient.quantity'>
+        <button (click)='decrementIngredient(ingredient)' *ngIf='ingredient.quantity != 0'> - </button>
+      </li>
+    </ul>
+  </div>
+</div>

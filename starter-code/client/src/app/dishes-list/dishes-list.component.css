@@ -1,0 +1,30 @@
+.dishes-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.dishes-item {
+  width: calc( (100% - (15px * 3)) / 4 );
+  margin: 15px;
+  text-align: center;
+  padding: 15px;
+
+}
+
+.dishes-item img{
+  height: 80px;
+  min-height: 80px;
+}
+
+.dishes-item h3{
+  text-align: left;
+}
+
+.card{
+  border: 3px solid #51737e;
+  background-color: #a3e5fc;
+  border-radius: 15px;
+}

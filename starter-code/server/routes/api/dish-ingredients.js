@@ -10,6 +10,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
   let { quantity } = req.body;
   quantity = Number(quantity);
 
+  console.log('Dish id', dishId, 'Ingredients id', id, 'Quantity', quantity);
   Dish
     .findById(dishId)
     .populate('ingredients.ingredientId')
