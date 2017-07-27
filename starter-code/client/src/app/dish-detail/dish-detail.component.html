@@ -11,7 +11,7 @@
         </span>
         <button (click)='incrementIngredient(ingredient)'> + </button>
         <input type="text" [(ngModel)]='ingredient.quantity'>
-        <button (click)='decrementIngredient(ingredient)'> - </button>
+        <button (click)='decrementIngredient(ingredient)' *ngIf='ingredient.quantity != 0'> - </button>
       </li>
     </ul>
   </div>
