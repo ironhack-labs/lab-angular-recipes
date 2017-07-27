@@ -1,0 +1,10 @@
+<h1> Entry details </h1>
+    <a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="entryRecipe">
+  <div class="entry-info">
+    <h2> {{ entryRecipe.name }}&nbsp;</h2>
+    <img style="height:200px;" [src] ="entryRecipe.image">
+    <p> {{entryRecipe.description}}</p>
+  </div>
+</div>

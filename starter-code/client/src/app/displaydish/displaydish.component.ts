@@ -8,7 +8,7 @@ import {ListdishService} from '../../services/listdish.service'
   styleUrls: ['./displaydish.component.css']
 })
 export class DisplaydishComponent implements OnInit {
-  dishesArray: Array<Object>;
+  dishesArray: Observable<Array<Object>>;
 
   constructor(private dishElement: ListdishService ) { }
 
