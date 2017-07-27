@@ -1,0 +1,10 @@
+span{
+  text-align: center;
+  margin: 15px;
+}
+
+img, a{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
