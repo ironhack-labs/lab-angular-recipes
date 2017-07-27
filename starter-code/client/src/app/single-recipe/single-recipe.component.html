@@ -1,0 +1,19 @@
+<a [routerLink]="['/']"> Go Back! </a>
+<div *ngIf="recipe">
+  <img height=150 [src]="recipe.image" />
+  <h3> {{ recipe.name }} </h3>
+  <p>{{recipe.description}}</p>
+  <div class="position">
+    <h3>Ingredients:</h3>
+    <ul *ngFor="let ingredient of ingredientsList | async">
+      <li>{{ingredient.name}}</li>
+      <label for="quantity">quantity:</label>
+      <input type="number" name="quantity" #recipe>
+      <button type="button" name="button" (click)="addIngredient(ingredient._id, recipe.value)">add</button>
+    </ul>
+    <h3>List of ingredients:</h3>
+    <ul *ngFor="let ingredient of recipe.ingredients">
+      <li>{{ingredient.ingredientId}} x {{ingredient.quantity}}</li>
+    </ul>
+    </div>
+</div>

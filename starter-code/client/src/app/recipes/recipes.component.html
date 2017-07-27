@@ -1,0 +1,8 @@
+<h3> Recipes list </h3>
+<div class="position">
+  <div *ngFor="let recipe of recipesList | async">
+    <img [src]="recipe.image" />
+    <h3> {{ recipe.name }} </h3>
+    <a [routerLink]="['', recipe._id]"> View Details </a>
+  </div>
+</div>
