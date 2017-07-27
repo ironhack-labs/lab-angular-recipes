@@ -1,0 +1,9 @@
+<div>
+  <div *ngFor="let dish of dishes" class="dish">
+    <div class="img-container">
+      <img src="{{ dish.image }}" alt="{{ dish.image }}">
+    </div>
+    <h3> {{ dish.name }} </h3>
+    <a [routerLink]="['recipe', dish._id]"> View Detail </a>
+  </div>
+</div>

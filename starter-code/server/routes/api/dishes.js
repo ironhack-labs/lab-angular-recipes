@@ -13,8 +13,8 @@ router.get('/', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   Dish.findById(req.params.id, (err, dish) => {
     if (err)         { return res.status(500).json(err); }
-    if (!dish)      { return res.status(404).json(new Error("404")) }
-
+    if (!dish)      { return res.status(404).json(new Error("404")); }
+    console.log('DISSSH',dish);
     return res.json(dish);
   });
 });
