@@ -7,9 +7,12 @@ import 'rxjs/add/operator/map';
 export class RecetsService {
   constructor (private http : Http) {}
 
-
   getRecipes(){
     return this.http.get('http://localhost:3000/dishes').map((res) => res.json());
  }
+
+ getRecipe(id){
+   return this.http.get(`http://localhost:3000/api/dishes/${id}`).map((res) => res.json());
+}
 
 }
