@@ -11,6 +11,7 @@ export class DishDetailComponent implements OnInit {
   name:string;
   image:string;
   description:string;
+  ingredients: Object[];
 
   constructor(private route: ActivatedRoute, private dishService:RecipeService) { }
 
@@ -24,6 +25,28 @@ export class DishDetailComponent implements OnInit {
           }
         )
     });
+
+    this.dishService.getIngredients().subscribe(
+      e => {
+        this.ingredients = e.map((elm)=>{
+          elm['quantity'] = 0;
+          return elm;
+        });
+      }
+    )
+  }
+
+  modifyIngredient(target, modifier){
+    target.quantity = Number(target.quantity) + modifier;
+    console.table(this.ingredients.filter(e => e['quantity'] != 0));
+  }
+
+  incrementIngredient(target){
+      this.modifyIngredient(target, 1);
+  }
+
+  decrementIngredient(target){
+    if(target.quantity > 0) this.modifyIngredient(target, -1);
   }
 
 }
