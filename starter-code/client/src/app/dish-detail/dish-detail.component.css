@@ -1,0 +1,16 @@
+.dish-detail{
+  margin: 25px;
+  padding: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dish-detail img{
+  width: 100%;
+}
+
+.card{
+  border: 3px solid #51737e;
+  background-color: #a3e5fc;
+  border-radius: 15px;
+}

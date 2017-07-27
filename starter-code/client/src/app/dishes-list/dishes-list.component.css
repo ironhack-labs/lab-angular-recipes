@@ -11,9 +11,7 @@
   margin: 15px;
   text-align: center;
   padding: 15px;
-  border: 3px solid #51737e;
-  background-color: #a3e5fc;
-  border-radius: 15px;
+
 }
 
 .dishes-item img{
@@ -23,4 +21,10 @@
 
 .dishes-item h3{
   text-align: left;
+}
+
+.card{
+  border: 3px solid #51737e;
+  background-color: #a3e5fc;
+  border-radius: 15px;
 }

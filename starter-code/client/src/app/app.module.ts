@@ -8,17 +8,19 @@ import { RecipeService } from './services/recipes.services';
 
 import { AppComponent } from './app.component';
 import { DishesListComponent } from './dishes-list/dishes-list.component';
+import { DishDetailComponent } from './dish-detail/dish-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: '', component: DishesListComponent }
-  // { path: 'entries/:id',  component: SingleEntryComponent },
+  { path: '', redirectTo: 'dish', pathMatch: 'full'},
+  { path: 'dish', component: DishesListComponent },
+  { path: 'dish/:id', component: DishDetailComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     DishesListComponent,
+    DishDetailComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
