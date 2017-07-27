@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { routes } from './routes';
 import { DishesService } from '../services/dishes.service';
 import { DishesListComponent } from './dishes-list/dishes-list.component';
+import { SingleDishComponent } from './single-dish/single-dish.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DishesListComponent,
+    SingleDishComponent,
   ],
   imports: [
     BrowserModule,

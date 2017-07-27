@@ -1,0 +1,17 @@
+<p>
+  single-dish works!
+</p>
+
+
+<h1> Recipy details </h1>
+    <a [routerLink]="['']"> Back to dishes list </a>
+
+<div *ngIf="dish">
+
+  <div class="dish-info">
+    <h2> {{dish.name}}</h2>
+    <img class="food-pic" src="{{dish.image}}" alt="">
+    <h3> {{dish.description}} </h3>
+
+  </div>
+</div>

@@ -3,5 +3,5 @@
 <div *ngFor="let dish of dishes | async">
   <p>{{dish.name}}</p>
   <img class="food-pic" src="{{dish.image}}">
-  <!-- <a [routerLink]="['entrie', entrie._id]"> View Details </a> -->
+  <a [routerLink]="['dish', dish._id]"> View Details </a>
 </div>
