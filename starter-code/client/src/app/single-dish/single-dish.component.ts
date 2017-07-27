@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DishesService } from '../../services/dishes.service';
+import { IngredientsService } from '../../services/ingredients.service';
 import { Observable } from 'rxjs';
 import "rxjs/add/operator/mergeMap";
 
@@ -11,15 +12,24 @@ import "rxjs/add/operator/mergeMap";
 })
 export class SingleDishComponent implements OnInit {
   dish:Object;
-  constructor(private route:ActivatedRoute, private dshServ:DishesService) {
-    route.params
-    .mergeMap( (d:any) => dshServ.get(d.id))
-    .subscribe( dish => {
-      this.dish=dish;
-    });
-   }
+  ingredientsList:Observable<Array<Object>>
+  // IngredientsService:any
+  constructor(private route:ActivatedRoute, private dshServ:DishesService, private ingServ:IngredientsService) {
+
+  route.params
+  .mergeMap( (d:any) => dshServ.get(d.id))
+  .subscribe( dish => {
+    this.dish=dish;
+    })
+  }
 
   ngOnInit() {
+    this.ingredientsList = this.ingServ.getIngredients();
+
+  }
+
+  addIngredient(id,qty) {
+
   }
 
 }
