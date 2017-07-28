@@ -1,0 +1,8 @@
+<h3> Dishes List </h3>
+<div>
+  <div *ngFor="let dish of dishListArray">
+    <img height=150 [src]="dish.image" />
+    <h3> {{ dish.name }} </h3>
+    <p> {{ dish.description }} </p>
+  </div>
+</div>
