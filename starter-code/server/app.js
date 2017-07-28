@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const routes       = require('./routes/index');
 const cors         = require('cors');
+//agregar dishes
+const dishes = require('./routes/api/dishes');
 
 require('./config/database');
 const app = express();
@@ -23,6 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+
+app.use('/dishes', dishes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
