@@ -12,6 +12,7 @@ import "rxjs/add/operator/mergeMap";
 
 export class RecipesDetailsComponent implements OnInit {
   entryRecipe: any;
+ ingredients:Observable<Array<Object>>;
 
 
   constructor( private route: ActivatedRoute, private rec:RecetsService) {

@@ -2,7 +2,15 @@
   <a [routerLink]="['']">Go back</a>
 
 <div *ngIf="entryRecipe">
-    <h3>{{entryRecipe.name}}</h3>
-    <p>{{entryRecipe.description}}</p>
+    <h3> {{entryRecipe.name}} </h3>
+    <p> {{entryRecipe.description}} </p>
     <img src="{{entryRecipe.image}}" width="200px">
+
+    <div>
+  <ul>
+    <li *ngFor='let ingredient of ingredients'>
+      <span> {{ingredient.name}} </span>
+    </li>
+  </ul>
+</div>
 </div>
