@@ -4,8 +4,8 @@
     name: {{ ingredient.name }} <br>
     description: {{ ingredient.description }} <br>
     image: {{ ingredient.image }} <br>
-    <label for="quantiy">quantity</label>
-    <input type="text" name="quantity">
-    <button>Add</button>
+    <label for="quantity">quantity</label>
+    <input type="text" name="quantity" #quantity>
+    <button (click)="onAddToDish(currentRecipe._id, ingredient._id, quantity.value)">Add</button>
   </li>
 </ul>

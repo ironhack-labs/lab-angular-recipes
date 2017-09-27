@@ -3,4 +3,11 @@
 Name: {{ recipe.name }}
 Description: {{ recipe.description }}
 Image: <img src="{{ recipe.image}}">
+Ingredients: <ul>
+                <li *ngFor="let ingredient of recipe.ingredients">
+                  {{ ingredient.name }}
+                </li>
+            </ul>
 <a [routerLink]="['']">Home</a>
+
+<app-ingredient-list [currentRecipe]="recipe"></app-ingredient-list>

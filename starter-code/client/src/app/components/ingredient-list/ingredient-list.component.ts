@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { RecipeService } from '../../services/recipe.service';
 import { IngredientService } from '../../services/ingredient.service';
 import { Ingredient } from '../../models/ingredient';
 
@@ -8,9 +9,11 @@ import { Ingredient } from '../../models/ingredient';
   styleUrls: ['./ingredient-list.component.css']
 })
 export class IngredientListComponent implements OnInit {
+  @Input () currentRecipe;
   ingredientList: Array<Ingredient>;
+  results: string;
 
-  constructor(private ingredient: IngredientService) { }
+  constructor(private ingredient: IngredientService, private recipe: RecipeService) { }
 
   ngOnInit() {
     this.ingredient.getIngredients()
@@ -19,4 +22,10 @@ export class IngredientListComponent implements OnInit {
     });
   }
 
+  onAddToDish(recipeId: string, ingredientId: string, quantity: string){
+    this.recipe.postIngredient(recipeId, ingredientId, quantity).subscribe
+    (data => {
+      this.results = data.results;
+    });
+  }
 }
