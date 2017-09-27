@@ -1,0 +1,11 @@
+<h3>Ingredient List</h3>
+<ul>
+  <li *ngFor="let ingredient of ingredientList">
+    name: {{ ingredient.name }} <br>
+    description: {{ ingredient.description }} <br>
+    image: {{ ingredient.image }} <br>
+    <label for="quantiy">quantity</label>
+    <input type="text" name="quantity">
+    <button>Add</button>
+  </li>
+</ul>

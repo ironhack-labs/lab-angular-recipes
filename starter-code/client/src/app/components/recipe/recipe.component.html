@@ -1,3 +1,6 @@
-<p>
-  recipe works!
-</p>
+<h1>Recipe</h1>
+
+Name: {{ recipe.name }}
+Description: {{ recipe.description }}
+Image: <img src="{{ recipe.image}}">
+<a [routerLink]="['']">Home</a>

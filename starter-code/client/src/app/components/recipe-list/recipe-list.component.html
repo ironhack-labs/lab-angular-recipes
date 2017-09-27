@@ -4,7 +4,8 @@
     name: {{ recipe.name }} <br>
     description: {{ recipe.description }} <br>
     image: {{ recipe.image }} <br>
+    <a [routerLink]="['recipe', recipe._id]">View Details</a>
   </li>
 </ul>
-<button (click)="showRecipes()">Show</button>
 
+<app-ingredient-list></app-ingredient-list>

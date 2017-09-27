@@ -19,7 +19,4 @@ export class RecipeListComponent implements OnInit {
                       });
   }
 
-  showRecipes() {
-    console.log(this.recipeList);
-  }
 }
