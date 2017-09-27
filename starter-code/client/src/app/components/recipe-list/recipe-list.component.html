@@ -1,0 +1,10 @@
+<h3>Recipe List</h3>
+<ul>
+  <li *ngFor="let recipe of recipeList">
+    name: {{ recipe.name }} <br>
+    description: {{ recipe.description }} <br>
+    image: {{ recipe.image }} <br>
+  </li>
+</ul>
+<button (click)="showRecipes()">Show</button>
+
