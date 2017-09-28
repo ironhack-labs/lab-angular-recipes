@@ -8,6 +8,14 @@
     <h2> {{ recipe.name }}</h2>
     <img [src]="recipe.image">
     <p> {{ recipe.description }} </p>
+    <h3>Ingredients:</h3>
+    <ul *ngIf="recipe.ingredients">
+      <li *ngFor="let i of recipe.ingredients">
+        {{ i }}
+      </li>
+    </ul>
+
+     <a [routerLink]="['addIngredient']">Add Ingredient</a>
 
   </div>
 </div>

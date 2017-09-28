@@ -5,5 +5,6 @@ import { RecipesListComponent } from './recipes-list/recipes-list.component'
 export const routes: Routes = [
     { path: '', component: RecipesListComponent },
     { path: 'recipe/:id', component: SingleRecipeComponent },
+    { path: 'addIngredients', component: SingleRecipeComponent }
     // { path: '**', redirectTo: '' }
 ];

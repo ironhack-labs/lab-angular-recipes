@@ -22,3 +22,17 @@ h1 {
   padding: 20px;
   text-align: justify;
 }
+
+.recipe-info h3 {
+  padding: 20px;
+  text-align: justify;
+}
+
+.recipe-info ul {
+  padding: 20px;
+  text-align: justify;
+}
+
+.recipe-info a {
+  padding: 20px;
+}
