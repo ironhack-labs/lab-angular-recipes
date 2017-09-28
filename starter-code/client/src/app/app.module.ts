@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { EntryListComponent } from './entry-list/entry-list.component';
 import { routes } from './routes';
 import { DishesService } from './services/dishes.service';
+// import { IngredientsService } from './services/ingredients.service';
 import { SingleDishComponent } from './single-dish/single-dish.component';
-
 
 
 @NgModule({

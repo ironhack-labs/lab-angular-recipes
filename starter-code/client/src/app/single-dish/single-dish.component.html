@@ -5,5 +5,10 @@
     </li>
     <li>{{dish.description}}</li>
   </ul>
+  <h4>Ingredients</h4>
+  <ul *ngFor='let e of ingredients'>
+    <li>{{e.name}} <input type="number" [(ngModel)]="numIngredients"><button>Add</button></li> 
+  </ul>
+
   <a [routerLink] = "['']">Go back</a>
 </div>
