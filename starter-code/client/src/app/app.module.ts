@@ -1,3 +1,4 @@
+import { IngredientsService } from './services/ingredients.service';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { DishesService } from './services/dishes.service';
@@ -8,11 +9,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DishesComponent } from './dishes/dishes.component';
+import { DishComponent } from './dish/dish.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DishesComponent,
+    DishComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,10 @@ import { DishesComponent } from './dishes/dishes.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService],
+  providers: [
+    DishesService,
+    IngredientsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
