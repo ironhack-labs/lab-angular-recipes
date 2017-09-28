@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DishesService} from '../dishes.service';
+import { DishesService } from '../dishes.service';
+import { IngredientsService } from '../ingredients.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -9,16 +10,19 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DishesDetailsComponent implements OnInit {
   dishes;
+  ingredients;
   constructor(
     public router:Router,
     public route:ActivatedRoute,
-    public dishesservice: DishesService
+    public dishesservice: DishesService,
+    public ingredientsService: IngredientsService
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(`El parametro recibido es: ${params['id']}`);
       this.getDishesDetails(params['id'])
+      this.ingredients = this.ingredientsService.getList();
+      console.log(this.ingredients)
     });
   }
 
@@ -27,5 +31,4 @@ export class DishesDetailsComponent implements OnInit {
       this.dishes = dishes
     })
   }
-
 }

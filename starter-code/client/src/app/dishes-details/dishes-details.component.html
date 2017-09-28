@@ -2,4 +2,8 @@
   <img [src]="dishes.image" height=100/>
   <h3> {{ dishes.name }} </h3>
   <p> {{ dishes.description }} </p>
+  <ul *ngFor="let e of ingredients | async" class="">
+    <p>hola</p>
+    <li>{{e}}</li>
+  </ul>
 </div>
