@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { DishesService} from './services/dishes.service'
 
 import { AppComponent } from './app.component';
+import {routes} from './routes';
+import {RouterModule} from '@angular/router';
+
 import { RecipiesListComponent } from './recipies-list/recipies-list.component';
 
 @NgModule({
@@ -15,7 +18,8 @@ import { RecipiesListComponent } from './recipies-list/recipies-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [DishesService],
   bootstrap: [AppComponent]
