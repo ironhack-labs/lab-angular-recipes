@@ -19,16 +19,7 @@ export class RetrieveService {
           .map((res) => res.json());
       }
 
-      edit(phone) {
-        return this.http.put(`${this.BASE_URL}/api/dishes/${phone.id}`, phone)
-          .map((res) => res.json());
-      }
-
-      remove(id) {
-        return this.http.delete(`${this.BASE_URL}/api/dishes/${id}`)
-          .map((res) => res.json());
-      }
-
+    
       add(quantity){
          //return this.http.delete(`${this.BASE_URL}/api/dishes/${id}/ingredients/${ingredient.id}/add`)
           //.map((res) => res.json());
