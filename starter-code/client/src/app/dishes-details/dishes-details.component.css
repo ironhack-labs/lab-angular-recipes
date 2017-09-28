@@ -1,0 +1,7 @@
+.details{
+  width: 50%;
+  margin: 0 auto;
+  border: 2px solid red;
+  border-radius: 20px;
+  padding: 10px;
+}
