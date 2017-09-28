@@ -1,0 +1,10 @@
+<p>
+  onerecepie works!
+</p>
+<div *ngFor="let d of dish">
+  <div *ngIf="d._id==dishId">
+    <p>{{d.name}}</p>
+    <img src="{{d.image}}">
+    <a [routerLink]="['/home']"> Go back </a>
+  </div>
+</div>
