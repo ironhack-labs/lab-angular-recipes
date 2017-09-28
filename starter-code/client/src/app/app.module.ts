@@ -8,11 +8,13 @@ import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { DishesService } from './services/dishes.service';
 import { ListRecipesComponent } from './list-recipes/list-recipes.component';
+import { DishesDetailsComponent } from './dishes-details/dishes-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListRecipesComponent,
+    DishesDetailsComponent,
   ],
   imports: [
     BrowserModule,
