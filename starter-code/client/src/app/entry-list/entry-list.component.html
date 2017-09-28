@@ -2,6 +2,7 @@
   <ul *ngFor="let e of dishes">
     <li><img [src]="e.image" height="100"></li>
     <li>{{e.name}}</li>
-    <!-- <a [routerLink] = "['journal', journal._id]">View details</a> -->
+    <a [routerLink] = "['dishes', e._id]">View details</a>
   </ul>
 </div>
+<!--  -->

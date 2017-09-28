@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { EntryListComponent } from './entry-list/entry-list.component';
 import { routes } from './routes';
 import { DishesService } from './services/dishes.service';
+import { SingleDishComponent } from './single-dish/single-dish.component';
 
 
 
@@ -14,6 +15,7 @@ import { DishesService } from './services/dishes.service';
   declarations: [
     AppComponent,
     EntryListComponent,
+    SingleDishComponent,
   ],
   imports: [
     BrowserModule,

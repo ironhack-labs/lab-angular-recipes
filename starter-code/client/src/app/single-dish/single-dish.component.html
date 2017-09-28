@@ -1,0 +1,9 @@
+<div>
+  <ul *ngIf='dish'>
+    <li>{{dish.name}}</li>
+    <li><img [src]="dish.image" alt="" height="100">
+    </li>
+    <li>{{dish.description}}</li>
+  </ul>
+  <a [routerLink] = "['']">Go back</a>
+</div>
