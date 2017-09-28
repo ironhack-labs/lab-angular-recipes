@@ -9,11 +9,13 @@ import {routes} from './routes';
 import {RouterModule} from '@angular/router';
 
 import { RecipiesListComponent } from './recipies-list/recipies-list.component';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipiesListComponent,
+    RecipeDetailComponent,
   ],
   imports: [
     BrowserModule,

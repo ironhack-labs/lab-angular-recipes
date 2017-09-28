@@ -4,6 +4,6 @@
   <article class="list-item" *ngFor="let recipie of recipies">
     <p>{{ recipie.name }}</p>
     <img [src]="recipie.image" height="100"/>
-    <!-- <a [routerLink]="['recipe', recipe._id]">View details</a> -->
+    <a [routerLink]="['recipie', recipie._id]">View details</a>
   </article>
 </section>
