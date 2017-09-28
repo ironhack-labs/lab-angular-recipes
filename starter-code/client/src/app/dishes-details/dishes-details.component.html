@@ -1,13 +1,15 @@
 <h1>Dish Details</h1>
 
-<a [routerLink]="['']">Back To List</a>
+<button [routerLink]="['']">Back To List</button>
 
 <div *ngIf="dish">
-  <h3>{{dish.name}}</h3>
+  <h2>{{dish.name}}</h2>
+  <div>
   <img [src]="dish.image" height=100/>
+  </div>
   <p>{{dish.description}}</p>
 
-  <div  *ngFor="let ingredient of ingredients">
+  <div class="ingredients" *ngFor="let ingredient of ingredients">
     <p>{{ingredient.name}}</p>
     <input type="number" [(ngModel)]="numberOfIngredients">
     <button>Add ingredient</button>

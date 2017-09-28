@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0 auto;
+  background-color: #d8e1e7;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+h1  {
+  text-align: center;
+  color: green;
+}
+
+button {
+  background-color: #b7deed;
+  border-radius: 1px solid;
+}
+
+img {
+  display: inline-block;
+}
+
+.dishes {
+  display: inline-block;
+  margin: 40px;
+}
+
+h2 {
+  text-align: center;
+  color: blue;
+}
+
+.ingredients{
+  display: inline-block;
+  margin: 40px;
+}

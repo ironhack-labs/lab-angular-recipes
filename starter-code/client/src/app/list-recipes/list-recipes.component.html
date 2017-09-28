@@ -1,8 +1,8 @@
 <h1> LIST DISHES </h1>
 <div>
-  <div *ngFor="let dishe of dishes" >
-    <img [src]="dishe.image" height=100/>
+  <div class="dishes" *ngFor="let dishe of dishes" >
+    <div><img [src]="dishe.image" height=100/></div>
     <h3> {{ dishe.name }} </h3>
-    <a [routerLink]="['/dishes', dishe._id]"> View Details </a>
+    <button [routerLink]="['/dishes', dishe._id]"> View Details </button>
   </div>
 </div>
