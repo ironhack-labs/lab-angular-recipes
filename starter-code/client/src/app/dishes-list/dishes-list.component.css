@@ -1,0 +1,12 @@
+.dish-img{
+  height: 100px;
+  width: 200px;
+}
+
+.dish{
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 5px;
+  padding: 10px;
+}

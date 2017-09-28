@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const IngredientSchema = new Schema({
   name: {
@@ -8,6 +8,6 @@ const IngredientSchema = new Schema({
   },
   description: String,
   image: String
-});
+})
 
-module.exports = mongoose.model('Ingredient', IngredientSchema);
+module.exports = mongoose.model('Ingredient', IngredientSchema)
