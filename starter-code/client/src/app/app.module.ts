@@ -6,6 +6,7 @@ import {routes} from './routes';
 import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { IngredientsService } from './services/ingredients.service';
 import { DishesService } from './services/dishes.service';
 import { ListRecipesComponent } from './list-recipes/list-recipes.component';
 import { DishesDetailsComponent } from './dishes-details/dishes-details.component';
@@ -22,7 +23,7 @@ import { DishesDetailsComponent } from './dishes-details/dishes-details.componen
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService],
+  providers: [DishesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
