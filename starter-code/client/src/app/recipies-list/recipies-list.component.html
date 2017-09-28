@@ -1,3 +1,6 @@
-<p>
-  recipies-list works!
-</p>
+<h1>Dashes</h1>
+<section *ngFor="let recipie of recipies">
+  <p>{{ recipie.name }}</p>
+  <img [src]="recipie.image" height="100"/>
+  <!-- <a [routerLink]="['recipe', recipe._id]">View details</a> -->
+</section>

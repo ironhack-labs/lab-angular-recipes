@@ -9,7 +9,7 @@ export class DishesService {
     constructor(private http: Http) {}
 
     getList() {
-      return this.http.get(`${this.BASE_URL}/api/recipies-list`)
+      return this.http.get(`${this.BASE_URL}/api/dishes`)
         .map((res) => res.json());
 
     }
