@@ -1,0 +1,12 @@
+<h2>{{dish.name}}</h2>
+<img [src]="dish.image" height="400">
+<p>{{dish.description}}</p>
+<button (click)="goHome()">Home</button>
+
+<h3>INGREDIENTS LIST </h3>
+<div *ngFor="let ing of ingredients">
+  <h4>{{ing.name}}</h4>
+  <input type="number" name="quantity" value="" [(ngModel)]="quantity">
+  <button type="button" name="add" (click)="addProduct(ing, dish._id)">Add</button>
+
+</div>
