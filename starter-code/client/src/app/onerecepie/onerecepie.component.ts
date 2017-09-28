@@ -18,19 +18,22 @@ export class OnerecepieComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-        .subscribe((params) => this.dishId = String(params['id']));
+      .subscribe((params) => {
+        this.dishId = String(params['id'])
+        this.retrieve.get(this.dishId)
+        .subscribe( e => {
+            this.dish = e
+            });
+      });
 
-        this.retrieve.getAll().subscribe( ey => {
-             this.dish = ey
-           });
-           this.ingredient.getAll().subscribe( i => {
-                this.ingredients = i
-              });
+    this.ingredient.getAll().subscribe( i => {
+              this.ingredients = i
+            })
 
   }
 
   add(){
-    
+
   }
 
 }
