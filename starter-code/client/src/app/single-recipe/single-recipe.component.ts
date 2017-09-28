@@ -8,7 +8,7 @@ import { RecipesService } from '../services/recipes.service'
   styleUrls: ['./single-recipe.component.css']
 })
 export class SingleRecipeComponent implements OnInit {
-  element;
+  recipe;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -25,8 +25,8 @@ export class SingleRecipeComponent implements OnInit {
 
   getRecipeDetails(id) {
     this.recipeS.get(id)
-      .subscribe((element) => {
-        this.element = element;
+      .subscribe((recipe) => {
+        this.recipe = recipe;
       });
   }
 

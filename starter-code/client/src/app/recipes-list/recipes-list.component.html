@@ -4,6 +4,7 @@
     <li *ngFor="let recipe of recipes">
       {{ recipe.name }}
       <br><img [src]="recipe.image">
+       <a [routerLink]="['recipe', recipe._id]">View details</a>
     </li>
   </ul>
 </div>

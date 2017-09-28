@@ -1,3 +1,13 @@
-<p>
-  single-recipe works!
-</p>
+<a [routerLink]="['']"> Back to list </a>
+
+<h1> Recipe details </h1>
+
+<div *ngIf="recipe">
+  <!-- <button (click)="deleteEntry()">Delete this entry</button> -->
+  <div class="recipe-info">
+    <h2> {{ recipe.name }}</h2>
+    <img [src]="recipe.image">
+    <p> {{ recipe.description }} </p>
+
+  </div>
+</div>
