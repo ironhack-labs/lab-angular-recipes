@@ -8,3 +8,10 @@
     <a [routerLink]="['/home']"> Go back </a>
   </div>
 </div>
+
+<div *ngFor="let i of ingredients">
+  <p>{{i.name}}</p>
+  <input type="number">
+  <button>Add</button>
+
+</div>
