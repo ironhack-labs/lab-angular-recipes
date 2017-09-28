@@ -1,4 +1,8 @@
-<p>
-  recipe-detail works!
-</p>
 <a [routerLink]="[recipie]">Back to list</a>
+<h2>Recipe details</h2>
+
+<article *ngIf="recipe">
+  <p>{{recipe.name}}</p>
+  <img [src]="recipe.image" height="300"/>
+  <p>{{recipe.description}}</p>
+</article>
