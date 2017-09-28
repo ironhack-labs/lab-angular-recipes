@@ -16,11 +16,24 @@ export class IngredientListComponent implements OnInit {
   constructor(private ingredient: IngredientService, private recipe: RecipeService) { }
 
   ngOnInit() {
+    this.getIngredients();
+  }
+
+  getIngredients(){
     this.ingredient.getIngredients()
     .subscribe((ingredients) => {
       this.ingredientList = ingredients;
     });
   }
+
+  handleNewIngredient(form) {
+    const newIngredient = {name: form.value.name};
+    this.ingredient.postNewIngredient(newIngredient).subscribe(res => {
+      this.results = res;
+    this.getIngredients();
+    });
+  }
+
 
   handleAddToDish(recipeId: string, ingredientId: string, quantity: string){
     this.recipe.postIngredient(recipeId, ingredientId, quantity).subscribe

@@ -5,7 +5,7 @@ Description: {{ recipe.description }}
 Image: <img src="{{ recipe.image}}">
 Ingredients: <ul>
                 <li *ngFor="let ingredient of recipe.ingredients">
-                  {{ ingredient.name }}
+                  {{ ingredient.ingredientId }}  x{{ ingredient.quantity }}
                 </li>
             </ul>
 <a [routerLink]="['']">Home</a>

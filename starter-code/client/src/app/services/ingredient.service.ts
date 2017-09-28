@@ -17,4 +17,10 @@ export class IngredientService {
     return this.http.get(`${this.BASE_URL}/api/ingredients/${id}`)
       .map((res) => res.json());
   }
+
+  postNewIngredient(ingredient) {
+    console.log(ingredient);
+    return this.http.post(`${this.BASE_URL}/api/ingredients`, ingredient)
+    .map((res) => res.json());
+  }
 }

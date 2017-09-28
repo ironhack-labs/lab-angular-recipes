@@ -1,4 +1,11 @@
 <h3>Ingredient List</h3>
+<h4>Add Ingredient</h4>
+<form (ngSubmit)="handleNewIngredient(ingredientForm)" #ingredientForm="ngForm" >
+  <label>name</label>
+  <input type="text" name="name" [(ngModel)]="name">
+  <button type="submit">Add</button>
+</form>
+
 <ul>
   <li *ngFor="let ingredient of ingredientList">
     name: {{ ingredient.name }} <br>

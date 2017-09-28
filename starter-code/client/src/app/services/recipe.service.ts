@@ -23,8 +23,8 @@ export class RecipeService {
     .map((res) => res.json());
   }
 
-  postIngredient(dishId: string, ingredientId: string, quantity: string) {
-    return this.http.post(`${this.BASE_URL}/api/dishes/${dishId}/ingredients/${ingredientId}/add`, quantity)
+  postIngredient(dishId: string, ingredientId: string, quantity) {
+    return this.http.post(`${this.BASE_URL}/api/dishes/${dishId}/ingredients/${ingredientId}/add`, {quantity: Number(quantity)})
       .map((res) => res.json());
   }
 }

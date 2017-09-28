@@ -5,17 +5,18 @@ const router     = express.Router();
 const Ingredient = require('../../models/ingredient');
 const Dish       = require('../../models/dish');
 
-router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
+router.post('/dishes/:dishId/ingredients/:id/add', (req, res, next) => {
+  
   const { dishId, id } = req.params;
-  let { quantity } = req.body;
-  quantity = Number(quantity);
+  let quantity = req.body.quantity;
 
   Dish
     .findById(dishId)
     .populate('ingredients.ingredientId')
     .exec(
      (err, dish) => {
-      if (err)    { return res.status(500).json(err) };
+
+      if (err)    { return next(err) };
       if (!dish)  { return res.status(404).json(new Error('404')) };
 
       let possibleIngred = dish.ingredients.filter(ingred => {
@@ -31,7 +32,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
 
 
       dish.save( (err) => {
-        if (err) { return res.status(500).json(err) }
+        if (err) { return next(err) }
 
         return res.status(200).json(dish)
       });
