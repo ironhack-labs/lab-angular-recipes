@@ -1,4 +1,3 @@
-import { IngredientsService } from './services/ingredients.service';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { DishesService } from './services/dishes.service';
@@ -23,10 +22,7 @@ import { DishComponent } from './dish/dish.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [
-    DishesService,
-    IngredientsService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,4 +5,11 @@
   <img [src]="dish.image" height="200" height="300">
   <br>
   <p>{{dish.description}}</p>
+
+  <div class="ingredients" *ngFor="let ingredient of ingredients">
+      <p>{{ingredient.name}}</p>
+      <input type="number" [(ngModel)]="numberOfIngredients">
+      <button>Add ingredient</button>
+  </div>
+  
 </div>
