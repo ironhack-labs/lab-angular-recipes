@@ -29,4 +29,8 @@ export class OnerecepieComponent implements OnInit {
 
   }
 
+  add(){
+    
+  }
+
 }

@@ -28,4 +28,9 @@ export class RetrieveService {
         return this.http.delete(`${this.BASE_URL}/api/dishes/${id}`)
           .map((res) => res.json());
       }
+
+      add(quantity){
+         //return this.http.delete(`${this.BASE_URL}/api/dishes/${id}/ingredients/${ingredient.id}/add`)
+          //.map((res) => res.json());
+      }
   }
