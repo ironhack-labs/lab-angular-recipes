@@ -9,9 +9,10 @@
   </div>
   <p>{{dish.description}}</p>
 
+  <h2>List Of Ingredients</h2>
   <div class="ingredients" *ngFor="let ingredient of ingredients">
     <p>{{ingredient.name}}</p>
-    <input type="number" [(ngModel)]="numberOfIngredients">
-    <button>Add ingredient</button>
+    <input type="number" [(ngModel)]="quantity">
+    <button (click)="addIngredient(ingredient, dish._id)">Add</button>
   </div>
 </div>

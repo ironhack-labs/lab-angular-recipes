@@ -5,7 +5,8 @@ import {Observable} from 'rxjs';
 @Component({
   selector: 'app-list-recipes',
   templateUrl: './list-recipes.component.html',
-  styleUrls: ['./list-recipes.component.css']
+  styleUrls: ['./list-recipes.component.css'],
+  providers: [ DishesService ]
 })
 export class ListRecipesComponent implements OnInit {
   dishes;

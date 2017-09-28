@@ -19,4 +19,9 @@ export class DishesService {
       .map((res) => res.json())
   }
 
+  addIngredient(ingredient, Id){
+    return this.http.put(`${this.BASE_URL}/dishes/${Id}/ingredients/${ingredient._id}/add`, ingredient)
+      .map((res)=>res.json())
+  }
+
 }

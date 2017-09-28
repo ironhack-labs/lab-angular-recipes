@@ -23,7 +23,7 @@ import { DishesDetailsComponent } from './dishes-details/dishes-details.componen
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService, IngredientsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
