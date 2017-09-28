@@ -1,0 +1,7 @@
+<a [routerLink]="['']">Back To List</a>
+
+<div *ngIf="dish">
+  <h2>Detail {{dish.name}}</h2>
+  <img [src]="dish.image" class="img-food">
+  <p>{{dish.description}}</p>
+</div>

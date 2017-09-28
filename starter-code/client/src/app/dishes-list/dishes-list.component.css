@@ -35,3 +35,7 @@ hr {
   border-width: 3px;
   border-color: #5b9aa0;
 }
+
+a{
+  display: block;
+}
