@@ -1,0 +1,8 @@
+<h1> Recipes list </h1>
+<div>
+  <div *ngFor="let e of recipes | async" class="dishes">
+    <img [src]="e.image" height=100/>
+    <h3> {{ e.name }} </h3>
+    <p> {{ e.description }} </p>
+  </div>
+</div>
