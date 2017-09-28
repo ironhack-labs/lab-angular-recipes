@@ -20,6 +20,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+  console.log(req.body.name);
   const newDish = new Dish({
     name: req.body.name,
     description: req.body.description,

@@ -18,9 +18,13 @@ export class RecipeService {
       .map((res) => res.json());
   }
 
+  postRecipe(recipe: Object) {
+    return this.http.post(`${this.BASE_URL}/api/dishes`, recipe)
+    .map((res) => res.json());
+  }
+
   postIngredient(dishId: string, ingredientId: string, quantity: string) {
-    console.log(dishId + ' ' + ingredientId + ' ' + quantity); 
-    return this.http.post(`${this.BASE_URL}/dishes/${dishId}/ingredients/${ingredientId}/add`, quantity)
+    return this.http.post(`${this.BASE_URL}/api/dishes/${dishId}/ingredients/${ingredientId}/add`, quantity)
       .map((res) => res.json());
   }
 }

@@ -22,10 +22,10 @@ export class IngredientListComponent implements OnInit {
     });
   }
 
-  onAddToDish(recipeId: string, ingredientId: string, quantity: string){
+  handleAddToDish(recipeId: string, ingredientId: string, quantity: string){
     this.recipe.postIngredient(recipeId, ingredientId, quantity).subscribe
-    (data => {
-      this.results = data.results;
+    (res => {
+      this.results = res;
     });
   }
 }

@@ -9,14 +9,27 @@ import { Dish } from '../../models/dish';
 })
 export class RecipeListComponent implements OnInit {
   recipeList: Array<Dish>;
+  results;
 
   constructor(private recipe: RecipeService) { }
 
   ngOnInit() {
+    this.getRecipes();
+  }
+
+  getRecipes() {
     this.recipe.getRecipes()
-                      .subscribe((recipes) => {
-                        this.recipeList = recipes;
-                      });
+    .subscribe((recipes) => {
+      this.recipeList = recipes;
+    });
+  }
+
+  handleNewRecipe(form) {
+    const newRecipe = {name: form.value.name, image: form.value.image, description: form.value.description}
+    this.recipe.postRecipe(newRecipe).subscribe(res => {
+      this.results = res;
+    this.getRecipes();
+    });
   }
 
 }
