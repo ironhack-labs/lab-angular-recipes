@@ -8,3 +8,11 @@
   <p><b>Description: </b>{{dish?.description}}</p>
   <a class="btn btn-info" [routerLink]="['']"> Home </a>
 </div>
+
+<h3>Ingredients</h3>
+<div class="" *ngFor='let ingredient of ingredients'>
+  <p>{{ingredient.name}}</p>
+  <!-- <input type="number" min="0" [(ngModel)]="ingredient.quantity"> -->
+  <!-- <button class="btn" (click)=" ">Add</button> -->
+  <button class="btn btn-success">Add</button>
+</div>
