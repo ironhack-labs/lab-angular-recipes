@@ -1,0 +1,19 @@
+.recipes {
+  display: inline-block;
+}
+
+.recipes li {
+  width: 200px;
+  height: 200px;
+  border: 2px dotted purple;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2vw;
+  list-style: none;
+  float: left;
+}
+
+img {
+  width: 180px;
+}
