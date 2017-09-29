@@ -4,6 +4,7 @@
 <div *ngIf="recipe">
   <div class="single-recipe">
     <h2> {{ recipe.name }}&nbsp;</h2>
+    <p>{{ recipe.description }}</p>
     <img [src]= "recipe.image" height=100 />
 
   </div>
