@@ -1,0 +1,10 @@
+<div *ngIf="!dish">
+  loading...
+</div>
+<div *ngIf="dish">
+  <h2>{{dish.name}}</h2>
+
+  <img src="{{dish.image}}">
+
+  <p>{{dish.description}}</p>
+</div>
