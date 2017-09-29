@@ -12,3 +12,16 @@
 
   </div>
 </div>
+
+<div *ngFor="let ingredient of ingredients">
+  <div>
+    <ul>
+      <li> {{ ingredient.name }} </li>
+      <button>Add ingredient</button>
+      <form action="/action_page.php">
+        Quantity: <input type="number" name="quantity">
+        <input type="submit" value="Submit">
+      </form>
+    </ul>
+  </div>
+</div>

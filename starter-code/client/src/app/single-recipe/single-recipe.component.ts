@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeListService } from '../services/recipe-list.service';
+import { IngredientlistService } from '../services/ingredientlist.service';
 
 @Component({
   selector: 'app-single-recipe',
@@ -9,10 +10,12 @@ import { RecipeListService } from '../services/recipe-list.service';
 })
 export class SingleRecipeComponent implements OnInit {
   recipe:any;
+  ingredients:Array<any>;
     constructor(
       private router: Router,
       private route: ActivatedRoute,
-      private recipeService: RecipeListService ) { }
+      private recipeService: RecipeListService,
+      private ingredientService: IngredientlistService) { }
 
     ngOnInit() {
       this.route.params.subscribe(params => {
@@ -23,5 +26,12 @@ export class SingleRecipeComponent implements OnInit {
           console.log(this.recipe)
         });
       });
+    this.ingredientService.getIngredientList().subscribe(result => {console.log(result)
+      this.ingredients = result})
     }
-  }
+
+    }
+
+
+
+  //queda poner el ingredient service api (lista hecha), mirar esta pag tb
