@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { DishesService } from '../services/dishes.service'
-
+import { IngredientsService } from '../services/ingredients.service'
 
 
 @Component({
@@ -12,11 +12,13 @@ import { DishesService } from '../services/dishes.service'
 })
 export class RecipeDetailComponent implements OnInit {
   recipe;
+  ingredients;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    public dishesService: DishesService
+    public dishesService: DishesService,
+    public ingredientsService: IngredientsService
   ) { }
 
   ngOnInit() {
@@ -31,5 +33,9 @@ export class RecipeDetailComponent implements OnInit {
     .subscribe((recipe) => {
       this.recipe = recipe
     })
+    this.ingredients = this.ingredientsService.getIngredients()
   }
+
+
+
 }

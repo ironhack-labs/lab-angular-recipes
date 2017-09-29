@@ -14,6 +14,7 @@ export class RecipiesListComponent implements OnInit {
   constructor(public dishesService: DishesService) { }
 
   ngOnInit() {
-    this.recipies = this.dishesService.getList().subscribe((rec) => this.recipies = rec);
+    this.recipies = this.dishesService.getList()
+      .subscribe((rec) => this.recipies = rec);
     }
 }
