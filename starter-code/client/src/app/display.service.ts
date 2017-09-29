@@ -17,8 +17,9 @@ export class DisplayService {
           .map((res)=>res.json())
   }
 
-  addIng(ingredient, dishId){
-    return this.http.put(`${this.BASE_URL}/dishes/${dishId}/ingredients/${ingredient._id}/add`, ingredient)
+  addIng(ingredient, dishId, quantity){
+    console.log(ingredient, dishId, quantity)
+    return this.http.post(`${this.BASE_URL}/api/dishes/${dishId}/ingredients/${ingredient._id}/add`, {quantity: quantity})
       .map((res)=>res.json())
   }
 }

@@ -35,8 +35,8 @@ export class SingleDishComponent implements OnInit {
         })
   }
 
-  addProduct(id, dishId ){
-    this.displayService.addIng(id, dishId)
+  addProduct(id, dishId, quantity ){
+    this.displayService.addIng(id, dishId, quantity)
         .subscribe((dish)=>{
           this.updated = dish
         })
