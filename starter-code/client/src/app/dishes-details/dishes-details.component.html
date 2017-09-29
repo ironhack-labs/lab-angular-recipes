@@ -1,0 +1,18 @@
+<a [routerLink]="['']"> Back to HOME </a>
+<div *ngIf="dish">
+
+  <div>
+    <img src="{{dish.image}}" height="100">
+
+    <h2>{{ dish.name }}</h2>
+    <p> {{ dish.description }} </p>
+
+  </div>
+<p>Ingredients: </p>
+<br>
+  <div *ngFor="let i of ingredient" class="col-md-4">
+    <li>{{i.name}}</li>
+    <input type="text" name="numberI">
+    <button>Add Ingredient</button>
+  </div>
+</div>
