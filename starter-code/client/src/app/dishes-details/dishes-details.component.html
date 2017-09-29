@@ -11,4 +11,8 @@
     <p> {{ dish.description }} </p>
 
   </div>
+<p>Ingredients: </p>
+  <div *ngFor="let i of ingredient">
+    <h6>{{i.name}}</h6>
+  </div>
 </div>
