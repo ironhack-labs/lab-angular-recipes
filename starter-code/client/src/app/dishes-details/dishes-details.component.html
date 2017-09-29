@@ -1,0 +1,14 @@
+<p>
+  dishes-details works!
+</p>
+<a [routerLink]="['']"> Back to HOME </a>
+<div *ngIf="dish">
+
+  <div>
+    <img src="{{dish.image}}" height="100">
+
+    <h2>{{ dish.name }}</h2>
+    <p> {{ dish.description }} </p>
+
+  </div>
+</div>

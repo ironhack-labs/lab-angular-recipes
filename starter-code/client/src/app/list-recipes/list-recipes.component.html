@@ -6,7 +6,7 @@
   <div *ngFor="let dish of dishes">
     <h3> {{ dish.name }} </h3>
     <img src="{{dish.image}}" height="200">
-    <!-- <a [routerLink]='["/dishes", dish._id]'> View Details </a> -->
+    <a [routerLink]='["/dishes", dish._id]'> View Details </a>
 
   </div>
 </div>
