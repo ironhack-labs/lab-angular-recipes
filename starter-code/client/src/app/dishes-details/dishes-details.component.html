@@ -1,0 +1,8 @@
+<div *ngIf="dishes" class="details">
+  <img [src]="dishes.image" height=100/>
+  <h3> {{ dishes.name }} </h3>
+  <p> {{ dishes.description }} </p>
+  <ul class="ingredients">
+    <button *ngFor="let e of ingredients" type="button" name="button">{{e.name}}</button>
+  </ul>
+</div>
