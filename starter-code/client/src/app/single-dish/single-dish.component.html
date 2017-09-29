@@ -1,0 +1,19 @@
+<div *ngIf = "dish">
+<h2>{{dish.name}}</h2>
+<img [src]="dish.image" height="400">
+<p>{{dish.description}}</p>
+<div *ngFor="let ingredient of dish.ingredients">
+<p> {{ingredient.ingredientId}} x {{ingredient.quantity}}</p>
+</div>
+<button (click)="goHome()">Home</button>
+
+<h3>INGREDIENTS LIST </h3>
+<div *ngFor="let ing of ingredients">
+  <h4>{{ing.name}}</h4>
+  <form>
+    <input type="number" #quantityInput>
+    <button type="button" name="add" (click)="addProduct(ing, dish._id, quantityInput.value)">Add</button>
+  </form>
+
+</div>
+</div>
