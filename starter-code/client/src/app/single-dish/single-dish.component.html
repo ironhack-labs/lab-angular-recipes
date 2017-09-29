@@ -7,8 +7,12 @@
   </ul>
   <h4>Ingredients</h4>
   <ul *ngFor='let e of ingredients'>
-    <li>{{e.name}} <input type="number" [(ngModel)]="numIngredients"><button>Add</button></li> 
+    <form>
+      <p>
+        {{e.name}} <input type="number" name="numIngredients" #myNumIngredients/>
+        <button type="submit" (click)="addProduct(myNumIngredients.value)"> Add </button>
+      </p>
+    </form>
   </ul>
-
   <a [routerLink] = "['']">Go back</a>
 </div>

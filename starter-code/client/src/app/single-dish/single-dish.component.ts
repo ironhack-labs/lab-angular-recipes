@@ -36,6 +36,8 @@ export class SingleDishComponent implements OnInit {
     this.dishesService.get(id)
     .subscribe( dish => {this.dish = dish})
   }
-
+  addProduct(myForm) {
+    console.log(myForm);
+  }
 
 }
