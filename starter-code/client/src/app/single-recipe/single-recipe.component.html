@@ -1,0 +1,10 @@
+<h1> Single entry </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="recipe">
+  <div class="single-recipe">
+    <h2> {{ recipe.name }}&nbsp;</h2>
+    <img [src] = "recipe.image" height=100 />
+    <p> {{ recipe.description }} </p>
+  </div>
+</div>
