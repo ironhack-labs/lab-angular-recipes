@@ -1,0 +1,27 @@
+<h1> Recipe details </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="recipe">
+  <div>
+    <img height="300" [src]="recipe.image" />
+  </div>
+
+  <div>
+    <h2> {{ recipe.name }}</h2>
+    <p> {{ recipe.description }} </p>
+
+  </div>
+</div>
+
+<div *ngFor="let ingredient of ingredients">
+  <div>
+    <ul>
+      <li> {{ ingredient.name }} </li>
+      <button>Add ingredient</button>
+      <form action="/action_page.php">
+        Quantity: <input type="number" name="quantity">
+        <input type="submit" value="Submit">
+      </form>
+    </ul>
+  </div>
+</div>
