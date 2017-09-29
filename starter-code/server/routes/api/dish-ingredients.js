@@ -15,8 +15,8 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
     .populate('ingredients.ingredientId')
     .exec(
      (err, dish) => {
-      if (err)    { return res.status(500).json(err) };
-      if (!dish)  { return res.status(404).json(new Error('404')) };
+      if (err)    { return res.status(500).json(err) }
+      if (!dish)  { return res.status(404).json(new Error('404')) }
 
       let possibleIngred = dish.ingredients.filter(ingred => {
          return ingred.ingredientId._id.toString() === id;

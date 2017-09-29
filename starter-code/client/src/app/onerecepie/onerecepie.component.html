@@ -1,0 +1,17 @@
+<p>
+  onerecepie works!
+</p>
+
+<div *ngIf="dish">
+    <p>{{dish.name}}</p>
+    <img src="{{dish.image}}">
+    <a [routerLink]="['/home']"> Go back </a>
+</div>
+
+<div *ngFor="let i of ingredients">
+  <p>{{i.name}}</p>
+  <form (ngSubmit)="add(quantity,i._id,i)" #myForm="ngForm">
+  <input type="number" name="quantity" [(ngModel)]="quantity">
+  <button> Add </button>
+</form>
+</div>
