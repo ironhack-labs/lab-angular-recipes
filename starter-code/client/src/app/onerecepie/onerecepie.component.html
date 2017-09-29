@@ -10,7 +10,8 @@
 
 <div *ngFor="let i of ingredients">
   <p>{{i.name}}</p>
-  <input type="number">
-  <button (click)="add()"> Add </button>
-
+  <form (ngSubmit)="add(quantity,i._id,i)" #myForm="ngForm">
+  <input type="number" name="quantity" [(ngModel)]="quantity">
+  <button> Add </button>
+</form>
 </div>

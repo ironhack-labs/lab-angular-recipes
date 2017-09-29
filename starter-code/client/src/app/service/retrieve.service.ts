@@ -19,9 +19,9 @@ export class RetrieveService {
           .map((res) => res.json());
       }
 
-    
-      add(quantity){
-         //return this.http.delete(`${this.BASE_URL}/api/dishes/${id}/ingredients/${ingredient.id}/add`)
-          //.map((res) => res.json());
+
+      add(quantity,id,ingredient){
+         return this.http.delete(`${this.BASE_URL}/api/dishes/${id}/ingredients/${ingredient.id}/add`)
+          .map((res) => res.json());
       }
   }

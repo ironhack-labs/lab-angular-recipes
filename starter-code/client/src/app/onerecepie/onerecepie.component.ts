@@ -14,6 +14,7 @@ export class OnerecepieComponent implements OnInit {
   dishId;
   dish;
   ingredients;
+  ingredientadd;
   constructor(public retrieve:RetrieveService, private route: ActivatedRoute, public ingredient: IngredientService) { }
 
   ngOnInit() {
@@ -32,8 +33,11 @@ export class OnerecepieComponent implements OnInit {
 
   }
 
-  add(){
-
+  add(quantity,dishId,ingredient){
+    this.retrieve.add(quantity,dishId,ingredient).subscribe(e=>{
+      this.ingredientadd=e
+      console.log(this.ingredientadd)
+    })
   }
 
 }

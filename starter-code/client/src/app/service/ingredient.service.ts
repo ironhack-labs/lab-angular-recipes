@@ -19,9 +19,9 @@ export class IngredientService {
           .map((res) => res.json());
       }
 
-      edit(phone) {
-        //return this.http.put(`${this.BASE_URL}/api/ingredients/${ingredient.id}`, ingredient)
-          //.map((res) => res.json());
+      edit(quantity,ingredient) {
+        return this.http.put(`${this.BASE_URL}/api/ingredients/${ingredient.id}`, ingredient)
+          .map((res) => res.json());
       }
 
       remove(id) {
