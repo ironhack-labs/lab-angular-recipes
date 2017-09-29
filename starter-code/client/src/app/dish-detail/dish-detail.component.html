@@ -1,18 +1,25 @@
-<h2>{{dish?.name}}</h2>
+<div *ngIf='dish'>
+  <h2>{{dish.name}}</h2>
 
-<div class="col-md-6 ">
-<img [src]='dish?.image' class='dish-img'/>
-</div>
+  <div class="col-md-6 ">
+  <img [src]='dish.image' class='dish-img'/>
+  </div>
 
-<div class="col-md-6 ">
-  <p><b>Description: </b>{{dish?.description}}</p>
-  <a class="btn btn-info" [routerLink]="['']"> Home </a>
-</div>
+  <div class="col-md-6 ">
+    <p><b>Description: </b>{{dish.description}}</p>
+    <p *ngIf='dish.ingredients.length'><b>Ingredients: </b></p>
+    <ul>
+      <li *ngFor='let ingredient of dish.ingredients'>
+        {{ingredient.ingredientId}} X{{ingredient.quantity}}
+      </li>
+    </ul>
+    <a class="btn btn-info" [routerLink]="['']"> Home </a>
+  </div>
 
-<h3>Ingredients</h3>
-<div class="" *ngFor='let ingredient of ingredients'>
-  <p>{{ingredient.name}}</p>
-  <!-- <input type="number" min="0" [(ngModel)]="ingredient.quantity"> -->
-  <!-- <button class="btn" (click)=" ">Add</button> -->
-  <button class="btn btn-success">Add</button>
+  <h3>Ingredients</h3>
+  <div class="" *ngFor='let ingredient of ingredients'>
+    <p>{{ingredient.name}}</p>
+    <input type="number" min="0" #quantityInput />
+    <button class="btn" (click)="addIngredientToDish(ingredient._id, quantityInput.value)">Add</button>
+  </div>
 </div>

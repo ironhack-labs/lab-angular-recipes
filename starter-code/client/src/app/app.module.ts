@@ -13,8 +13,8 @@ import { IngredientsService } from './services/ingredients.service'
 import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
-  { path: '', component: DishesListComponent  },
-  { path: ':id', component: DishDetailComponent }
+  { path: '', component: DishesListComponent },
+  { path: 'dishes/:dishId', component: DishDetailComponent }
 ]
 
 @NgModule({

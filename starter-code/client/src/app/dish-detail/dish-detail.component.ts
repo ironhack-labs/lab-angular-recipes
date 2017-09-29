@@ -28,6 +28,7 @@ interface Ingredient{
   styleUrls: ['./dish-detail.component.css']
 })
 export class DishDetailComponent implements OnInit {
+  dishId: string
   dish: Dish
   ingredients: Array<Ingredient>
 
@@ -35,13 +36,19 @@ export class DishDetailComponent implements OnInit {
 
   ngOnInit(){
     this.route.params.subscribe( params => {
-      this.dishesService.getDish(params['id'])
+      this.dishId = params['dishId']
+      this.dishesService.getDish(this.dishId)
         .subscribe( dish => this.dish = dish)
-    })
+      })
 
     this.ingredientsService.getIngredients()
       .subscribe(ingredients => {
         this.ingredients = ingredients
       })
+  }
+
+  addIngredientToDish(ingredientId, quantity){
+    this.dishesService.postIngredientInDish(this.dishId, ingredientId, quantity)
+      .subscribe( dish => this.dish = dish )
   }
 }
