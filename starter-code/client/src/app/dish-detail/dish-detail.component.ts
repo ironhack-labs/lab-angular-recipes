@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../services/recipes.service';
+import { IngredientsService } from '../services/ingredients.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-dish-detail',
@@ -9,15 +11,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DishDetailComponent implements OnInit {
   dish;
+  ingredients;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private recipesFoodService: RecipesService) { }
+    private recipesFoodService: RecipesService,
+    private ingredientsService: IngredientsService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params =>{
+    this.route.params.subscribe(params => {
       this.getDishDetail(params['id'])
     })
+
+    this.ingredientsService.getList().subscribe(result => this.ingredients = result)
   }
 
   getDishDetail(id) {

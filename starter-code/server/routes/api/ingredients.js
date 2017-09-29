@@ -3,11 +3,10 @@ const router     = express.Router();
 const Ingredient = require('../../models/ingredient');
 
 router.get('/', (req, res, next) => {
-  Ingredient.find({}, (err, ingredients) => {
-    if (err) { return res.status(500).json(err); }
-
-    return res.json(ingredients);
-  });
+  console.log("GET INGREDIENTS");
+  Ingredient.find()
+    .then(ingredientsList => res.status(200).json(ingredientsList))
+    .catch(e => res.status(500).json({error:e.message}));
 });
 
 router.get('/:id', (req, res, next) => {

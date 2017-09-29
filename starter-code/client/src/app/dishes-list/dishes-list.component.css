@@ -3,7 +3,7 @@
   height: 1000px;
   margin: 50px;
   border: red;
-  padding:50px;
+  padding:0 auto;
 }
 
 .food-card {
