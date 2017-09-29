@@ -1,12 +1,7 @@
-const mongoose = require('mongoose');
-const dbName = 'recipe-app';
+const mongoose = require('mongoose')
+const dbName = 'recipe-app'
 
 // connect to the database
-mongoose.connect(`mongodb://localhost/${dbName}`);
-
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log(`Connected to the ${dbName} database`);
-});
+mongoose.connect(`mongodb://localhost/${dbName}`)
+  .then(console.log(`Connected to the ${dbName} database`))
+  .catch(console.error.bind(console, 'connection error:'))
