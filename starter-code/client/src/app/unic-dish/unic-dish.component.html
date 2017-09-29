@@ -1,0 +1,15 @@
+<h1> Esta es nuestra comida riquita </h1>
+<a [routerLink]="['']"> Back to list </a>
+<br>
+<a [routerLink]="['']"> Posibles ingredientes </a>
+
+<div *ngIf="unicDish">
+  <div>
+    <img height="300" [src]="unicDish.image" />
+  </div>
+
+  <div>
+    <h2> {{ unicDish.name }}</h2>
+    <h3> {{ unicDish.description }} </h3>
+  </div>
+</div>
