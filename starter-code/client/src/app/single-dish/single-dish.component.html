@@ -1,0 +1,18 @@
+<div>
+  <ul *ngIf='dish'>
+    <li>{{dish.name}}</li>
+    <li><img [src]="dish.image" alt="" height="100">
+    </li>
+    <li>{{dish.description}}</li>
+  </ul>
+  <h4>Ingredients</h4>
+  <ul *ngFor='let e of ingredients'>
+    <form>
+      <p>
+        {{e.name}} <input type="number" name="numIngredients" #myNumIngredients/>
+        <button type="submit" (click)="addProduct(myNumIngredients.value)"> Add </button>
+      </p>
+    </form>
+  </ul>
+  <a [routerLink] = "['']">Go back</a>
+</div>
