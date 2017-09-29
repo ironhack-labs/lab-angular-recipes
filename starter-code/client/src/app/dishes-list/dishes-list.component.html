@@ -1,0 +1,9 @@
+<div class='container'>
+  <h2>Dishes List</h2>
+  <hr />
+  <div *ngFor="let dish of dishes" class="food-card">
+    <h5>{{dish.name | uppercase }}</h5>
+    <img [src]="dish.image" class="img-food">
+    <a [routerLink]="['/dish', dish._id]">Dish Detail</a>
+  </div>
+</div>

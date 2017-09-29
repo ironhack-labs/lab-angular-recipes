@@ -1,0 +1,17 @@
+<a [routerLink]="['']">Back To List</a>
+
+<div *ngIf="dish" class='container'>
+  <h2>Detail {{dish.name}}</h2>
+  <img [src]="dish.image" class="img-food">
+  <p>{{dish.description}}</p>
+</div>
+
+ <div class='container'>
+  <h2>Ingredients List</h2>
+  <hr />
+  <div *ngFor="let ingredient of ingredients" >
+    <li>{{ingredient.name}}</li>
+    <button>Add</button>
+    <input type="number" name='quantity'>
+  </div>
+</div>
