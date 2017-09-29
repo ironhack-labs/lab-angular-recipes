@@ -8,11 +8,15 @@
   <img [src]="dish.image" height=100/>
   </div>
   <p>{{dish.description}}</p>
+  <div>
+    <h3>Added Ingredient</h3>
+    <span></span>
+  </div>
 
   <h2>List Of Ingredients</h2>
   <div class="ingredients" *ngFor="let ingredient of ingredients">
     <p>{{ingredient.name}}</p>
-    <input type="number" [(ngModel)]="quantity">
-    <button (click)="addIngredient(ingredient, dish._id)">Add</button>
+    <input type="number" #quantityinput>
+    <button (click)="addIngredient(ingredient, dish._id, quantityinput.value)">Add</button>
   </div>
 </div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { DishesService } from '../services/dishes.service';
 import { IngredientsService } from './../services/ingredients.service';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-dishes-details',
@@ -40,10 +39,10 @@ export class DishesDetailsComponent implements OnInit {
       });
   }
 
-  addIngredient(id, ingredient ){
-  this.dishesService.addIngredient(id, ingredient)
+  addIngredient(id, ingredient, quantity ){
+  this.dishesService.addIngredient(id, ingredient, quantity)
       .subscribe((dish)=>{
         this.add = dish;
-      })
+      });
 }
 }
