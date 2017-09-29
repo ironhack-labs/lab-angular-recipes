@@ -22,7 +22,6 @@ export class DishesDetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.getDishesDetails(params['id'])
       this.ingredients = this.ingredientsService.getList();
-      console.log(this.ingredients)
     });
   }
 
