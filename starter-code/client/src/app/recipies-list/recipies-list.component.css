@@ -1,0 +1,24 @@
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.list {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.list p {
+  text-transform: uppercase;
+}
+
+.list-item {
+  display: inline-block;
+  margin: 15px;
+}
+
+.list-item a {
+  display: block;
+  text-align: center;
+}

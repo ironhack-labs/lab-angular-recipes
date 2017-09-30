@@ -1,0 +1,11 @@
+<a [routerLink]="[recipie]">Back to list</a>
+<h2>Recipe details</h2>
+
+<article *ngIf="recipe">
+  <h2>{{recipe.name}}</h2>
+  <img [src]="recipe.image" height="300"/>
+  <p>{{recipe.description}}</p>
+  <button *ngFor="let ingredient of ingredients">
+    {{ingredient.name}}
+  </button>
+</article>
