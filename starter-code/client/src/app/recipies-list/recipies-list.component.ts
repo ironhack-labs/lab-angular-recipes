@@ -15,13 +15,12 @@ export class RecipiesListComponent implements OnInit {
 
   ngOnInit() {
     this.dishesService.getList()
-      .subscribe(
-        (data) => {
-          this.recipies = data
-        },
+    .subscribe(
+      (data) => {
+        this.recipies = data
+      },
       (err) => {
-      console.log(this.recipies);
+        console.log(this.recipies);
+      });
     }
-    );
-    }
-}
+  }
