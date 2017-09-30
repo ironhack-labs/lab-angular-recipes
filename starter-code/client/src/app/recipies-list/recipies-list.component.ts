@@ -14,7 +14,14 @@ export class RecipiesListComponent implements OnInit {
   constructor(public dishesService: DishesService) { }
 
   ngOnInit() {
-    this.recipies = this.dishesService.getList()
-      .subscribe((rec) => this.recipies = rec);
+    this.dishesService.getList()
+      .subscribe(
+        (data) => {
+          this.recipies = data
+        },
+      (err) => {
+      console.log(this.recipies);
+    }
+    );
     }
 }
