@@ -4,5 +4,6 @@
   <li>
     <h3>{{dish.name}}</h3>
     <img [src]="dish.image">
+    <a [routerLink]="['/dishes', dish._id]"> See Details </a>
   </li>
 </ul>

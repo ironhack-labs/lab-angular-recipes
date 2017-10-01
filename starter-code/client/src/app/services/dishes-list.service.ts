@@ -14,4 +14,8 @@ export class DishesListService {
     return this.http.get(this.baseUrl + '/api/dishes');
   }
 
+  getDetails(id: string) {
+    return this.http.get(this.baseUrl + '/api/dishes/' + id);
+  }
+
 }

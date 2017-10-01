@@ -8,15 +8,18 @@ import { DishesListService } from './services/dishes-list.service';
 
 import { AppComponent } from './app.component';
 import { DishesListComponent } from './dishes-list/dishes-list.component';
+import { DishDetailsComponent } from './dish-details/dish-details.component';
 
 const routes: Routes = [
-  { path: '',              component: DishesListComponent }
+  { path: '',              component: DishesListComponent },
+  { path: 'dishes/:id',    component: DishDetailsComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     DishesListComponent,
+    DishDetailsComponent,
   ],
   imports: [
     BrowserModule,
