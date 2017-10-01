@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Dish } from '../../models/dish'
+import { Dish } from '../../models/dish';
+import { Ingredient } from '../../models/ingredient';
 
-import {RecipesService} from '../../services/recipes.service'
+import {RecipesService} from '../../services/recipes.service';
+import {IngredientsService} from '../../services/ingredients.service';
 
 
 @Component({
@@ -13,15 +15,35 @@ import {RecipesService} from '../../services/recipes.service'
 })
 export class DishCardComponent implements OnInit {
   dish: Dish;
-  constructor(private recipeService: RecipesService, private route: ActivatedRoute) { }
+  ingredientList: Ingredient[];
+  constructor(private recipeService: RecipesService, private route: ActivatedRoute, private ingredientsService: IngredientsService) { }
 
   ngOnInit() {
+    this.getDish();
 
+  }
+
+  getDish(){
     this.route.params.subscribe((params) => {
       this.recipeService.getOne(params['id'])
         .subscribe((dish) => this.dish = dish);
-      });
-  }
+    });
+    this.ingredientsService.getList()
+      .subscribe((ingredientList)=> this.ingredientList=ingredientList);
+  };
 
+  addOneIngredient(quantity,id){
 
+    this.route.params.subscribe((params) => {
+
+      let dishId=params['id'];
+
+      this.recipeService.addIngredient(quantity,dishId,id)
+      .subscribe((dish) => this.dish = dish);
+
+      this.getDish()
+      console.log(this.dish)
+
+    });
+  };
 }

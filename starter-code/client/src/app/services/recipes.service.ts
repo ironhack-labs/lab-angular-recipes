@@ -20,6 +20,11 @@ export class RecipesService {
     return this.http.get(`http://localhost:3000/api/dishes/${id}`)
       .map((res) => new Dish(res.json()));
   }
-  // map((res) => new Dish(res.json()))
+
+  addIngredient(quantity: number, dishId:string, id: string) {
+    
+    return this.http.post(`http://localhost:3000/api/dishes/${dishId}/ingredients/${id}/add`, {quantity: quantity})
+      .map((res) => new Dish(res.json()));
+  }
 
 }
