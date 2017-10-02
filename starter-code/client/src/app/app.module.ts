@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DishApiService } from './dish-api.service';
+import { IngredientApiService } from './ingredient-api.service';
 
 import { AppComponent } from './app.component';
 import { DishListComponent } from './pages/dish-list/dish-list.component';
@@ -23,7 +24,8 @@ import { DishDetailsComponent } from './pages/dish-details/dish-details.componen
     HttpClientModule
   ],
   providers: [
-    DishApiService
+    DishApiService,
+    IngredientApiService
   ],
   bootstrap: [AppComponent]
 })

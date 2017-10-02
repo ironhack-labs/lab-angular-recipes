@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DishApiService } from '../../dish-api.service';
+import { IngredientApiService } from '../../ingredient-api.service';
 
 @Component({
   selector: 'app-dish-details',
@@ -10,10 +11,12 @@ import { DishApiService } from '../../dish-api.service';
 export class DishDetailsComponent implements OnInit {
 
   dishInfo: any = {};
+  ingredients: any[] = [];
 
   constructor(
     private activatedThang: ActivatedRoute,
     private dishThang: DishApiService,
+    private ingredientThang: IngredientApiService,
     private routerThang: Router
   ) { }
 
@@ -32,6 +35,14 @@ export class DishDetailsComponent implements OnInit {
             }
           );
     });
+
+    this.ingredientThang.getIngredients()
+    .subscribe(
+      (ingredientFromApi: any[]) => {
+        this.ingredients = ingredientFromApi;
+      }
+    );
+
   }
 
 }

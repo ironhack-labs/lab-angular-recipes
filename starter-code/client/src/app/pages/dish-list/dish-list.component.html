@@ -3,11 +3,11 @@
 <ul>
     <li *ngFor="let oneDish of dishes">
       <h3> {{ oneDish.name }} </h3>
-      <span> From {{ oneDish.brand }} </span>
+      <span> {{ oneDish.description }} </span>
   
       <img [src]="oneDish.image">
       <a [routerLink]="['/dish', oneDish._id]">
         See Details
       </a>
     </li>
-  </ul>
+</ul>
