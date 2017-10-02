@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
+import { DishApiService } from './dish-api.service';
 
 import { AppComponent } from './app.component';
 import { DishListComponent } from './pages/dish-list/dish-list.component';
@@ -14,9 +16,11 @@ import { DishListComponent } from './pages/dish-list/dish-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    DishApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

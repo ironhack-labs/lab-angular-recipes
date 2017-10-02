@@ -88,7 +88,7 @@ const foods = [
   }
 ]
 
-Dish.create(dishes, (err) => {
+Dish.create(foods, (err) => {
   if (err) { throw(err) }
-  console.log(`Created ${dishes.length} dishes`)
+  console.log(`Created ${foods.length} dishes`)
 });
