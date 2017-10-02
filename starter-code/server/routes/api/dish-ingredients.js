@@ -6,10 +6,11 @@ const Ingredient = require('../../models/ingredient');
 const Dish       = require('../../models/dish');
 
 router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
+  console.log(req.body);
   const { dishId, id } = req.params;
   let { quantity } = req.body;
   quantity = Number(quantity);
-
+    console.log('hereeeeeeeeeee'+quantity, dishId, id);
   Dish
     .findById(dishId)
     .populate('ingredients.ingredientId')

@@ -42,6 +42,7 @@ const routes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
+  
 
   ],
   providers: [RecipesService, IngredientsService],

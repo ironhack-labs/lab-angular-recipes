@@ -16,10 +16,11 @@ router.get('/:id', (req, res, next) => {
     if (!dish)      { return res.status(404).json(new Error("404")); }
 
     return res.json(dish);
-  });
+  }).populate('ingredients.ingredientId');
 });
 
 router.post('/', (req, res, next) => {
+  console.log(req);
   const newDish = new Dish({
     name: req.body.name,
     description: req.body.description,

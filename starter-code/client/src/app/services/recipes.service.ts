@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+
 import { Dish } from './../models/dish';
 
 @Injectable()
@@ -22,9 +23,16 @@ export class RecipesService {
   }
 
   addIngredient(quantity: number, dishId:string, id: string) {
-    
+
     return this.http.post(`http://localhost:3000/api/dishes/${dishId}/ingredients/${id}/add`, {quantity: quantity})
       .map((res) => new Dish(res.json()));
+  }
+
+  addNew(newDish: Object) {
+
+    return this.http.post(`http://localhost:3000/api/dishes`, newDish)
+      .map((res) => new Dish(res.json()));
+    
   }
 
 }

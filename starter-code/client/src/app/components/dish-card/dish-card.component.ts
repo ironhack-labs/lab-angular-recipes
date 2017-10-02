@@ -41,9 +41,7 @@ export class DishCardComponent implements OnInit {
       this.recipeService.addIngredient(quantity,dishId,id)
       .subscribe((dish) => this.dish = dish);
 
-      this.getDish()
-      console.log(this.dish)
-
+      this.getDish()      
     });
   };
 }
