@@ -22,7 +22,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+//ROUTES GO HERE ==VV==================
+const index = require('./routes/index');
+app.use('/', index);
+
+
+//ROUTES GO HERE ==^^==================
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
