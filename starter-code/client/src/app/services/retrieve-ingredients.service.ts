@@ -19,5 +19,11 @@ export class RetrieveIngredientsService {
     )
   }
 
+  // postIngredient(ingredientFields: IngredientInfo) {
+  //   return this.httpThang.post(
+  //     this.baseUrl + '/dishes/:dishId/ingredients/:id/add'
+  //   )
+  // }
+
 
 }
