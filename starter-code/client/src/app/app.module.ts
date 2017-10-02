@@ -14,7 +14,7 @@ import { RetrieveIngredientsService } from './services/retrieve-ingredients.serv
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './pages/recipe-list/recipe-list.component';
 import { DishDetailsComponent } from './pages/dish-details/dish-details.component';
-import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
+import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
 
 const myRoutes: Routes = [
   {path: '', component: RecipeListComponent},
@@ -27,7 +27,7 @@ const myRoutes: Routes = [
     AppComponent,
     RecipeListComponent,
     DishDetailsComponent,
-    AddIngredientComponent,
+    IngredientFormComponent,
   ],
   imports: [
     BrowserModule,

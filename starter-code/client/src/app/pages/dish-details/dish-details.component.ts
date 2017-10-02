@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { DishRetrieveService } from '../../services/dish-retrieve.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RetrieveIngredientsService } from '../../services/retrieve-ingredients.service'
+import { IngredientInfo } from '../../interfaces/ingredient-info'
 
 @Component({
   selector: 'app-dish-details',
@@ -10,9 +16,18 @@ import { RetrieveIngredientsService } from '../../services/retrieve-ingredients.
 })
 export class DishDetailsComponent implements OnInit {
 
+  ingredients: any[] = [];
+
   recipeInfo: any = {};
 
   isFormOn: boolean;
+
+  newIngredient: IngredientInfo = {
+    ingredientName: '',
+    ingredientQuantity: ''
+  };
+
+  @Output() newIngredientNotifier = new EventEmitter();
 
   constructor(
     private recipeThang: DishRetrieveService,
@@ -32,20 +47,21 @@ export class DishDetailsComponent implements OnInit {
               }
             );
         });
-  }
+  }//CLOSE ngOnInit
 
-};//close ngOnInit
+  showForm() {
+    if(this.isFormOn){
+      this.isFormOn = false;
+    }
+    else{
+      this.isFormOn = true;
+    }
 
-showForm() {
-  if(this.isFormOn) {
+  }//CLOSE showForm()
+
+  handleNewIngredient(theIngredient) {
+    this.ingredients.unshift(theIngredient);
     this.isFormOn = false;
   }
-  else{
-    this.isFormOn = true;
-  }
-}
 
-handleNewIngredient(theIngredient) {
-  this.ingredients.unshift(theIngredient);
-  this.isFormOn = false;
 }
