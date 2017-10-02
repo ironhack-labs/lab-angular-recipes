@@ -1,0 +1,17 @@
+<a routerLink="/"> Home </a>
+
+<h2> {{ dishInfo.name }} </h2>
+
+<p> by {{ dishInfo.description }} </p>
+
+<img [src]="dishInfo.image">
+
+<ul>
+    <li *ngFor="let oneIngredient of ingredients">
+          <h3> {{ oneIngredient.name }} </h3>
+          <span> From {{ oneIngredient.description }} </span>
+      
+          <img [src]="oneIngredient.image">
+          <app-ingredient-form></app-ingredient-form>
+    </li>
+</ul>
