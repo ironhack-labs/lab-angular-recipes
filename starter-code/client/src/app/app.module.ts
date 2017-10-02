@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { DishListComponent } from './pages/dish-list/dish-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DishDetailsComponent } from './pages/dish-details/dish-details.component';
+import { IngredientFormComponent } from './pages/dish-details/ingredient-form/ingredient-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DishListComponent,
     DishDetailsComponent,
+    IngredientFormComponent,
   ],
   imports: [
     BrowserModule,

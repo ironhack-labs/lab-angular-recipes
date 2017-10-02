@@ -12,9 +12,6 @@
           <span> From {{ oneIngredient.description }} </span>
       
           <img [src]="oneIngredient.image">
-          <form>
-              <input type="number">
-              <button>Add Ingredient</button>
-          </form>
+          <app-ingredient-form></app-ingredient-form>
     </li>
 </ul>
