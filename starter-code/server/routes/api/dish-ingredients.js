@@ -36,10 +36,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
         Ingredient.findById(id, (err, ingredient)=>{
           if(err) {return res.status(500).json(err)}
           const lastIndex = dish.ingredients.length - 1;
-          console.log(dish.ingredients, dish.ingredients.length);
-          console.log(lastIndex, dish.ingredients[lastIndex]);
           dish.ingredients[lastIndex].ingredientId = ingredient;
-          console.log(dish);
           return res.status(200).json(dish)
         });
       });

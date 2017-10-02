@@ -12,4 +12,11 @@ export class IngredientServiceService {
   getIngredients(){
     return this.http.get(`${this.baseUrl}/api/ingredients`)
   }
+  addIngredient(incomingIng){
+    const {recipeId, ingId, qty} = incomingIng;
+    // const recipeId = incomingIng.recipeId;
+    // const ingId = incomingIng.ingId;
+    // const qty = incomingIng.qty;
+        return this.http.post(`${this.baseUrl}/api/dishes/${recipeId}/ingredients/${ingId}/add`, {quantity: qty})
+  }
 }

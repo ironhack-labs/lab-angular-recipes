@@ -11,6 +11,7 @@ import { IngredientServiceService } from '../../services/ingredient-service.serv
 export class RecipeDetailsComponent implements OnInit {
   recipeInfo: any = {};
   ingredientArr: any = {};
+  ingredientToAdd: any = {  }
   constructor(
     private router: ActivatedRoute,
     private dishService: DishServiceService,
@@ -20,9 +21,10 @@ export class RecipeDetailsComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.router.params
+      this.router.params
       .subscribe(
         (myParams) => {
+          this.ingredientToAdd.recipeId = myParams.id;
           this.dishService.getRecipeDetails(myParams.id)
             .subscribe(
               (recipeFromApi) =>{
@@ -33,18 +35,25 @@ export class RecipeDetailsComponent implements OnInit {
         }
       );
 
-
-
-      this.ingredientService.getIngredients()
+    this.ingredientService.getIngredients()
       .subscribe(
         (ingredientsFromApi) => {
           this.ingredientArr = ingredientsFromApi
-          console.log(ingredientsFromApi)
+          console.log("ingredient array: ",   this.ingredientArr)
         }
 
       );
   }
 
-
+  addIngredientToRecipe(ingId){
+    this.ingredientToAdd.ingId = ingId,
+    this.ingredientService.addIngredient(this.ingredientToAdd)
+      .subscribe(
+        (dataFromApi)=>{
+          console.log(dataFromApi)
+          this.ingredientToAdd = {};
+        }
+      );
+  }
 
 }

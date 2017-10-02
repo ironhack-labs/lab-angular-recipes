@@ -1,9 +1,31 @@
-<a  [routerLink]="['/']">Home</a>
+<a [routerLink]="['/']">Home</a>
 
 <h3>{{recipeInfo.name}}</h3>
 <br>
 <img src="{{recipeInfo.image}}" alt="">
 <p>{{recipeInfo.description}}</p>
+<br>
+<h4>Ingredients to make:</h4>
+<ul>
+  <li *ngFor="let ing of recipeInfo.ingredients">
+    <h5>{{ing.ingredientId.name}}</h5><span> x {{ing.quantity}}</span>
+    <p>{{ing.ingredientId.description}}</p>
+  </li>
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let recipeIng of ingredientArr">
+    <h4>{{recipeIng.name}}</h4>
+    <p>{{recipeIng.description}}</p>
+    <form (ngSubmit)="addIngredientToRecipe(recipeIng._id)">
+      <label for="quantity">Qty</label>
+      <input id="quantity" type="Number" [(ngModel)]="ingredientToAdd.qty" name="ingQty">
+      <button>Add</button>
+    </form>
+  </li>
+</ul>
 
 
 <!-- In the dish details component, list all of these ingredients. Add a button to each ingredient called add. We will use this to add ingredients to a particular dish in the next iteration. In addition, for each ingredient add an input box for the quantity. -->
+Create a function in the single dish component. When someone clicks the "add" button from the previous iteration, this should make an API request to the API. The request should be done inside of your dish service. The API endpoint is a POST to '/dishes/:dishId/ingredients/:id/add'.
+It also takes in a parameter for quantity in the body, which is a number.
