@@ -1,0 +1,10 @@
+<p>
+  recipe-list works!
+</p>
+
+
+
+<h3 *ngFor="let recipe of recipes">
+  <a [routerLink]="['/recipe', recipe._id]">  {{recipe.name}}</a>
+
+</h3>
