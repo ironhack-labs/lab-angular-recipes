@@ -1,0 +1,8 @@
+<div *ngFor="let dish of dishes">
+  <h3>{{ dish.name }}</h3>
+  <p>{{ dish.description }}</p>
+  <a [routerLink]="['dishes', dish._id]">View Details</a>
+</div>
+
+
+<a routerLink="ingredients">Ingredients List</a>
