@@ -11,6 +11,12 @@ export class DishDetailsComponent implements OnInit {
 
   details: any = {};
 
+  //newDetails: any = {};
+
+  ingredients: any[] = [];
+
+  quantity: number = 0;
+
   constructor(
     private dishService: DishesListService,
     private urlReader: ActivatedRoute
@@ -24,8 +30,32 @@ export class DishDetailsComponent implements OnInit {
             .subscribe(
               (data) => {
                 this.details = data;
+                console.log("food --> ", data);
               }
             )
+        }
+      )
+
+    this.dishService.getIngredients()
+      .subscribe(
+        (data: any) => {
+          console.log("Success Ingredients Get");
+          this.ingredients = data;
+        }
+      )
+
+
+  }
+
+  addIngredient(dishId, id,ingredient) {
+    console.log('HERE!!');
+    this.details.ingredients.push(ingredient);
+    //this.details.ingredients.name = ingredient.name;
+    this.dishService.postIngredient(dishId, id, this.quantity, ingredient.name)
+      .subscribe(
+        (data) => {
+          console.log('Post Success! --> ', data);
+          this.details = data;
         }
       )
   }

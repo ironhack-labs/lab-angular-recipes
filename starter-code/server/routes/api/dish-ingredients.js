@@ -7,7 +7,7 @@ const Dish       = require('../../models/dish');
 
 router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
   const { dishId, id } = req.params;
-  let { quantity } = req.body;
+  let { quantity, name } = req.body;
   quantity = Number(quantity);
 
   Dish
@@ -24,6 +24,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
 
       if (possibleIngred){
         possibleIngred.quantity += quantity;
+        //possibleIngred.name = name;
       } else {
         possibleIngred = { ingredientId: id, quantity: quantity }
         dish.ingredients.push(possibleIngred);

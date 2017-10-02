@@ -1,0 +1,10 @@
+<a routerLink="/"> Home </a>
+<br>
+
+<form (ngSubmit)="addNewIng()">
+  <label for="name">Name</label>
+  <input  id="name" type="text" name="name"
+    [(ngModel)]="newIng.name">
+
+  <button> Submit </button>
+</form>

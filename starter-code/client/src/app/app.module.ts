@@ -9,10 +9,14 @@ import { DishesListService } from './services/dishes-list.service';
 import { AppComponent } from './app.component';
 import { DishesListComponent } from './dishes-list/dishes-list.component';
 import { DishDetailsComponent } from './dish-details/dish-details.component';
+import { AddDishComponent } from './add-dish/add-dish.component';
+import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
 
 const routes: Routes = [
   { path: '',              component: DishesListComponent },
-  { path: 'dishes/:id',    component: DishDetailsComponent }
+  { path: 'dishes/:id',    component: DishDetailsComponent },
+  { path: 'post-dish',     component: AddDishComponent},
+  { path: 'add-ing',       component: AddIngredientComponent}
 ];
 
 @NgModule({
@@ -20,6 +24,8 @@ const routes: Routes = [
     AppComponent,
     DishesListComponent,
     DishDetailsComponent,
+    AddDishComponent,
+    AddIngredientComponent,
   ],
   imports: [
     BrowserModule,

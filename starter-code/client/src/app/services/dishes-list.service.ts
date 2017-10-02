@@ -18,4 +18,20 @@ export class DishesListService {
     return this.http.get(this.baseUrl + '/api/dishes/' + id);
   }
 
+  getIngredients() {
+    return this.http.get(this.baseUrl + '/api/ingredients');
+  }
+
+  postIngredient(dishId, id, quantity, name) {
+    return this.http.post(this.baseUrl + '/api/dishes/'+dishId+'/ingredients/'+id+'/add', {quantity: quantity, name:name});
+  }
+
+  postDish(dish) {
+    return this.http.post(this.baseUrl + '/api/dishes', dish);
+  }
+
+  postNewIng(ing) {
+    return this.http.post(this.baseUrl + '/api/ingredients', ing);
+  }
+
 }

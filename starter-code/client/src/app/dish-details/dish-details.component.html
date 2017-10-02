@@ -9,3 +9,31 @@
 <br>
 
 <p>{{details.description}}</p>
+<br>
+
+<div *ngIf="details.ingredients && details.ingredients.length > 0">
+<ul>
+  <li *ngFor="let ing of details.ingredients">
+    <h3> {{ing.ingredientId.name}} X {{ing.quantity}}</h3>
+  </li>
+</ul>
+</div>
+
+<a routerLink="/add-ing"> Add new Ingredient </a>
+
+<ul>
+  <li *ngFor="let ingredient of ingredients">
+    <h3> {{ingredient.name}}</h3>
+    <p> {{ ingredient.description }}</p>
+    <br>
+    <form (ngSubmit)="addIngredient(details._id, ingredient._id, ingredient)">
+
+    <br>
+    <label for="quantity">Quantity</label>
+    <input  id="quantity" type="number" name="quantity"
+      [(ngModel)]="quantity">
+
+    <button> Add </button>
+    </form>
+  </li>
+</ul>

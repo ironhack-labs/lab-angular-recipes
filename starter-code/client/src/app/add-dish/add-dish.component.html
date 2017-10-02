@@ -1,0 +1,21 @@
+<a routerLink="/"> Home </a>
+<br>
+
+<form (ngSubmit)="addNewDish()">
+  <label for="name"> Name </label>
+  <input  id="name" type="text" name="name"
+    [(ngModel)]="newDish.name">
+  <br>
+
+  <label for="image"> Image </label>
+  <input  id="image" type="text" name="image"
+    [(ngModel)]="newDish.image">
+  <br>
+
+  <label for="description"> Description </label>
+  <input  id="description" type="text" name="descritpion"
+    [(ngModel)]="newDish.description">
+  <br>
+
+  <button> Submit </button>
+</form>
