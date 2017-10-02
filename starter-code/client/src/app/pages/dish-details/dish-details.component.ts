@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DishRetrieveService } from '../../services/dish-retrieve.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { RetrieveIngredientsService } from '../../services/retrieve-ingredients.service'
 
 @Component({
   selector: 'app-dish-details',
@@ -14,7 +15,8 @@ export class DishDetailsComponent implements OnInit {
   constructor(
     private recipeThang: DishRetrieveService,
     private activatedThang: ActivatedRoute,
-    private routerThang: Router
+    private routerThang: Router,
+    private ingredientThang: RetrieveIngredientsService
   ) { }
 
   ngOnInit() {

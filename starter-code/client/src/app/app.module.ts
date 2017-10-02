@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 //SERVICES HERE==VVVVVV================================================
 import { DishRetrieveService } from './services/dish-retrieve.service'
+import { RetrieveIngredientsService } from './services/retrieve-ingredients.service'
 //SERVICES HERE==^^^^^^================================================
 
 
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './pages/recipe-list/recipe-list.component';
 import { DishDetailsComponent } from './pages/dish-details/dish-details.component';
+import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
 
 const myRoutes: Routes = [
   {path: '', component: RecipeListComponent},
@@ -25,6 +27,7 @@ const myRoutes: Routes = [
     AppComponent,
     RecipeListComponent,
     DishDetailsComponent,
+    AddIngredientComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ const myRoutes: Routes = [
     HttpClientModule
   ],
   providers: [
-    DishRetrieveService
+    DishRetrieveService,
+    RetrieveIngredientsService
   ],
   bootstrap: [AppComponent]
 })
