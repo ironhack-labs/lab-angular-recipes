@@ -1,0 +1,8 @@
+<h2>Add new ingredient</h2>
+
+  <label for="">Name: </label>
+  <input type="text" [(ngModel)]="name" name="name" ><br>
+  <label for="">Description: </label>
+  <input type="text" [(ngModel)]="description" name="description" ><br>
+
+  <button type="button"(click)="addItem(name, description)" >Submit</button>
