@@ -1,7 +1,7 @@
 <h3> Add an Ingredient</h3>
 
 
-<form>
+<form (ngSubmit)="saveNewIngredient()">
   <label for="ingred-name-input">Name of Ingredient</label>
   <input id="ingred-name-input" type="text" placeholder="eggs"
     name="ingredientName" [(ngModel)]="newIngredient.ingredientName"/>
@@ -12,4 +12,5 @@
     name="ingredientQuantity" [(ngModel)]="newIngredient.ingredientQuantity"/>
   <br />
 
+  <save> Add This Ingredient </save>
 </form>

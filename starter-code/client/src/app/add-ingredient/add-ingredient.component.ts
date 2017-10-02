@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 
 import { RetrieveIngredientsService } from '../services/retrieve-ingredients.service';
+import { IngredientInfo } from '../interfaces/ingredient-info'
 
 @Component({
   selector: 'app-add-ingredient',
@@ -14,9 +15,16 @@ import { RetrieveIngredientsService } from '../services/retrieve-ingredients.ser
 })
 export class AddIngredientComponent implements OnInit {
 
-  newIngredient
+  newIngredient: IngredientInfo = {
+    ingredientName: '',
+    ingredientQuantity: ''
+  };
 
-  constructor() { }
+  @Output() newIngredientNotifier = new EventEmitter();
+
+  constructor(
+    private ingredientThang: RetrieveIngredientsService
+  ) { }
 
   ngOnInit() {
   }

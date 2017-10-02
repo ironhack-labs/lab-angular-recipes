@@ -14,5 +14,9 @@
 </ul>
 
 
-<app-add-ingredient></app-add-ingredient>
-<button> Add Ingredients </button>
+<button (click) = "showForm()"> Add an Ingredient </button>
+
+<app-add-ingredient
+  *ngIf="isFormOn"
+  (newIngredientNotifier)="handleNewIngredient($event)">
+</app-add-ingredient>

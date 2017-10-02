@@ -12,6 +12,8 @@ export class DishDetailsComponent implements OnInit {
 
   recipeInfo: any = {};
 
+  isFormOn: boolean;
+
   constructor(
     private recipeThang: DishRetrieveService,
     private activatedThang: ActivatedRoute,
@@ -32,4 +34,18 @@ export class DishDetailsComponent implements OnInit {
         });
   }
 
+};//close ngOnInit
+
+showForm() {
+  if(this.isFormOn) {
+    this.isFormOn = false;
+  }
+  else{
+    this.isFormOn = true;
+  }
+}
+
+handleNewIngredient(theIngredient) {
+  this.ingredients.unshift(theIngredient);
+  this.isFormOn = false;
 }
