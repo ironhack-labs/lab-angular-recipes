@@ -26,17 +26,29 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
         possibleIngred.quantity += quantity;
         //possibleIngred.name = name;
       } else {
-        possibleIngred = { ingredientId: id, quantity: quantity }
+        possibleIngred = { ingredientId: id, quantity: quantity };
         dish.ingredients.push(possibleIngred);
       }
 
 
-      dish.save( (err) => {
-        if (err) { return res.status(500).json(err) }
 
-        return res.status(200).json(dish)
-      });
-    })
+
+      dish.save( (err) => {
+        if (err) { return res.status(500).json(err); }
+
+        Ingredient.findById(id, (err, ing) => {
+          if (err) {
+            return res.status(500).json(err);
+          }
+          const lastIndex = dish.ingredients.length - 1;
+          dish.ingredients[lastIndex].ingredientId = ing;
+          console.log('Last Index --->  ', dish.ingredients[lastIndex]);
+          return res.status(200).json(dish);
+        });
+
+
+        });
+    });
 });
 
 module.exports = router;

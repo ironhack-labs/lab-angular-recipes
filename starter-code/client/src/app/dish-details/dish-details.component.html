@@ -22,16 +22,16 @@
 <a routerLink="/add-ing"> Add new Ingredient </a>
 
 <ul>
-  <li *ngFor="let ingredient of ingredients">
+  <li *ngFor="let ingredient of ingredients; let i = index">
     <h3> {{ingredient.name}}</h3>
     <p> {{ ingredient.description }}</p>
     <br>
-    <form (ngSubmit)="addIngredient(details._id, ingredient._id, ingredient)">
+    <form (ngSubmit)="addIngredient(details._id, ingredient._id, quantity[i], ingredient)">
 
     <br>
     <label for="quantity">Quantity</label>
     <input  id="quantity" type="number" name="quantity"
-      [(ngModel)]="quantity">
+      [(ngModel)]="quantity[i]">
 
     <button> Add </button>
     </form>

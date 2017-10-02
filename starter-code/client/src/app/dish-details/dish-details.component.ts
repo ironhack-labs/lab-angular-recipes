@@ -15,7 +15,7 @@ export class DishDetailsComponent implements OnInit {
 
   ingredients: any[] = [];
 
-  quantity: number = 0;
+  quantity: number[] = [];
 
   constructor(
     private dishService: DishesListService,
@@ -47,11 +47,11 @@ export class DishDetailsComponent implements OnInit {
 
   }
 
-  addIngredient(dishId, id,ingredient) {
+  addIngredient(dishId, id,quantity, ingredient) {
     console.log('HERE!!');
-    this.details.ingredients.push(ingredient);
-    //this.details.ingredients.name = ingredient.name;
-    this.dishService.postIngredient(dishId, id, this.quantity, ingredient.name)
+    //this.details.ingredients.push(ingredient);
+    //this.details.ingredients.ingredientId.name = ingredient.name;
+    this.dishService.postIngredient(dishId, id, quantity, ingredient.name)
       .subscribe(
         (data) => {
           console.log('Post Success! --> ', data);
