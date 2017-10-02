@@ -6,5 +6,8 @@
       <span> From {{ oneDish.brand }} </span>
   
       <img [src]="oneDish.image">
+      <a [routerLink]="['/dish', oneDish._id]">
+        See Details
+      </a>
     </li>
   </ul>

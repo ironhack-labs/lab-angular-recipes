@@ -7,14 +7,18 @@ import { DishApiService } from './dish-api.service';
 
 import { AppComponent } from './app.component';
 import { DishListComponent } from './pages/dish-list/dish-list.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DishDetailsComponent } from './pages/dish-details/dish-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DishListComponent,
+    DishDetailsComponent,
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule
   ],
