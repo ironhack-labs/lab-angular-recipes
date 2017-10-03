@@ -1,0 +1,15 @@
+<h1> IronRecipes </h1>
+
+<h2> List of Recipes </h2>
+
+
+<ul>
+    <li *ngFor = "let oneRecipe of recipes">
+      <div class="recipe-list">
+        <h3> {{ oneRecipe.name }}</h3>
+        <img [src] = "oneRecipe.image" />
+        <p> {{ oneRecipe.description }}</p>
+        <a [routerLink]="['/dish-details/', oneRecipe._id]">Details</a>
+      </div>
+    </li>
+</ul>
