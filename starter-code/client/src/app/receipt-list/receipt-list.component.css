@@ -1,0 +1,16 @@
+img{
+  width: 200px;
+}
+
+.list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 20px;
+  width: 30%;
+}
