@@ -7,14 +7,15 @@ import { RecipeService} from '../services/recipe.service';
 import { RouterModule } from "@angular/router";
 import { routes } from "./routes";
 import { ListRecipesComponent } from './list-recipes/list-recipes.component';
-// import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
-//
-// RecipeDetailComponent
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListRecipesComponent
+    ListRecipesComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     BrowserModule,
