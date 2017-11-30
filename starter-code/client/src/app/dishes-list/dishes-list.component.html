@@ -1,0 +1,6 @@
+<div *ngIf="dishes" class="dishes">
+  <div *ngFor="let dish of dishes" class="dish">
+    <img [src]="dish.image">
+    <h2>{{ dish.name }}</h2>
+  </div>
+</div>

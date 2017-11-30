@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 const Ingredient = require('../models/ingredient');
 const Dish = require('../models/dish');
 
-const dbName = 'recipe-app';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+require('dotenv').config();
+const DB_URL = process.env.DB_URL;
+
+mongoose.connect(DB_URL, {useMongoClient:true} );
 
 const foods = [
   {
@@ -86,9 +88,9 @@ const foods = [
     image: "https://i.imgur.com/URhdrAm.png",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
-]
+];
 
 Dish.create(foods, (err) => {
-  if (err) { throw(err) }
-  console.log(`Created ${foods.length} dishes`)
+  if (err) { throw(err); }
+  console.log(`Created ${foods.length} dishes`);
 });

@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  font: 20px/1.5 Georgia, serif;
+  color: #444;
+  background: #FFF;
+}
+.dishes {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dish {
+  flex: 1 1 25%;
+}
+.dish img {
+  max-width: 100%;
+}
