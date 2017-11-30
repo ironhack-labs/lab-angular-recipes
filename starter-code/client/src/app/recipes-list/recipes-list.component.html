@@ -1,0 +1,9 @@
+<div class="container">
+    <div *ngFor='let e of listRecipes' class="item">
+      <article>
+        <p>{{e.name}}</p>
+        <img [src]="e.image"><br>
+        <a [routerLink]="['../recipeDetail',e._id]">Go to Recipe Detail</a><br>
+      </article>
+    </div>
+  </div>

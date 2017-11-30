@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 100px;
+}
+.item{
+  padding-top: 50px;
+  width: 700px;
+}
+.container img {
+  width: 100%;
+}
+.item h3 {
+  text-align: center;
+  font-size: 2em;
+}
+
+#description {
+  text-align:justify;
+  font-size: 1.3em;
+}
