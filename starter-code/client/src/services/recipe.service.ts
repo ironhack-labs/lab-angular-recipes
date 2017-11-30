@@ -17,10 +17,10 @@ export class RecipeService {
                       .map(res => res.json());
   }
 
-  // getRecipeByID(id):Observable<any>{
-  //     return this.http.get(`${BASEURL}/${id}`)
-  //                     .map(res => res.json());
-  // }
+  getRecipeByID(id):Observable<any>{
+      return this.http.get(`${BASEURL}/${id}`)
+                      .map(res => res.json());
+  }
   //
   // deleteRecipe(id){
   //     return this.http.delete(`${BASEURL}/${id}`)
