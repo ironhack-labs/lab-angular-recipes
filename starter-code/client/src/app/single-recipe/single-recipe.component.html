@@ -1,0 +1,10 @@
+<h1> Recipe details </h1>
+  <a [routerLink]="['']">See all Recipes </a>
+
+<ul>
+  <li *ngFor="let detail of singleRecipe">
+    <h2>{{detail.name}}</h2>
+    <img [src]="['detail.image']" alt="{{detail.name}}">
+    <p>{{detail.description}}</p>
+  </li>
+</ul>

@@ -17,14 +17,9 @@ export class RecipesService {
                       .map(res => res.json());
   }
 
-  // getDishByID(id):Observable<any>{
-  //     return this.http.get(`${BASEURL}/${id}`)
-  //                     .map(res => res.json());
-  // }
-  //
-  // deleteDish(id){
-  //     return this.http.delete(`${BASEURL}/${id}`)
-  //                     .map(res => res.json());
-  // }
+  getDishByID(id):Observable<any>{
+      return this.http.get(`${BASEURL}/${id}`)
+                      .map(res => res.json());
+  }
 
 }

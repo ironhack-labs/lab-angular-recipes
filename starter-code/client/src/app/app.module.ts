@@ -9,12 +9,14 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RouterModule } from '@angular/router';
 import {routes} from './routes';
 
-import { RecipesService } from '../services/recipes.services'
+import { RecipesService } from '../services/recipes.services';
+import { SingleRecipeComponent } from './single-recipe/single-recipe.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesComponent,
+    SingleRecipeComponent,
   ],
   imports: [
     BrowserModule,
