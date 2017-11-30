@@ -1,0 +1,14 @@
+<p>
+  recipes works!
+</p>
+
+<h1> Recipes list </h1>
+
+<div class="recipes">
+  <div *ngFor="let e of recipes" class="recipe">
+    <p> {{ e.name }} </p>
+    <img src="{{ e.image }}" width="200"><br>
+    <p> {{ e.description }} </p>
+    <a [routerLink]="['recipe', e._id]">Recipe Details</a>
+  </div>
+</div>
