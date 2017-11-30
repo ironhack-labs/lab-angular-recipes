@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 import { RecipeService} from '../services/recipe.service';
 import { RouterModule } from "@angular/router";
 import { routes } from "./routes";
+import { ListRecipesComponent } from './list-recipes/list-recipes.component';
+// import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+//
+// RecipeDetailComponent
 
 @NgModule({
   declarations: [
     AppComponent,
+    ListRecipesComponent
   ],
   imports: [
     BrowserModule,
