@@ -4,17 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { DishesService } from '../services/dishes.service';
+import { DishesComponent } from './dishes/dishes.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './routes';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DishesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [DishesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
