@@ -2,6 +2,7 @@
   list-recipes works!
 </p>
 <div *ngFor="let recipe of myRecipes">
+  <a [routerLink] = "recipe._id">Link to recipe </a>
 {{ recipe.name }}
 {{ recipe.image }}
 <!-- {{ recipe.description }} -->
