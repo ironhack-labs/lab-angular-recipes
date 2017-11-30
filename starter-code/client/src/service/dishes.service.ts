@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 
 const DOMAIN = "http://localhost:3000";
-const PATH = "/api/phones";
+const PATH = "/api/dishes";
 const BASEURL = `${DOMAIN}${PATH}`;
 
 @Injectable()
@@ -17,5 +17,5 @@ export class DishesService {
                       .map(res => res.json());
   }
 
-  
+
 }

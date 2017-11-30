@@ -1,5 +1,8 @@
-<h2>{{dishes}}</h2>
-<ul *ngFor="let dish of dishes">
-  <li><{{dish.name}}</li>
-  <li><img src="{{dish.image}}" alt=""></li>
-</ul>
+
+<div class="">
+  <ul *ngFor="let dish of dishes">
+    <li>{{dish.name}}</li>
+    <li><img src="{{dish.image}}"></li>
+    <li><p>{{dish.description}}</p></li>
+  </ul>
+</div>
