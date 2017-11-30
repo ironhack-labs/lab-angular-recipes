@@ -1,0 +1,17 @@
+img {
+  width: 200px;
+  height: auto;
+}
+
+.dish {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
+.list {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}

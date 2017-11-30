@@ -1,6 +1,8 @@
+<div class = "list">
 <ul>
-  <li *ngFor="let platos of dishesList">
-    <h2>{{platos.title}}</h2>
+  <li class = "dish" *ngFor="let platos of dishesList">
+    <h2>{{platos.name}}</h2>
     <img [src]="platos.image" />
   </li>
 </ul>
+</div>
