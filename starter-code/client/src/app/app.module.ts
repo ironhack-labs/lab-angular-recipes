@@ -4,17 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+
+import { routes } from './routes';
+import { DishesService } from '../services/dishes.service';
+import { ReceiptListComponent } from './receipt-list/receipt-list.component';
+import { ReceiptDetailsComponent } from './receipt-details/receipt-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ReceiptListComponent,
+    ReceiptDetailsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [DishesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

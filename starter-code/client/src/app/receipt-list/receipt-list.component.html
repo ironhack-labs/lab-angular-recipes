@@ -1,0 +1,7 @@
+<ul class="list">
+  <li *ngFor="let receipt of receipts" class="dishes">
+    <h2>{{ receipt.name }}</h2>
+    <img [src]="receipt.image" alt="receipt-photo"><br>
+    <a [routerLink]="['receipt', receipt._id]"> View Details </a>
+  </li>
+</ul>
