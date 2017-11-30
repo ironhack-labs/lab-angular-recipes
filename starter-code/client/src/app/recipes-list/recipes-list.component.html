@@ -1,0 +1,9 @@
+<ul *ngIf="recipes.length > 0; else noRecipesBlock">
+  <li *ngFor="let recipe of recipes">
+    <h4>{{ recipe.name }}</h4>
+    <img [src]="recipe.image">
+  </li>
+</ul>
+<div #noRecipesBlock>
+  <p>There are no recipes yet</p>
+</div>
