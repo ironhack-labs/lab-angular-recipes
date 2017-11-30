@@ -1,0 +1,20 @@
+.recipe {
+  display: inline-block;
+    border: 8px solid navy;
+}
+h1 {
+  color: skyblue;
+text-align: center;
+}
+.recipe img {
+  width: 400px;
+  height: 400px;
+  justify-content: center;
+  margin-left: 420px;
+}
+
+p {
+text-align: left;
+padding-left: 300px;
+padding-right: 300px;
+}

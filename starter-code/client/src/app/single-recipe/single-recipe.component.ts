@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RecipesService} from '../services/recipes.service';
 import {ActivatedRoute} from '@angular/router';
+import {IngredientsService} from '../services/ingredients.service';
 
 @Component({
   selector: 'app-single-recipe',
@@ -9,7 +10,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class SingleRecipeComponent implements OnInit {
   myRecipe:any;
-  constructor(public route: ActivatedRoute, public listRecipes:RecipesService) {
+  myIngredients: any;
+  constructor(public route: ActivatedRoute, public listRecipes:RecipesService, public listIngredients:IngredientsService) {
  }
 
   ngOnInit() {
@@ -18,6 +20,8 @@ export class SingleRecipeComponent implements OnInit {
       this.myRecipe = list;
     })
     })
+      this.listIngredients.getAllIngredients().subscribe(ilist => {
+      this.myIngredients = ilist;
+    })
   }
-
-}
+};
