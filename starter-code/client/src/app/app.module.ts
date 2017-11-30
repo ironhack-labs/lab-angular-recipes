@@ -10,11 +10,13 @@ import { routes } from './routes';
 
 import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesComponent,
+    SingleRecipeComponent,
   ],
   imports: [
     BrowserModule,

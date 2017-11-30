@@ -13,9 +13,9 @@ export class RecipeService {
     .map(res => res.json());
   }
 
-  // getSingleRecipe(id):Observable<any> {
-  //   return this.http.get(`http://localhost:3000/api/journal-entries/${id}`)
-  //   .map(res => res.json());
-  // }
+  getSingleRecipe(id):Observable<any> {
+    return this.http.get(`http://localhost:3000/api/dishes/${id}`)
+    .map(res => res.json());
+  }
 
 }

@@ -1,0 +1,14 @@
+.recipe {
+  display: inline-block;
+  width: 200px;
+  text-align: justify;
+  margin: 10px;
+}
+
+.recipe p {
+  text-align: center;
+  font-weight: bold;
+  color: tomato;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
