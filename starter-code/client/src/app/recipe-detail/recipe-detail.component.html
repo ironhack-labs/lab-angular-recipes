@@ -6,3 +6,9 @@
     <p id="description">{{description}}</p>
   </article>
 </div>
+
+<div>
+  <div *ngFor='let e of ingredients'>
+      <app-ingredient [theIngredient]="e"></app-ingredient>
+   </div>
+</div>

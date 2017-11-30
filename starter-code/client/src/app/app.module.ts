@@ -8,8 +8,11 @@ import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { dishesService } from '../services/dishes.service';
+//import { ingredientsService } from '../services/ingredients.service';
+
 import { routes } from './routes';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { IngredientComponent } from './ingredient/ingredient.component';
 
 
 @NgModule({
@@ -17,6 +20,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
     AppComponent,
     RecipesListComponent,
     RecipeDetailComponent,
+    IngredientComponent,
   ],
   imports: [
     BrowserModule,
