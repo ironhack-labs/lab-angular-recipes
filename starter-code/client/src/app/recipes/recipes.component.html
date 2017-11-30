@@ -1,0 +1,10 @@
+<p>
+  recipes works!
+</p>
+
+<ul>
+  <li *ngFor="let dish of dishes">
+      <h2>{{dish.name}}</h2>
+      <img [src]="dish.image" />
+  </li>
+</ul>
