@@ -16,4 +16,9 @@ export class RecipesService {
     return this.http.get(BASEURL)
       .map(res => res.json());
   }
+
+  getRecipeByID(id):Observable<any>{
+      return this.http.get(`${BASEURL}/${id}`)
+                      .map(res => res.json());
+  }
 }

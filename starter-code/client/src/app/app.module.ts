@@ -13,11 +13,13 @@ import { AppComponent } from './app.component';
 import { RecipesService } from './services/recipes.service';
 //COMPONENTS
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesListComponent,
+    RecipeDetailsComponent,
   ],
   imports: [
     BrowserModule,

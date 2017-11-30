@@ -3,3 +3,13 @@ body {
   font-family: Helvetica, sans-serif;
   color: #666;
 }
+a {
+  font-size: .8em;
+  color: orange;
+}
+a:hover {
+  color: tomato;
+}
+img {
+  width: 250px;
+}

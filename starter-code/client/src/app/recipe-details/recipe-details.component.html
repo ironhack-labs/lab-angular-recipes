@@ -1,0 +1,9 @@
+<h2> Recipe details </h2>
+  <a [routerLink]="['']"> Back to recipe list </a>
+
+  <div *ngIf="recipe">
+  <h2>{{recipe.name}}</h2>
+
+  <img src="{{recipe.image}}">
+
+  <p>{{recipe.description}}</p>
