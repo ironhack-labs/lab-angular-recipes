@@ -1,0 +1,8 @@
+img {
+  max-width: 100%;
+}
+
+.recipe-info {
+  max-width: 600px;
+  margin: auto;
+}
