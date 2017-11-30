@@ -1,0 +1,13 @@
+.recipe-list {
+  list-style-type: none;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+li {
+  padding: 2em;
+}
+img {
+  width: 250px;
+}
