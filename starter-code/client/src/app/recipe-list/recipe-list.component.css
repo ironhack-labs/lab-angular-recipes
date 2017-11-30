@@ -1,0 +1,15 @@
+img {
+  width: 300px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recipes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
