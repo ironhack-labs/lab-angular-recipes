@@ -7,10 +7,10 @@ import { DishesService } from '../../services/dishes.service';
   styleUrls: ['./receipt-list.component.css']
 })
 export class ReceiptListComponent implements OnInit {
-  dishes: Array<any> = [];
-  constructor(public dishesList:DishesService) {
-    this.dishesList.getDishesList().subscribe( list => {
-      this.dishes = list;
+  receipts: Array<any> = [];
+  constructor(public receiptList:DishesService) {
+    this.receiptList.getDishesList().subscribe( list => {
+      this.receipts = list;
     });
   }
 

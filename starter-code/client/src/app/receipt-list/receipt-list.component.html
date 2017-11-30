@@ -1,6 +1,7 @@
 <ul class="list">
-  <li *ngFor="let dish of dishes" class="dishes">
-    <h2>{{ dish.name }}</h2>
-    <img [src]="dish.image" alt="dish-photo">
+  <li *ngFor="let receipt of receipts" class="dishes">
+    <h2>{{ receipt.name }}</h2>
+    <img [src]="receipt.image" alt="receipt-photo"><br>
+    <a [routerLink]="['receipt', receipt._id]"> View Details </a>
   </li>
 </ul>
