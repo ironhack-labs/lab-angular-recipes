@@ -1,0 +1,12 @@
+<p>
+  recipe-details works!
+</p>
+
+<div *ngIf="recipe">
+  <h1> Recipe details: {{recipe.name}} </h1>
+  <div class="foods">
+      <img [src]="recipe.image" /><br>
+      <p>{{recipe.description}}</p>
+  </div>
+</div>
+<a [routerLink]="['']"> Back to list </a>
