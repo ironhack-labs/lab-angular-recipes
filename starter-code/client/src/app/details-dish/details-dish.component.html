@@ -1,0 +1,13 @@
+<a routerLink="/">Back</a>
+<div *ngIf="dish">
+  <p>{{ dish.name }}</p>
+  <img src="{{ dish.image }}">
+  <p>{{ dish.description }}</p>
+</div>
+
+
+<ul *ngFor="let ingredient of ingredients">
+  <li>{{ingredient.name}}</li>
+  <input type="number">
+  <button>add</button>
+</ul>

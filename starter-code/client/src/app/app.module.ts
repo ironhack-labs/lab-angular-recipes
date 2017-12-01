@@ -7,15 +7,19 @@ import { RouterModule } from '@angular/router'
 import { routes } from './routes';
 import { AppComponent } from './app.component';
 import { DishesComponent } from './dishes/dishes.component';
+import { IngredientComponent } from './ingredient/ingredient.component';
 
 import { DishesService } from '../service/dishes.service';
-
+import { IngredientService } from '../service/ingredient.service';
+import { DetailsDishComponent } from './details-dish/details-dish.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DishesComponent,
+    IngredientComponent,
+    DetailsDishComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,7 @@ import { DishesService } from '../service/dishes.service';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService],
+  providers: [DishesService, IngredientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

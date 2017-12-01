@@ -92,3 +92,23 @@ Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
 });
+
+const ingredients = [
+  { name: 'arroz',
+    description: 'Tiene almidon (imaginacion - 0)',
+    image:"https://i.imgur.com/URhdrAm.png"
+   },
+   { name: 'sal',
+     description: 'sal (imaginacion - 0)',
+     image:"https://i.imgur.com/URhdrAm.png"
+   },
+   { name: 'pimienta',
+     description: 'Picante (imaginacion - 0)',
+     image:"https://i.imgur.com/URhdrAm.png"
+   },
+]
+
+Ingredient.create(ingredients, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${ingredients.length} ingredientss`)
+});
