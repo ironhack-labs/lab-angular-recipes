@@ -11,7 +11,7 @@ import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
 import { routes } from './../routes/routes';
 
 import { RecipesService } from './../services/recipes.service';
-import { IngredientsService } from './../services/recipes.service';
+import { IngredientsService } from './../services/ingredients/ingredients.service';
 
 @NgModule({
   declarations: [
