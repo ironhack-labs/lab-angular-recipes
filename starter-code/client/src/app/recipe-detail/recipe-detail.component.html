@@ -8,7 +8,8 @@
 </div>
 
 <div>
+  <h2>List of ingredients</h2>
   <div *ngFor='let e of ingredients'>
-      <app-ingredient [theIngredient]="e"></app-ingredient>
+      <app-ingredient [theIngredient]="e" (onAdd)="AddIngredient($event)"></app-ingredient>
    </div>
 </div>

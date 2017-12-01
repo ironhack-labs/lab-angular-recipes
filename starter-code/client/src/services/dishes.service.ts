@@ -15,9 +15,12 @@ export class dishesService {
       return this.http.get(`http://localhost:3000/api/dishes/${id}`)
         .map((res) => res.json());
     }
-    // newEntry(title, content){
-    //   return this.http.post('http://localhost:3000/api/journal-entries', {title, content})
-    //     .map((res) => res.json());
-    // }
 
+    addIngredient(dishId,ingreId,quantity){
+      console.log("Dishes service Add ingredient");
+      const body={quantity : quantity};
+        
+      return this.http.post(`http://localhost:3000/api/dishes/${dishId}/ingredients/${ingreId}/add`,body)
+        .map((res) => res.json());
+    }
 }

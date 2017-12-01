@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { dishesService } from '../../services/dishes.service';
 import { ActivatedRoute } from '@angular/router';
 import { ingredientsService } from '../../services/ingredients.service';
@@ -10,15 +10,23 @@ import { ingredientsService } from '../../services/ingredients.service';
   providers:[ingredientsService]
 })
 export class RecipeDetailComponent implements OnInit {
+
   id: String;
   name: String;
   image:String;
   description:String;
 
+dish={
+  id:this.id,
+  name:this.name,
+  image:this.image,
+  description:this.description
+}
   ingredients:Array<any>=[];
 
   constructor(private route: ActivatedRoute, private recipeServ :dishesService,
               public ingredientServ : ingredientsService) {
+
 }
 
   ngOnInit() {
@@ -37,7 +45,12 @@ export class RecipeDetailComponent implements OnInit {
       .subscribe(items => {
           this.ingredients = items;});
 
+  }
 
+  AddIngredient(ingreId){
+    this.recipeServ.addIngredient(this.id,ingreId,2).subscribe(e=>this.dish=e);
+    console.log("recipe-detail Add");
+    console.log(this.id,ingreId,2);
   }
 
 }
