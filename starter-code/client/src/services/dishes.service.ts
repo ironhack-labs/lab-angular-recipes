@@ -16,10 +16,10 @@ export class DishesService {
       return this.http.get(BASEURL)
                       .map(res => res.json());
   }
-  //
-  // getEntryByID(id):Observable<any>{
-  //     return this.http.get(`${BASEURL}/${id}`)
-  //                     .map(res => res.json());
-  // }
+
+  getDishByID(id):Observable<any>{
+      return this.http.get(`${BASEURL}/${id}`)
+                      .map(res => res.json());
+  }
 
 }

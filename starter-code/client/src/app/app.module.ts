@@ -8,11 +8,13 @@ import { DishesService } from '../services/dishes.service';
 import { DishesComponent } from './dishes/dishes.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
+import { DishDetailComponent } from './dish-detail/dish-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DishesComponent,
+    DishDetailComponent,
   ],
   imports: [
     BrowserModule,
