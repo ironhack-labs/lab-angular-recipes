@@ -1,0 +1,7 @@
+<a [routerLink]="['addIngredient']">add Ingredient</a><br><br>
+<a [routerLink]="['addDish']">add Dish</a><br><br>
+<div *ngFor="let recipe of myRecipes">
+  <a [routerLink] = "recipe._id">Link to recipe </a>
+{{ recipe.name }}
+{{ recipe.image }}
+</div>
