@@ -1,6 +1,6 @@
 <ul *ngIf="recipes.length > 0; else noRecipesBlock">
   <li *ngFor="let recipe of recipes">
-    <h4>{{ recipe.name }}</h4>
+    <h4><a [routerLink]="['recipe', recipe._id]">{{ recipe.name }}</a></h4>
     <img [src]="recipe.image">
   </li>
 </ul>

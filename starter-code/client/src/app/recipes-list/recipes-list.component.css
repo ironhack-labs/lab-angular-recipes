@@ -1,0 +1,14 @@
+ul {
+  display: inline-block;
+  width: 30%;
+}
+
+li {
+  display: inline-block;
+  width: 30%;
+}
+
+img {
+  width: 30%;
+  height: auto;
+}
