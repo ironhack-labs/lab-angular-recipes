@@ -1,0 +1,20 @@
+h2 {
+  text-align: center;
+}
+
+.ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ingredient {
+  flex-basis: 40%;
+  text-align: center;
+  margin: 10px;
+}
+
+.quant {
+  text-align: center;
+}
