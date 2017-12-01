@@ -5,6 +5,24 @@ const Dish = require('../models/dish');
 const dbName = 'recipe-app';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
+const ingredients = [
+  {
+    name: "Peperoni",
+    image:'http://goldenagecheese.com/wp-content/uploads/2015/05/Turkey-Pepperoni1.jpg',
+    description: "Is an American variety of salami, made from cured pork and beef mixed together and seasoned with paprika or other chili pepper"
+  },
+  {
+    name: 'Orange',
+    image:'http://www.funnynwallpaper.in.net/wp-content/uploads/2017/03/Funny-Food-Photo-Manipulation-2017-Wallpapers-600x338.jpg',
+    description: "Is a type of citrus fruit which people often eat. Oranges are a very good source of vitamins, especially vitamin C. Orange juice is an important part of many people's breakfast."
+  },
+  {
+    name: 'Cheese',
+    image:'http://www.eatwisconsincheese.com/images/cheese/Emmentaler-w.jpg',
+    description: "Is a food derived from milk that is produced in a wide range of flavors, textures, and forms by coagulation of the milk protein casein. It comprises proteins and fat from milk, usually the milk of cows, buffalo, goats, or sheep."
+  }
+]
+
 const foods = [
   {
     name: "Pizza",
@@ -88,7 +106,14 @@ const foods = [
   }
 ]
 
-Dish.create(foods, (err) => {
-  if (err) { throw(err) }
-  console.log(`Created ${foods.length} dishes`)
-});
+
+
+let dishPromise = Dish.create(foods);
+let ingredientPromise = Ingredient.create(ingredients);
+
+Promise.all([ingredientPromise,dishPromise)
+  .then(() => {
+    console.log('Database populated correctly');
+    mongoose.connection.close();
+  } )
+  .catch(() => console.log('Error populating the database'));
