@@ -61,3 +61,27 @@ img {
   padding: .25rem .5rem;
   cursor: pointer;
 }
+.main-nav a {
+  text-decoration: none;
+  color: tomato;
+  font-weight: bold;
+}
+.recipe {
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem auto;
+}
+.recipe-img {
+  flex-basis: 30%;
+}
+.recipe-text {
+  flex-basis: 35%;
+  margin-left: 2rem;
+}
+.extra-ingredients {
+  flex-basis: 25%;
+  background: #DFDFDF;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-left: 2rem;
+}

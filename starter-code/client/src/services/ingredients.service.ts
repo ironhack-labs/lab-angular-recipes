@@ -13,8 +13,8 @@ export class IngredientsService {
   constructor(private http: Http) { }
 
   getIngredients():Observable<IIngredient[]>{
-      return this.http.get(environment.INGREDIENTS_API_URL)
-                      .map(res => <IIngredient[]>res.json());
+    return this.http.get(environment.INGREDIENTS_API_URL)
+      .map(res => <IIngredient[]>res.json());
   }
 
 }

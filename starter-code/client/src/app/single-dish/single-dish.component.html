@@ -2,20 +2,28 @@
   <a routerLink="/">&lt; Back</a>
 </nav>
 <div *ngIf="recipe" class="recipe">
-  <img [src]="recipe.image" [alt]="recipe.name" width="400">
-  <h1>{{ recipe.name }}</h1>
-  <p>{{ recipe.description }}</p>
-  <ul *ngIf="recipe.ingredients">
-    <li *ngFor="let ingredient of recipe.ingredients">
-      {{ ingredient.name }}
-    </li>
-  </ul>
-  <div *ngIf="listOfIngredients" class="ingredients">
-    <hr>
-    <h3>Ingredients</h3>
+  <div class="recipe-img">
+    <img [src]="recipe.image" [alt]="recipe.name" width="400">
+  </div>
+  <div class="recipe-text">
+    <h1>{{ recipe.name }}</h1>
+    <p>{{ recipe.description }}</p>
+    <div *ngIf="recipe.ingredients.length">
+      <h3>Ingredients</h3>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.ingredientId.name }} {{ingredient.quantity}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="listOfIngredients" class="extra-ingredients">
+    <h4>More Ingredients?</h4>
     <ul>
       <li *ngFor="let ing of listOfIngredients">
-        {{ ing.name }} <button class="small-button">Add</button>
+        {{ ing.name }}
+        <button (click)="add(recipe._id, ing._id, recipe.slug)"
+                class="small-button">Add</button>
       </li>
     </ul>
   </div>
