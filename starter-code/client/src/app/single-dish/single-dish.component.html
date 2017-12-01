@@ -1,0 +1,26 @@
+<h1>Single dish information</h1>
+<a [routerLink]="['']">Back to List</a>
+
+<div class="single-dish" *ngIf="singleDish">
+<h2>{{singleDish.name}}</h2>
+<img [src]="[singleDish.image]" alt="dishinfo" width="400">
+<h3>{{singleDish.description}}</h3>
+<div class="ingredients" *ngFor="let ing of singleDish.ingredients">
+  <h4>Ingredient: {{ing.ingredientId.name}}</h4>
+  <h4>Amount: {{ing.quantity}}</h4>
+</div>
+</div>
+
+<h2>Ingredient List</h2>
+<div class="quant">
+  <label>Quantity</label><br>
+  <input type="number" [(ngModel)]="newIng.quantity">
+</div>
+<div class="ingredient-list">
+  <div class="ingredient" *ngFor="let ingredient of ingredients">
+    <h4>{{ingredient.name}}</h4>
+    <img [src]="[ingredient.image]" alt="ingredientimage" width="200">
+    <p>{{ingredient.description}}</p>
+    <button (click)="addIngredient(singleDish._id, ingredient._id)">Add Ingredient</button>
+  </div>
+</div>
