@@ -1,0 +1,9 @@
+<div class = "list">
+<ul>
+  <li class = "dish" *ngFor="let platos of dishesList">
+    <h2>{{platos.name}}</h2>
+    <img [src]="platos.image" />
+      <a [routerLink]="['dishes', platos._id]"> Show Details </a>
+  </li>
+</ul>
+</div>
