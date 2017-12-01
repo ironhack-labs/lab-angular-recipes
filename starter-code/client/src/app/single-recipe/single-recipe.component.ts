@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesService } from './../../services/recipes.service';
-
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { RecipesService } from './../../services/recipes.service';
+import { IngredientsService } from './../../services/ingredients/ingredients.service';
 
 @Component({
   selector: 'app-single-recipe',
@@ -10,9 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SingleRecipeComponent implements OnInit {
   recipe: any;
-  
+  ingredients: any;
+
   constructor(
     private recipesService: RecipesService,
+    private ingredientsService: IngredientsService,
     private router: Router,
     private route: ActivatedRoute
   ) {
@@ -20,6 +23,10 @@ export class SingleRecipeComponent implements OnInit {
       this.recipesService.getRecipeById(params['id']).subscribe(recipe => {
         this.recipe = recipe;
       });
+    });
+
+    this.ingredientsService.getIngredientsList().subscribe(list => {
+      this.ingredients = list;
     });
   }
 

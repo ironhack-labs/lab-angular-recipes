@@ -3,3 +3,14 @@
   <img [src]="recipe.image">
   <p>{{ recipe.description }}</p>
 </div>
+<div>
+  <ul *ngIf="ingredients.length > 0; else noIngredientsBlock">
+    <li *ngFor="let ingredient of ingredients">
+      <p>{{ ingredient }}</p>
+      <button>Add</button>
+    </li>
+  </ul>
+</div>
+<div #noIngredientsBlock>
+  <p>There are no ingredients yet</p>
+</div>
