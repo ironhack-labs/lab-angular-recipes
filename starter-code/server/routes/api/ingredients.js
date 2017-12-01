@@ -5,7 +5,7 @@ const Ingredient = require('../../models/ingredient');
 router.get('/', (req, res, next) => {
   Ingredient.find({}, (err, ingredients) => {
     if (err) { return res.status(500).json(err); }
-
+    console.log(ingredients);
     return res.json(ingredients);
   });
 });

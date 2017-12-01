@@ -5,6 +5,7 @@ const myRoutes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '',  component: ListRecipesComponent },
   { path: ':id',  component: SingleRecipeComponent }
+
 ];
 
 export { myRoutes };

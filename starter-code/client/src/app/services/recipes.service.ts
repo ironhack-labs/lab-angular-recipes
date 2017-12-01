@@ -23,4 +23,8 @@ export class RecipesService {
                       .map(res => res.json());
   }
 
+  insertIngredientInDish(ingredientId,dishId,quantity):Observable<any>{
+    return this.http.post(`${BASEURL}/${dishId}/ingredients/${ingredientId}/add`, { quantity: quantity })
+                    .map(res => res.json());
+    }
 }

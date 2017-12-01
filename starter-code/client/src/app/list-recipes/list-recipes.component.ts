@@ -10,10 +10,10 @@ export class ListRecipesComponent implements OnInit {
   constructor(public recipes: RecipesService) { }
 
   ngOnInit() {
+
     this.recipes.getAllRecipes().subscribe( list =>{
       this.myRecipes = list;
 
   });
-
   }
 }
