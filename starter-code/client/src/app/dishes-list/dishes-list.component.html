@@ -1,0 +1,9 @@
+<h1>All the dishes</h1>
+<div *ngIf="dishes" class="dishes">
+  <div *ngFor="let dish of dishes" class="dish" (click)="viewDetails(dish.slug)">
+    <div class="dish-img">
+      <img [src]="dish.image">
+    </div>
+    <h2 class="dish-title">{{ dish.name }}</h2>
+  </div>
+</div>

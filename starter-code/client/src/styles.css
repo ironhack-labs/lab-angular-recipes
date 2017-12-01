@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  font-size: 20px;
+}
+body {
+  margin: 0;
+  padding: 1rem;
+  font: 20px/1.5 'Didot',Georgia, serif;
+  color: #444;
+  background: #FFF;
+}
+img {
+  max-width: 100%;
+}
+.wrapper {
+  width: 90%;
+  max-width: 60rem;
+  margin: 1rem auto;
+}
+.dishes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.dish {
+  flex-basis: 22%;
+  border: 1px solid #DFDFDF;
+  background: #fff;
+  margin: 10px 20px 10px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.dish:nth-child(4n){
+  margin-right: 0;
+}
+.dish:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 6px 8px rgba(66, 66, 66, 0.15);
+}
+.dish-img {
+  height:8rem;
+  border-radius: 12px;
+  overflow-y: hidden;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+}
+.dish-img img {
+  display: block;
+  align-self: center;
+}
+.dish-title {
+  text-align: center;
+  font-weight: 400;
+}
+.small-button {
+  border: none;
+  background: #444;
+  color: #fff;
+  border-radius: 6px;
+  padding: .25rem .5rem;
+  cursor: pointer;
+}
+.main-nav a {
+  text-decoration: none;
+  color: tomato;
+  font-weight: bold;
+}
+.recipe {
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem auto;
+}
+.recipe-img {
+  flex-basis: 30%;
+}
+.recipe-text {
+  flex-basis: 35%;
+  margin-left: 2rem;
+}
+.extra-ingredients {
+  flex-basis: 25%;
+  background: #DFDFDF;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-left: 2rem;
+}

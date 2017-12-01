@@ -6,6 +6,12 @@ const DishSchema = new Schema({
     type: String,
     required: [true, 'name is required']
   },
+  slug: {
+    type: String,
+    required: [true, 'a slug is required'],
+    unique: true,
+    index: { unique: true}
+  },
   description: {
     type: String,
     required: [true, 'description is required']

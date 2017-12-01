@@ -1,12 +1,12 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
-const dbName = 'recipe-app';
+const DB_URL = process.env.DB_URL;
 
-// connect to the database
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(DB_URL, {useMongoClient:true} );
 
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
-  console.log(`Connected to the ${dbName} database`);
+  console.log(`Connected to ${DB_URL}`);
 });
