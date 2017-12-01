@@ -1,0 +1,11 @@
+<p>
+  recipes works!
+</p>
+
+<ul>
+  <li *ngFor="let dish of dishes">
+      <h2>{{dish.name}}</h2>
+      <img [src]="dish.image" />
+      <a [routerLink]="['dishes', dish._id]"><button>View Details</button></a>
+  </li>
+</ul>
