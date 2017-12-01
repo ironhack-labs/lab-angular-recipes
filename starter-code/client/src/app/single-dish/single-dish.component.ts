@@ -1,28 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IDish } from '../../interfaces/dish';
+import { IIngredient } from '../../interfaces/ingredient';
 import { DishesService } from '../../services/dishes.service';
+import { IngredientsService } from '../../services/ingredients.service';
 
 @Component({
   selector: 'app-single-dish',
   templateUrl: './single-dish.component.html',
-  styleUrls: ['./single-dish.component.css']
+  styleUrls: ['./single-dish.component.css'],
+  providers: [IngredientsService]
 })
 export class SingleDishComponent implements OnInit {
-  recipe: any;
+  recipe: IDish;
+  listOfIngredients: IIngredient[];
 
   constructor(
     public router: Router,
     public dishes: DishesService,
-    public route: ActivatedRoute) {
+    public route: ActivatedRoute,
+    public ingredients: IngredientsService) {
     route.params.subscribe(params => {
-      this.dishes.getSingleDish(params['slug'])
+      dishes.getSingleDish(params['slug'])
         .subscribe(dish => this.recipe = dish);
     })
+    ingredients.getIngredients()
+      .subscribe(ingredients => this.listOfIngredients = ingredients);
   }
 
   ngOnInit() {
-    console.log(this.recipe)
   }
 
 }

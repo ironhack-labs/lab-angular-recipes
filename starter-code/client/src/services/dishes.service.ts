@@ -15,11 +15,11 @@ export class DishesService {
   constructor(private http: Http) { }
 
   getDishes():Observable<IDish[]>{
-      return this.http.get(environment.API_URL)
+      return this.http.get(environment.DISHES_API_URL)
                       .map(res => <IDish[]>res.json());
   }
   getSingleDish(slug):Observable<IDish>{
-    return this.http.get(environment.API_URL + '/' + slug)
+    return this.http.get(environment.DISHES_API_URL + '/' + slug)
                     .map(res => <IDish>res.json());
   }
 

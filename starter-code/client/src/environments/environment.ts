@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  API_URL: "http://localhost:3000/api/dishes"
+  DISHES_API_URL: "http://localhost:3000/api/dishes",
+  INGREDIENTS_API_URL: "http://localhost:3000/api/ingredients"
 };

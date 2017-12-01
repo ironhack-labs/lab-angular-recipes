@@ -2,7 +2,7 @@
   <a routerLink="/">&lt; Back</a>
 </nav>
 <div *ngIf="recipe" class="recipe">
-  <img [src]="recipe.image" [alt]="recipe.name">
+  <img [src]="recipe.image" [alt]="recipe.name" width="400">
   <h1>{{ recipe.name }}</h1>
   <p>{{ recipe.description }}</p>
   <ul *ngIf="recipe.ingredients">
@@ -10,4 +10,13 @@
       {{ ingredient.name }}
     </li>
   </ul>
+  <div *ngIf="listOfIngredients" class="ingredients">
+    <hr>
+    <h3>Ingredients</h3>
+    <ul>
+      <li *ngFor="let ing of listOfIngredients">
+        {{ ing.name }} <button class="small-button">Add</button>
+      </li>
+    </ul>
+  </div>
 </div>
