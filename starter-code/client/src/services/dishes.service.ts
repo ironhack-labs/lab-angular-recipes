@@ -18,5 +18,9 @@ export class DishesService {
       return this.http.get(environment.API_URL)
                       .map(res => <IDish[]>res.json());
   }
+  getSingleDish(slug):Observable<IDish>{
+    return this.http.get(environment.API_URL + '/' + slug)
+                    .map(res => <IDish>res.json());
+  }
 
 }
