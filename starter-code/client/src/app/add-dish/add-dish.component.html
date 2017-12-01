@@ -1,0 +1,13 @@
+<a [routerLink]='[""]'>back</a><br><br>
+<form (ngSubmit)="addDish(myForm)" #myForm="ngForm">
+  <p> name
+    <input type="text" name="name" [(ngModel)]="name" required />
+  </p>
+  <p> image
+    <input type="text" name="image" [(ngModel)]="image" required />
+  </p>
+  <p> description
+    <input type="text" name="description" [(ngModel)]="description" required />
+  </p>
+  <button type="submit"> Add Dish </button>
+</form>

@@ -20,6 +20,9 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+  console.log("IN");
+  console.log(req);
+  console.log(res);
   const newIngredient = new Ingredient({
     name: req.body.name,
     description: req.body.description,

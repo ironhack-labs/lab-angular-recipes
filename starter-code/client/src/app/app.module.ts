@@ -10,11 +10,15 @@ import { IngredientsService } from './services/ingredients.service';
 import { RouterModule } from '@angular/router';
 import { myRoutes } from './routes';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
+import { AddDishComponent } from './add-dish/add-dish.component';
+import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListRecipesComponent,
     SingleRecipeComponent,
+    AddDishComponent,
+    AddIngredientComponent,
   ],
   imports: [
     BrowserModule,

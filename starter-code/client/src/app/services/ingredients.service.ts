@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
-
+import { Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 
@@ -19,10 +19,15 @@ export class IngredientsService {
                     .map(res => res.json());
   }
 
-  // getOneIngredient(id):Observable<any>{
-  //     return this.http.get(`${BASEURL}/${id}`)
-  //                     .map(res => res.json());
-  //                   }
+  addNewIngredient(data){
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    let options = new RequestOptions({ headers: headers });
+    var body = "name=" + data.name + "&image=" + data.image + "&description="+ data.description;
+    this.http.post(BASEURL,body,options).subscribe(res => res.json());
+    
+  }
 
 
 }
