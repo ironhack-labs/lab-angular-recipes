@@ -1,0 +1,11 @@
+<p>
+  my-dishes works!
+</p>
+
+<div class="disheslist">
+   <div *ngFor="let dishes of dishesList">
+     <h1>{{dishes.name}}</h1>
+     <p>{{dishes.image}}</p>
+     <!-- <a [routerLink]="['dish',dish._id]"><button>Details</button></a> -->
+   </div>
+ </div>
