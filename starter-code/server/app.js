@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express      = require('express');
 const path         = require('path');
 const favicon      = require('serve-favicon');
@@ -6,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const routes       = require('./routes/index');
 const cors         = require('cors');
+const mongoose     = require('mongoose');
 
 require('./config/database');
 const app = express();
@@ -13,6 +15,8 @@ app.use(cors());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+mongoose.connect(process.env.MONGODB_URI).then(console.log(`Connected to the database {MONGODB_URI}`));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
