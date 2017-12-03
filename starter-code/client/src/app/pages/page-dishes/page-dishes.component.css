@@ -1,0 +1,15 @@
+img {
+  max-width: 10vw;
+}
+
+.dish {
+  max-width: 20vw;
+  align-items: center;
+  margin: 1vw;
+}
+
+.dish-list {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

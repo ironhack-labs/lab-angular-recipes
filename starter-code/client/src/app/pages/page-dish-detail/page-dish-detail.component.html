@@ -1,0 +1,8 @@
+<a [routerLink]="['/dishes']">Home</a>
+<div class="details" *ngIf='dish'>
+  <h4>{{dish.name}}</h4>
+  <p>{{dish.description}}</p>
+  <img src="{{dish.image}}" alt="{{dish.name}}">
+</div>
+
+
