@@ -1,0 +1,9 @@
+<h1>Dominiks Dish-List</h1>
+
+<div class="dish-list">
+  <div *ngFor="let dish of dishes" class="dish-card" [routerLink]="['/dishes', dish._id]">
+    <h2> {{dish.name}}</h2>
+    <!-- <p>{{dish.description}}</p> -->
+    <img [src]="dish.image" alt="{{dish.name}}">
+  </div>
+</div>
