@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
 import { DishService } from './services/dish.service';
 import { PageDishesComponent } from './pages/page-dishes/page-dishes.component';
@@ -13,9 +12,8 @@ import { PageDishDetailComponent } from './pages/page-dish-detail/page-dish-deta
 const routes: Routes = [
   {path: '', redirectTo: '/dishes', pathMatch: 'full'},
   {path: 'dishes', component: PageDishesComponent},
-  {path: 'dishes/:id', component: PageDishDetailComponent}
+  {path: 'dishes/:id', component: PageDishDetailComponent},
 ];
-
 
 @NgModule({
   declarations: [
