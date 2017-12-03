@@ -1,0 +1,26 @@
+img {
+  max-height:150px;
+}
+
+.dish-list {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+
+.dish-card {
+  width:28%;
+  display:flex;
+  flex-direction:column;
+  border: solid 1px lightgrey;
+  box-shadow: 10px 10px 10px lightgrey;
+  margin: 2% 0;
+  padding: 2%;
+  background-color: rgba(235, 235, 235, 0.486);
+  text-align:center;
+}
+
+h1 {
+  text-align: center;
+}
