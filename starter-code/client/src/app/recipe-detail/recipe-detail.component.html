@@ -1,0 +1,15 @@
+<div class="container">
+  <a [routerLink]="['']">Go to Home</a><br>
+  <article class="item">
+    <h3>{{name}}</h3>
+    <img [src]="image">
+    <p id="description">{{description}}</p>
+  </article>
+</div>
+
+<div>
+  <h2>List of ingredients</h2>
+  <div *ngFor='let e of ingredients'>
+      <app-ingredient [theIngredient]="e" (onAdd)="AddIngredient($event)"></app-ingredient>
+   </div>
+</div>

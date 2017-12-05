@@ -23,7 +23,7 @@ const foods = [
   },
   {
     name: "Gnocchi",
-    image: "https://i.imgur.com/",
+    image: "https://i.imgur.com/GNrNEqI.jpg",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
@@ -86,9 +86,40 @@ const foods = [
     image: "https://i.imgur.com/URhdrAm.png",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
-]
+];
+const ingredients = [
+  {
+    name: "1",
+    description: "YA TE VALE PAPU......"
+  },
+  {
+    name: "2",
+    description: "YA TE VALE PAPU x2"
+  },
+  {
+    name: "3",
+    description: "YA TE VALE PAPU x3"
+  }
+];
 
-Dish.create(foods, (err) => {
-  if (err) { throw(err) }
-  console.log(`Created ${foods.length} dishes`)
-});
+Dish.collection.drop();
+Ingredient.collection.drop();
+
+  Dish.create(foods)
+  .then((c)=>{
+    c.forEach( e=>{
+      console.log(e.name);});
+      Ingredient.create(ingredients)
+      .then((t)=>{
+        t.forEach( e=>{
+          console.log(e.name);});
+        mongoose.connection.close();
+        })
+      .catch( (e)=>{next(e);});
+      })
+  .catch( (e)=>{next(e);});
+
+// Dish.create(foods, (err) => {
+//   if (err) { throw(err); }
+//   console.log(`Created ${foods.length} dishes`);
+// });
