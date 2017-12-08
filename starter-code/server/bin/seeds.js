@@ -88,7 +88,35 @@ const foods = [
   }
 ]
 
+const ingredients = [
+  {name: "cheese",
+   description: "salty",
+   image: "http://briciole.typepad.com/.a/6a00d835508b1869e20120a587e438970b-pit"
+ },
+ {name: "tomato sauce",
+  description: "blend tomatoes then cook in a pan",
+  image: "https://cdn1.nonnabox.com/wp-content/uploads/diet-nutrition_recipes_tomato-sauce_2716x1810_000023741142.jpg"
+},
+ {name: "Chocolate",
+  description: "delicious",
+  image: "https://www.google.es/search?q=chocolate+image&rlz=1C5CHFA_enES773ES773&source=lnms&tbm=isch&sa=X&ved=0ahUKEwich73un-fXAhXFfhoKHUaxBEQQ_AUICigB&biw=1280&bih=709#imgrc=GyrVwzz5Rqu1uM:",
+},
+ {name: "paprika",
+  description: "condiment",
+  image: "https://static.thespicehouse.com/images/file/372/large_square_Smoked_Hot_Spanish_Paprika__Pimenton_de_la_Vera_Picante__close.jpg"
+},
+ {name: "pesto",
+  description: "sauce",
+  image:"http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/7/27/0/IG1A08F_pesto_s4x3.jpg.rend.hgtvcom.616.462.suffix/1394586016072.jpeg"
+ }
+]
+
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
+});
+
+Ingredient.create(ingredients, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${ingredients.length} ingredients`)
 });

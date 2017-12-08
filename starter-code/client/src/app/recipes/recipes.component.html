@@ -1,0 +1,13 @@
+<h1>Recipes</h1>
+<br>
+<div class="recipes">
+<ul>
+  <li *ngFor = "let recipe of myRecipes" class = "recipe">
+  {{recipe.name}}
+  <br>
+  <img src="{{recipe.image}}" alt="">
+  <br>
+  <a [routerLink]= "['/recipe', recipe._id]">Details</a>
+</li>
+</ul>
+</div>

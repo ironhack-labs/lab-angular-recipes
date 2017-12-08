@@ -1,0 +1,21 @@
+
+<div *ngIf="myRecipe" class= "recipe">
+  <h1>
+    {{ myRecipe.name }}</h1><br>
+  <img src="{{ myRecipe.image }}" alt="">  <br>
+  <p>
+    {{ myRecipe.description }}
+  </p>
+</div>
+
+<div class="recipes">
+<ul>
+  <li *ngFor = "let ingredient of myIngredients" class = "ingredient">
+  {{ingredient.name}}
+  <br>
+  <img src="{{ingredient.image}}" alt="">
+  <br>
+  <p>{{ingredient.description}}</p>
+</li>
+</ul>
+</div>
