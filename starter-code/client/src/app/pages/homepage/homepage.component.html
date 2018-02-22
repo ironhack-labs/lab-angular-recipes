@@ -1,0 +1,16 @@
+<h1> The recepies </h1>
+
+<div class="loading" *ngIf="!recepies">
+  Loading.....
+</div>
+
+<ul *ngIf="recepies">
+  <li *ngFor="let recepie of recepies">
+    <div>
+      {{ recepie.name }}
+    </div>
+    <div>
+      <img src="{{ recepie.image }}">     
+    </div>
+  </li>
+</ul>
