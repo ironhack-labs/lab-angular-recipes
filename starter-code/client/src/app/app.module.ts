@@ -10,7 +10,7 @@ import { RecipesListComponent } from './components/recipes-list/recipes-list.com
 import { DishesService } from './services/dishes.service';
 
 const routes: Routes = [
-  { path: '' , component: RecipesListComponent }
+  { path: '' , component: RecipesListComponent, pathMatch:'full' }
 ]
 
 @NgModule({

@@ -8,9 +8,19 @@ import { DishesService } from '../../services/dishes.service';
 })
 export class RecipesListComponent implements OnInit {
 
-  constructor(private dishesService: DishesService) { }
+  dishes: Array<any>;
+
+  constructor(private dishesService: DishesService) { 
+    console.log('ok');
+  }
 
   ngOnInit() {
+    this.dishesService.getDishes()
+    .then((dishes) => {
+      this.dishes = dishes;
+      console.log(dishes);
+      }
+    );
   }
 
 }
