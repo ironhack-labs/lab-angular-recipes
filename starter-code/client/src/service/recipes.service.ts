@@ -15,8 +15,9 @@ export class RecipesService{
   
      }
 
-    //  get(id) {
-    //   return this.http.get(`${this.BASE_URL}/api/journal-entries/${id}`)
-    //     .map((res) => res.json());
+     get(id) {
+      return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
+        .map((res) => res.json());
     
+}
 }

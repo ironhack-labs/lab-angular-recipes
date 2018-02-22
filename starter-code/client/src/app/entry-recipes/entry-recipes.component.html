@@ -5,7 +5,7 @@
 
 <div *ngFor="let r of recipeList">
   <p>{{r.name}}</p>
-  <img src="{{r.image}}" width=250px>
+  <img src="{{r.image}}" width="250">
   
-  <!-- <a [routerLink]="['journal-entries', journal._id]"> View Journal</a> -->
+  <a [routerLink]="['dishes', r._id]"> View Journal</a>
 </div>
