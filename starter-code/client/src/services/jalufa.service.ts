@@ -12,10 +12,10 @@ export class JalufaService {
       .map((res) => res.json());
   }
   
-//   get(id) {
-//     return this.http.get(`${this.BASE_URL}/api/phone/${id}`)
-//       .map((res) => res.json());
-//   }
+  get(id) {
+    return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
+      .map((res) => res.json());
+  }
   
 //   edit(phone) {
 //     return this.http.put(`${this.BASE_URL}/api/phone/${phone.id}`, phone)

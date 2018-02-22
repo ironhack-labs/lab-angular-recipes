@@ -8,12 +8,14 @@ import { JalufaService } from 'services/jalufa.service';
 import { ComiditaListComponent } from './comidita-list/comidita-list.component';
 import { routes } from './routes';
 import { RouterModule } from '@angular/router';
+import { ComiditaDetailComponent } from './comidita-detail/comidita-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ComiditaListComponent,
+    ComiditaDetailComponent,
   ],
   imports: [
     BrowserModule,
