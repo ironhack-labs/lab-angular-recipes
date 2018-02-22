@@ -88,7 +88,33 @@ const foods = [
   }
 ]
 
+const ingredients =
+  [
+    {
+      name: "Onion",
+      image: "http://mercadosantaeugenia.eu/wp-content/uploads/sites/5/2017/05/Cebolla.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      name: "Lemon",
+      image: "http://mercadosantaeugenia.eu/wp-content/uploads/sites/5/2017/05/limon01.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      name: "Garlic",
+      image: "http://mercadosantaeugenia.eu/wp-content/uploads/sites/5/2017/05/Ajos.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  ]
+
+
 Dish.create(foods, (err) => {
-  if (err) { throw(err) }
+  if (err) { throw (err) }
   console.log(`Created ${foods.length} dishes`)
 });
+
+Ingredient.create(ingredients, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${ingredients.length} ingredients`)
+});
+
