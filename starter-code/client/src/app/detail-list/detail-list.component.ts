@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DishesService } from 'app/services/dishes.service';
+import { IngredientsService } from 'app/services/ingredients.service';
 
 @Component({
   selector: 'app-detail-list',
@@ -9,24 +10,37 @@ import { DishesService } from 'app/services/dishes.service';
 })
 export class DetailListComponent implements OnInit {
   recipe: any;
+  ingredient: any;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private dishesService: DishesService,
+    private ingredientsService: IngredientsService,
   ) { }
 
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      this.getEntryDetails(params['id']);
+      this.getDishDetails(params['id']);
     });
+    this.ingredientsService.getIngredient()
+    .subscribe((ing) => {
+      this.ingredient = ing,
+      console.log(ing)
+    })
   }
-  getEntryDetails(id) {
+  getDishDetails(id) {
     this.dishesService.get(id)
       .subscribe((recipe) => {
         this.recipe = recipe;
       });
   }
+  // getIngredients(id) {
+  //   this.ingredientsService.getIngredient(id)
+  //     .subscribe((ingredient) => {
+  //     this.ingredient = ingredient;
+  //   })
+  // }
 
 
 }
