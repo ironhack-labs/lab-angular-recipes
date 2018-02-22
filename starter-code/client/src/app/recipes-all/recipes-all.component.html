@@ -1,5 +1,8 @@
+<h1>MY RECIPES</h1>
 <div *ngFor="let r of recipes" class="dish">
-  <img [src]="r.image" alt="">  
+  <a [routerLink]="r._id">
+    <img [src]="r.image" alt="">
+  </a>
   <hr>
-<h4>{{r.name}}</h4>
+  <h4>{{r.name}}</h4>
 </div>
