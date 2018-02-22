@@ -1,0 +1,8 @@
+<p>
+  recipe-list works!
+</p>
+<div *ngFor="let recepie of recepiesList">
+    <p>{{recepie.name}}</p>
+    <img [src]="recepie.image" [alt]="recepie.name" width="200">
+    <a [routerLink]="['/api/dishes', recepie._id]"> View recepie</a>
+  </div>
