@@ -1,0 +1,7 @@
+<div class="parent">
+  <div class="el" *ngFor="let recip of recipList">
+    <a [routerLink]="['recip', recip._id]"><img [src]="recip.image"  height="200"/></a>
+      <h3> {{ recip.name }} </h3>
+      <a [routerLink]="['recip', recip._id]"> View Details </a>
+  </div>
+</div>
