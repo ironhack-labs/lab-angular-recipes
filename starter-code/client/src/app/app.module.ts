@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DataService } from 'app/services/data.service';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SingleRecipeComponent } from './pages/single-recipe/single-recipe.component';
+import { DataIngService } from 'app/services/data-ing.service';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -18,7 +19,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomepageComponent,
-    SingleRecipeComponent,
+    SingleRecipeComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -26,7 +27,7 @@ const routes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [DataService],
+  providers: [DataService, DataIngService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { DataIngService } from '../../services/data-ing.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,8 +12,9 @@ export class SingleRecipeComponent implements OnInit {
 
   singleRecipe: object;
   recipiId: string;
+  ingredients: Array<any>;
 
-  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) { }
+  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private dataIng: DataIngService) { }
 
   ngOnInit() {
     this.activatedRoute.params
@@ -20,6 +22,10 @@ export class SingleRecipeComponent implements OnInit {
 
     this.dataService.getSingle(this.recipiId)
       .then(singleRecipe => this.singleRecipe = singleRecipe);
+
+    this.dataIng.getList()
+     .then(ingredients => this.ingredients = ingredients);
+    
   }
 
 }

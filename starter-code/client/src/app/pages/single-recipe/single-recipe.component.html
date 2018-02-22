@@ -12,3 +12,16 @@ Dish Name:  {{ singleRecipe.name }}
 
 <p> Description: {{ singleRecipe.description }} </p>
 </ul>
+
+<ul *ngIf="ingredients">
+  <li *ngFor="let ingredient of ingredients">
+    <div>
+      {{ ingredient }}
+    </div>
+    <div>
+      <label for="quantity">Quantity</label>
+      <input type="number">
+      <button>Add</button>
+    </div>
+  </li>
+</ul>
