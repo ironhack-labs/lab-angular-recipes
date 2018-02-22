@@ -1,0 +1,11 @@
+<div class="columna">
+  <h1>Lista de platos</h1>
+  <div>
+    <div *ngFor="let dish of dList">
+      <div>
+        <a [routerLink]="['/recipe',dish._id]"><img src="{{dish.image}}" height=200></a>
+        <h3>{{dish.name}}</h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="columna">
+  <div class="card">
+    <img src="{{recipe.image}}" width="200px">
+    <div class="container">
+      <h1>{{recipe.name}}</h1>
+      <p>{{recipe.description}}</p>
+    </div>
+    <a [routerLink]="['']"> Back to the list </a>
+    <br>
+    <div>
+      <h1>Lista de Ingredientes</h1>
+      <div>
+        <div *ngFor="let ing of iList">
+          <div>
+            <img src="{{ing.image}}" height=100>
+            <h3>{{ing.name}}</h3><button (click)="addIngredient(ing._id)">+1</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
