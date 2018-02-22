@@ -1,16 +1,17 @@
 <h1> The recepies </h1>
 
-<div class="loading" *ngIf="!recepies">
+<div class="loading" *ngIf="!recipies">
   Loading.....
 </div>
 
-<ul *ngIf="recepies">
-  <li *ngFor="let recepie of recepies">
+<ul *ngIf="recipies">
+  <li *ngFor="let recipe of recipies">
     <div>
-      {{ recepie.name }}
+      {{ recipe.name }}
     </div>
     <div>
-      <img src="{{ recepie.image }}">     
+      <img src="{{ recipe.image }}">     
     </div>
+    <a [routerLink]="['/recipe', recipe._id]">Details</a>
   </li>
 </ul>

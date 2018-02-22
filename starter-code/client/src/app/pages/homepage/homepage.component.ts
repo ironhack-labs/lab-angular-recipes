@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service'
+import { DataService } from '../../services/data.service';
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -7,13 +8,12 @@ import { DataService } from '../../services/data.service'
 })
 export class HomepageComponent implements OnInit {
 
-  recepies: Array<any>;
+  recipies: Array<any>;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.getList()
-    .then(recepies => this.recepies = recepies);
+      .then(recipies => this.recipies = recipies);
   }
-
 }

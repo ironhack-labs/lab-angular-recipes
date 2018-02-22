@@ -13,5 +13,13 @@ export class DataService {
       .toPromise()
       .then((res: Response) => res.json())
   }
+
+  getSingle(id): Promise<any> {
+    return this.http.get(`${this.API_URL}/dishes/${id}`)
+      .toPromise()
+      .then((res: Response) => res.json())
+  }
+
+
 }
 
