@@ -1,0 +1,10 @@
+.dishes {
+  text-align: center;
+}
+
+.dish {
+  display: inline-block;
+  width: 29%;
+  margin: 10px;
+  padding: 5px;
+}
