@@ -5,7 +5,9 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const routes       = require('./routes/index');
-const cors         = require('cors');
+const cors         = require('cors')
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);;
 
 require('./config/database');
 const app = express();
