@@ -1,0 +1,10 @@
+
+
+<div class="parent">
+    <h1>Lista de recetas</h1>
+    <div class="el" *ngFor="let d of dishesList">
+        <img [src]="d.image"  height="200"/>
+      <h3> {{ d.name }} </h3>
+        <p>{{d.description}}</p>
+    </div>
+</div>
