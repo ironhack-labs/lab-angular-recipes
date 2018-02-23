@@ -1,0 +1,12 @@
+<div *ngIf="!recipes">
+  Loading dishes
+</div>
+<div *ngIf="recipes"> 
+  <ul>
+    <li *ngFor="let recipe of recipes">
+      {{ recipe.name }}
+      <img src={{recipe.image}} alt="">
+      <a [routerLink]="['recipes', recipe._id]">Link</a>
+    </li>
+  </ul>
+</div>
