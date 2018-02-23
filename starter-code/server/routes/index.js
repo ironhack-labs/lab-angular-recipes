@@ -19,3 +19,6 @@ const generateCRUD = (Model) => {
 }
 
 module.exports = router;
+
+
+
