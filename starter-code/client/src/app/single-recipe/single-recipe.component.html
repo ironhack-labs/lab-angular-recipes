@@ -5,7 +5,8 @@
   <p>{{recipe.description}}</p>
   <div class="ingredients">
     <strong>Ingredients</strong>
-    <ul><li *ngFor="let i of recipe.ingredients">i</li></ul>
+    <button (click)="addIngredient(recipe._id)">Add</button>
+    <ul><li *ngFor="let i of ingredients">{{i.name}} <input type="text" placeholder="quantity"></li></ul>
   </div>
   <a [routerLink]="['/']"> < Back </a>
 </div>

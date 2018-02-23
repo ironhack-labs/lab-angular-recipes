@@ -88,7 +88,36 @@ const foods = [
   }
 ]
 
+const ingredients = [
+  {
+    name: "Onion",
+    image:
+      "http://kitlab.pef.czu.cz/1617zs/etea8e/15/wp-content/uploads/2016/12/Yellw-Onions.jpg",
+    description:
+      "Brownie gingerbread chupa chups fruitcake tart chocolate cake. Gingerbread dessert croissant. Lemon drops halvah brownie."
+  },
+  {
+    name: "Tomato",
+    image:
+      "https://zopcart.com/wp-content/uploads/2017/12/Organictomato1.jpg",
+    description:
+      "Brownie gingerbread chupa chups fruitcake tart chocolate cake. Gingerbread dessert croissant. Lemon drops halvah brownie."
+  },
+  {
+    name: "Tuna",
+    image:
+      "https://www.todopapas.com/images/cms_2011/tpp/comida/atun.gif",
+    description:
+      "Brownie gingerbread chupa chups fruitcake tart chocolate cake. Gingerbread dessert croissant. Lemon drops halvah brownie."
+  }
+];
+
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
+});
+
+Ingredient.create(ingredients, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${ingredients.length} ingredients`)
 });
