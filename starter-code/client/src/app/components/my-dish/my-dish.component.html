@@ -8,4 +8,7 @@
   <div>
     {{myDish.description}}
   </div>
+  <li *ngFor="let ingredient of ingredients">
+    <p>Ingredients: {{ingredient.name}}</p>
+  </li>
 </div>

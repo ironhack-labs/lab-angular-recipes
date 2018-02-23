@@ -9,6 +9,8 @@ import { DishService } from './services/dish.service';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { DishListComponent } from './components/dish-list/dish-list.component';
 import { MyDishComponent } from './components/my-dish/my-dish.component';
+import { IngredientsService } from './services/ingredients.service';
+
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -20,7 +22,7 @@ const routes: Routes = [
     AppComponent,
     HomePageComponent,
     DishListComponent,
-    MyDishComponent,
+    MyDishComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishService],
+  providers: [DishService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
