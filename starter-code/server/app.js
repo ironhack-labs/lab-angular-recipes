@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const routes       = require('./routes/index');
 const cors         = require('cors');
+const generateCrud = require('./routes/crud');
 
 require('./config/database');
 const app = express();

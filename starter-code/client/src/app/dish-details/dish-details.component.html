@@ -1,0 +1,17 @@
+<p>
+  dish-details works!
+</p>
+
+<h1> Phone details </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="dish">
+  <div class="dish-thumbnail">
+    <img height="300" [src]="dish.image" />
+  </div>
+
+  <div class="dish-info">
+    <h2> {{ dish.name }}&nbsp;</h2>
+    <h3> {{ dish.description }} </h3>
+  </div>
+</div>
