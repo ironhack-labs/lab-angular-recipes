@@ -8,15 +8,20 @@ import { AppComponent } from './app.component';
 import { RecipesListComponent } from './components/recipes-list/recipes-list.component';
 
 import { DishesService } from './services/dishes.service';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
-  { path: '' , component: RecipesListComponent, pathMatch:'full' }
+  { path: '' , component: RecipesListComponent, pathMatch:'full' },
+  { path: 'recipe/:id', component: RecipeDetailsComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesListComponent,
+    RecipeDetailsComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,4 +14,11 @@ export class DishesService {
     .toPromise()
     .then((res: Response) => res.json());
   }
+
+  getDish(id): Promise<any> {
+    return this.http.get(`${this.API_URL}/api/dishes/${id}`)
+    .toPromise()
+    .then((res: Response) => res.json())
+  }
+
 }

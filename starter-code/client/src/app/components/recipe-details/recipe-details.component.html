@@ -1,0 +1,12 @@
+
+<div *ngIf="!dish">
+    <p>Loading recipe details...</p>
+</div>
+
+
+<div *ngIf="dish">
+    <button [routerLink]="['/']" >Back to recipes list</button>
+    <p>{{ dish.name }}</p>
+    <img src="{{ dish.image }}">
+    <p>{{ dish.description }}</p>
+</div>

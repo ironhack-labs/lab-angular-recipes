@@ -3,6 +3,7 @@
 </p>
 
 <ul *ngFor="let dish of dishes">
-  <li>{{ dish.name }}</li>
+  <a [routerLink]="['/recipe', dish._id]">{{ dish.name }}</a>
   <img src= "{{ dish.image }}" >
 </ul>
+
