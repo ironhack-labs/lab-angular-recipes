@@ -21,8 +21,8 @@
   <ul *ngIf="ingredients">
     <li *ngFor="let ingredient of ingredients">
       <p>{{ ingredient.name }}</p>
-      <input type="number" placeholder="0" [(ngModel)]="quantity">
-      <button (click)="sendValues()">Add</button>
+      <input type="number" placeholder="0" #input>
+      <button type="submit" (click)="sendValues(ingredient._id, input)">Add</button>
     </li>
   </ul>
 </div>

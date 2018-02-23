@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class DishesService {
@@ -19,4 +20,11 @@ export class DishesService {
     .toPromise()
     .then((res: Response) => res.json());
   }
+
+  addIngredient(dishId, ingId, quantity) {
+    return this.http.post(`${this.BASE_URL}/api/dishes/${dishId}/ingredients/${ingId}/add`, {quantity})
+    .toPromise()
+    .then((res: Response) => res.json());
+  }
+
 }
