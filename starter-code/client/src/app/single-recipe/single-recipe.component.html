@@ -5,8 +5,16 @@
   <p>{{recipe.description}}</p>
   <div class="ingredients">
     <strong>Ingredients</strong>
-    <button (click)="addIngredient(recipe._id)">Add</button>
-    <ul><li *ngFor="let i of ingredients">{{i.name}} <input type="text" placeholder="quantity"></li></ul>
+
+    <ul>
+      <li *ngFor="let i of ingredients">
+        <span>{{i.name}}</span>
+        <form (ngSubmit)="addIngredient(recipe._id, i._id, myForm)" #myForm="ngForm">
+          <input type="text" placeholder="quantity" name="quantity" [(ngModel)]="quantity" #ingQuantity="ngModel">
+          <button type="submit">Add</button>
+        </form>
+      </li>
+    </ul>
   </div>
   <a [routerLink]="['/']"> < Back </a>
 </div>

@@ -38,5 +38,9 @@ export class SingleRecipeComponent implements OnInit {
       this.ingredients = ing;
     })
   }
-
+  addIngredient(recId, ingId, form){
+    console.log(recId)
+    console.log(ingId)
+    console.log(form)
+  }
 }
