@@ -1,0 +1,16 @@
+<h1>dishes</h1>
+
+<div *ngIf="!dishes">
+  loading....
+</div>
+
+<ul *ngIf="dishes">
+
+  <li *ngFor="let dish of dishes">
+    {{dish.name}}
+      <a [routerLink]="['dishes', dish._id]">click me </a> 
+
+
+    <!-- <app-display-all [dish]="dish"></app-display-all> -->
+  </li>
+</ul>
