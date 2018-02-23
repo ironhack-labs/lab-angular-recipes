@@ -1,0 +1,19 @@
+.ingredientes {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+img {
+    height: 50px;
+    width: auto;
+}
+
+.recetas {
+    height: 250px;
+    width: auto;
+}
+
+.boton {
+    margin: 50px 0px;
+}
