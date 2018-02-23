@@ -1,6 +1,9 @@
-<div class="dishes">
-  <h3><a [routerLink]="['']"> Go Home </a></h3>
-  <img [src]="recipe.image"  height="400"/>
-  <h2> {{ recipe.name }} </h2>
-  <p> {{ recipe.description }} </p>
+<div class="container">
+  <div class="dishes">
+    <h3><a [routerLink]="['']"> Go Home </a></h3>
+    <img [src]="recipe.image"  height="300"/>
+    <h2> {{ recipe.name }} </h2>
+    <p> {{ recipe.description }} </p>
+    <h3><a [routerLink]="['./details']"> Add Ingredients </a></h3>
+  </div>
 </div>

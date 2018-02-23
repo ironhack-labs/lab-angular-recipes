@@ -8,14 +8,14 @@ export class IngredientsService {
   constructor(private http: Http) {}
     
   getList() {
-    return this.http.get(`${this.BASE_URL}/api/dishes`)
+    return this.http.get(`${this.BASE_URL}/api/ingredients`)
       .map((res) => res.json());
   }
   
-  get(id) {
-    return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
-      .map((res) => res.json());
-  }
+  // get(id) {
+  //   return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
+  //     .map((res) => res.json());
+  // }
   
   // edit(dish) {
   //   return this.http.put(`${this.BASE_URL}/api/dishes/${dish.id}`, dishes)

@@ -9,8 +9,8 @@ import { DishesService } from '../../services/dishes.service';
 export class DishesComponent implements OnInit {
   dishesList: object;
 
-  constructor( public dishesC: DishesService) {
-    this.dishesC.getList().subscribe( list => this.dishesList = list);
+  constructor( public dishesSer: DishesService) {
+    this.dishesSer.getList().subscribe( list => this.dishesList = list);
    }
 
   ngOnInit() {

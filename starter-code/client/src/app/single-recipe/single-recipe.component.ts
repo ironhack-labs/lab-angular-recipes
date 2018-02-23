@@ -11,7 +11,7 @@ export class SingleRecipeComponent implements OnInit {
   recipe: object;
 
   constructor(
-    public dishesC: DishesService,
+    public dishesSer: DishesService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -21,8 +21,9 @@ export class SingleRecipeComponent implements OnInit {
   }
 
   getRecipe(id) {
-    this.dishesC.get(id).subscribe( obj => {
+    this.dishesSer.get(id).subscribe( obj => {
       this.recipe = obj;
+      console.log(obj)
     });
   }
 }
