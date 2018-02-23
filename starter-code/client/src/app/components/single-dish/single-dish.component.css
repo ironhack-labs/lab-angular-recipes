@@ -1,0 +1,30 @@
+.dish-detail {
+    width: 60%;
+    height: 70%;
+    margin: 20px;
+    text-align: justify;
+}
+
+.ingredients-container {
+    margin: 40px;
+    width: 50%;
+}
+
+.add-ingredient {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 90%;
+}
+
+.input-field {
+    margin: auto 0px;
+}
+
+.quantity {
+    width: 20%;
+}
+
+a {
+    margin: 20px;
+}
