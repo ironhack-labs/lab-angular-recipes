@@ -1,0 +1,10 @@
+
+<h1>Comidita Works
+
+</h1>
+<div class="comida">
+<div *ngFor="let r of recipes" class="dish">
+  <img [src]="r.image" height="150"  width="200" alt="">  
+<h4>{{r.name}}</h4>
+</div>
+</div>
