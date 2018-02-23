@@ -1,0 +1,12 @@
+<a [routerLink]= "['/dishes']"></a>
+<div>
+  <div>
+    <p>{{dish.name}}</p>
+  </div>
+  <div>
+    <p>{{dish.description}}</p>
+  </div>
+  <div>
+      <a [routerLink]="['/dish', dish._id]"> <img src='{{dish.image}}'/></a>
+  </div>
+</div>
