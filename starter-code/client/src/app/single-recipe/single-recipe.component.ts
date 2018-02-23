@@ -18,10 +18,10 @@ export class SingleRecipeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe( params => this.getEntry(params["id"]))
+    this.route.params.subscribe( params => this.getRecipe(params["id"]))
   }
 
-  getEntry(id){
+  getRecipe(id){
     this.recServ.get(id).subscribe( rec => {
       this.recipe = rec;
     })

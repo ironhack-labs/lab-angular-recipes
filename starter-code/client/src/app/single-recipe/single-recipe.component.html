@@ -3,4 +3,9 @@
     {{recipe.name}}</h1>
   <img [src]="recipe.image" />
   <p>{{recipe.description}}</p>
+  <div class="ingredients">
+    <strong>Ingredients</strong>
+    <ul><li *ngFor="let i of recipe.ingredients">i</li></ul>
+  </div>
+  <a [routerLink]="['/']"> < Back </a>
 </div>
