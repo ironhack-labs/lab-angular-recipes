@@ -1,0 +1,17 @@
+<div class="loading" *ngIf="!recipeArr">
+  Loading...
+</div>
+
+<ul *ngIf="recipeArr">
+  <li *ngFor="let recipe of recipeArr">
+  <div>
+    {{recipe.name}}
+  </div>
+  <div>
+    <img src="{{recipe.image}}">
+  </div>
+  <div>
+    <a [routerLink]="['/single-recipe', recipe._id]">Details</a>
+  </div>
+  </li>
+</ul>

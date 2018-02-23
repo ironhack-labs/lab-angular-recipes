@@ -1,0 +1,35 @@
+<p>
+  single-recipe works!
+</p>
+<a href="/">Back to Homepage</a>
+<div *ngIf="oneRecipe">
+  <ul>
+    <li>
+      <div>
+        {{oneRecipe.name}}
+      </div>
+      <img src="{{oneRecipe.image}}">
+      <div>
+        {{oneRecipe.description}}
+      </div>
+    </li>
+  </ul>
+ <!-- ingredient made up on the fly -->
+ <div *ngIf="ingreds">
+    <div *ngFor="let ingredient of ingreds"> 
+      <div>
+      Name: {{ingredient.name}}
+      </div>
+      <div>
+       Description: {{ingredient.description}}
+      </div>
+      <div>
+      <img src="{{ingredient.image}}">
+      </div>
+      <div>
+          <label for="qty">Quantity</label>
+          <input type="number">
+          <button>Add</button>
+      </div>
+  </div>
+</div>
