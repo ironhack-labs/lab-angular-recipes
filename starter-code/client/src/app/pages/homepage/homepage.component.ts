@@ -8,12 +8,12 @@ import { DataService } from '../../services/data.service';
 })
 export class HomepageComponent implements OnInit {
 
-  recipies: Array<any>;
+  recipes: Array<any>;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.getList()
-      .then(recipies => this.recipies = recipies);
+      .then(recipes => this.recipes = recipes);
   }
 }

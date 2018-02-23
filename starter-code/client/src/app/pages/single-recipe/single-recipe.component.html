@@ -2,6 +2,8 @@
   single-recipe works!
 </p>
 
+<a href="/">Return Back</a>
+
 <ul *ngIf="singleRecipe">
 
 Dish Name:  {{ singleRecipe.name }}
@@ -16,7 +18,13 @@ Dish Name:  {{ singleRecipe.name }}
 <ul *ngIf="ingredients">
   <li *ngFor="let ingredient of ingredients">
     <div>
-      {{ ingredient }}
+      <div>
+       {{ ingredient.name }}
+      </div>
+      <img src="{{ingredient.image}}">
+      <div>
+      {{ ingredient.description }}
+      </div>
     </div>
     <div>
       <label for="quantity">Quantity</label>

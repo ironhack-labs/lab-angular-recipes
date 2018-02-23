@@ -20,6 +20,5 @@ export class DataService {
       .then((res: Response) => res.json())
   }
 
-
 }
 
