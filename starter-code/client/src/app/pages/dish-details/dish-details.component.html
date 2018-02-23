@@ -8,3 +8,12 @@
     <img src={{recipe.image}}>
   </ul>
 </div>
+<p>Want to add ingridients?</p>
+  
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+      <span>{{ingredient.name}}</span>
+      <input type="text" name="order-quantity" id="order-quantity" placeholder="quantity">
+      <button >Add</button>
+    </li>
+  </ul>

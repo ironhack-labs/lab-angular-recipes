@@ -6,8 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ListOfDishesComponent } from './pages/list-of-dishes/list-of-dishes.component';
-import { ListDishesService } from './services/list-dishes.service';
 import { DishDetailsComponent } from './pages/dish-details/dish-details.component';
+
+import { ListDishesService } from './services/list-dishes.service';
+import { ListIngredientsService } from './services/list-ingredients.service';
 
 const routes: Routes = [
   { path: '',  component: ListOfDishesComponent },
@@ -26,7 +28,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ListDishesService],
+  providers: [ListDishesService, ListIngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
