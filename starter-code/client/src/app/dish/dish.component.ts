@@ -22,9 +22,8 @@ export class DishComponent implements OnInit {
   //get ingredient from db
   getIngredient(id) { this.ingredientsS.get(id).subscribe(ingred => this.ingred = ingred) }
 
-  addIngredient(ing_id,dish_id) {
-
-    console.log(ing_id, dish_id);
+  addIngredient(ing_id,dish_id,form) {
+    console.log(ing_id, dish_id, form);
     this.dishesS.assign(ing_id, dish_id).subscribe()
   }
 }
