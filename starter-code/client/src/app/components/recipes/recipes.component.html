@@ -1,12 +1,14 @@
 <div *ngIf="!recipes" class="recipes-wrapper">
   <p>It's loading... Please wait. <p>
 </div>
-<div *ngIf="recipes" class="recipes-wrapper">
+<div *ngIf="recipes" class="recipes-list">
   <h1>Dishes List</h1>
-  <div *ngFor="let recipe of recipes" class="recipes-list">
+  <div *ngFor="let recipe of recipes" class="recipe-item">
     <a [routerLink]="['/recipe', recipe._id]">
-      <div class="recipe-item">
+      <div class="recipe-name">
         <h3>{{ recipe.name }}</h3>
+      </div>
+      <div class="recipe-img">
         <img [src]="recipe.image" />
       </div>
     </a>

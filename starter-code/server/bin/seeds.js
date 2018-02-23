@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Ingredient = require('../models/ingredient');
 const Dish = require('../models/dish');
 
 const dbName = 'recipe-app';

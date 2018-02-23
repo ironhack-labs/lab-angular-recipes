@@ -7,9 +7,10 @@ import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from './app.component';
 //Components
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 //Services
 import { DishesService } from 'app/services/dishes.service';
-import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
+import { IngredientsService } from 'app/services/ingredients.service';
 
 //Routes
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService],
+  providers: [DishesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
