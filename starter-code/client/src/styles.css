@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+header, footer{
+  padding: 25px;
+  color: #fff;
+  background: #444;
+}
+.main-wrapper{
+  padding: 20px;
+}
