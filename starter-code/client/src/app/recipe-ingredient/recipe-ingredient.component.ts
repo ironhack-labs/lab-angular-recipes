@@ -14,7 +14,7 @@ export class RecipeIngredientComponent implements OnInit {
   constructor(
     private router:Router,
     private route: ActivatedRoute,
-    private recepieService:RecepieControllerService
+    private recepieSrv:RecepieControllerService
   ) { }
 
 
@@ -26,9 +26,12 @@ export class RecipeIngredientComponent implements OnInit {
 
 
   getSingleRecepie(id) {
-    this.recepieService.get(id)
+    this.recepieSrv.get(id)
       .subscribe((recepie) => {
+        console.log("entramos");
+        console.log(recepie);
         this.recepie = recepie;
+
       });
   }
 
