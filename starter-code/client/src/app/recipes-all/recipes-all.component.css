@@ -1,0 +1,12 @@
+.dish{
+  display: inline-block;
+  width: 20%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid crimson;
+  height: 100%;
+}
+.dish img{
+  max-height: 200px;
+  max-width: 100%;
+}
