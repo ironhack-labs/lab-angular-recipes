@@ -1,0 +1,11 @@
+<div *ngIf="recipe">
+  <p>
+   {{recipe.name}}
+  </p>
+  <img [src]="recipe.image" height="100">
+  
+  <p>{{ recipe.description }}</p>
+  <hr>
+  <a [routerLink]="['']"> Back to list </a>
+  
+  </div>
