@@ -1,0 +1,19 @@
+<h1> Recip details </h1>
+  <a [routerLink]='[""]'>back</a><br><br>
+<div *ngIf ="recip">
+  <h1>{{ recip.name }}</h1>
+  <img [src]="recip.image"  height="200"/>
+  {{ recip.description }}
+  <p *ngIf="recip.ingredients.length>0">Lista de ingredientes</p>
+  {{recip.ingredients | json}}
+  <div *ngFor="let ingredient of recip.ingredients">
+    {{ ingredient | json}} x {{ ingredient.quantity }}
+  </div>
+</div>
+<br><br>
+<div *ngFor="let ingredient of allIngredients">
+  {{ ingredient.name }}
+  <input type="text" #quantity>
+  <button (click)="addIngredient(ingredient.name,quantity.value)">Add</button>
+</div>
+
