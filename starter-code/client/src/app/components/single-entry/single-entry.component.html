@@ -11,3 +11,18 @@
   <p>{{ singleEntry.image }}</p>
   <p>{{ singleEntry.description }}</p>
 </div>
+
+
+<div *ngIf="!ingredients">
+    loading ...
+</div>
+
+<div>
+  <ul *ngIf="ingredients">
+    <li *ngFor="let ingredient of ingredients">
+      <p>{{ ingredient.name }}</p>
+      <input type="number" placeholder="0">
+      <button>Add</button>
+    </li>
+  </ul>
+</div>

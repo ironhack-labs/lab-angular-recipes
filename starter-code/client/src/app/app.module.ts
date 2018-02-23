@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { DishesService } from 'app/services/dishes.service';
 import { SingleEntryComponent } from './components/single-entry/single-entry.component';
+import { IngredientsService } from 'app/services/ingredients.service';
 
 const routes: Routes = [
   { path: '', component: RecipeListComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService],
+  providers: [DishesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
