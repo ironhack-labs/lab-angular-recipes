@@ -11,21 +11,27 @@ import { ActivatedRoute } from '@angular/router';
 export class SingleRecipeComponent implements OnInit {
 
   singleRecipe: object;
-  recipiId: string;
+  recipeId: string;
   ingredients: Array<any>;
-
+  singleIngredient: object;
+  ingredientId: string;
+  
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private dataIng: DataIngService) { }
 
   ngOnInit() {
     this.activatedRoute.params
-      .subscribe((params) => this.recipiId = params['id']);
+      .subscribe(params => this.recipeId = params['id']);
 
-    this.dataService.getSingle(this.recipiId)
+    this.dataService.getSingle(this.recipeId)
       .then(singleRecipe => this.singleRecipe = singleRecipe);
 
     this.dataIng.getList()
      .then(ingredients => this.ingredients = ingredients);
-    
+  }
+
+  addIngredients(quantity, ingredientId) {
+    this.dataService.postIngredients(quantity, ingredientId, this.recipeId)
+      .then(() => console.log('ingredients added'));
   }
 
 }

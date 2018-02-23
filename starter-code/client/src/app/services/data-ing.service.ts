@@ -14,4 +14,10 @@ export class DataIngService {
       .toPromise()
       .then((res: Response) => res.json())
   }
+
+  getSingle(id): Promise<any> {
+    return this.http.get(`${this.API_URL}/ingredients/${id}`)
+      .toPromise()
+      .then((res: Response) => res.json())
+  }
 }

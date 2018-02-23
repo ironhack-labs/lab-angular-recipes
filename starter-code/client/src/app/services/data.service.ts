@@ -20,5 +20,11 @@ export class DataService {
       .then((res: Response) => res.json())
   }
 
+
+  postIngredients(quantity, ingredientId, recipeId): Promise<any> {
+    return this.http.post(`${this.API_URL}/dishes/${recipeId}/ingredients/${ingredientId}/add`, {quantity: quantity})
+      .toPromise()
+      .then((res: Response) => res.json())
+  }
 }
 
