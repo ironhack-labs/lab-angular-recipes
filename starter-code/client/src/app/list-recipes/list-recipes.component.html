@@ -1,0 +1,9 @@
+
+<div class="parent">
+  <div class="el" *ngFor="let list of recipeList">
+          <img [src]="list.image"  height="200" width="300"/>
+      <h3> {{ list.name }} </h3>
+      <a [routerLink]="['dishes', list._id]">Detalles</a>
+  </div>
+</div>
+

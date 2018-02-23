@@ -1,0 +1,15 @@
+.contain{
+    text-align: center;
+}
+.description{
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    border:5px solid black;
+}
+.name{
+    border:5px solid black;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
