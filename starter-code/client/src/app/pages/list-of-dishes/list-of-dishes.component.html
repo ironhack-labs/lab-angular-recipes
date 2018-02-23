@@ -1,0 +1,13 @@
+<p>
+  recipes works!
+</p>
+<div *ngIf="dishList">
+  <ul>
+    <li *ngFor="let element of dishList" class="dish-element">
+      <a [routerLink]="['',element._id]"><span>{{element.name}}</span></a>
+      <p><img src={{element.image}}></p>
+    </li>
+  </ul>
+</div>
+
+
