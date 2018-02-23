@@ -1,11 +1,12 @@
-<p>
-  entry-recipes works!
-</p>
 
-
-<div *ngFor="let r of recipeList">
+<div *ngFor="let r of recipeList" class="cont">
+ 
   <p>{{r.name}}</p>
-  <img src="{{r.image}}" width="250">
-  
+  <div>
+
+    <img src="{{r.image}}" width="220" height="120">
+
+  </div><br>
   <a [routerLink]="['dishes', r._id]"> View Journal</a>
+
 </div>
