@@ -16,7 +16,7 @@ router.get('/:id', (req, res, next) => {
     .exec((err, dish) => {
       if (err)         { return res.status(500).json(err); }
       if (!dish)      { return res.status(404).json(new Error("404")) }
-
+      console.log(dish)
       return res.json(dish);
     });
 });

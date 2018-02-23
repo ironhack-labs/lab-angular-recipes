@@ -1,0 +1,26 @@
+<div *ngIf="!recipe">
+  Loading dish
+</div>
+<div *ngIf="recipe">
+  <p> {{ recipe.name }}</p>
+  <p> {{ recipe.description }}</p>
+  <img src={{recipe.image}} alt="">
+  <ul>
+    <li *ngFor="let ingredient of recipe.ingredients">
+      <p>{{ ingredient.ingredientId.name }}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf='!ingredients'>
+  Loading ingredients
+</div>
+<div *ngIf='ingredients'>
+  <ul *ngFor="let ingredient of ingredients">
+    {{ ingredient.name }}
+    <button (click)="addIngredient(ingredient._id, quantityInput.value)">Add Ingredient</button>
+    <p>Quantity: </p><input #quantityInput name='quantity' type="number">
+  </ul>
+</div>
+
+<a [routerLink]="['']">Home</a>

@@ -88,7 +88,36 @@ const foods = [
   }
 ]
 
-Dish.create(foods, (err) => {
-  if (err) { throw(err) }
-  console.log(`Created ${foods.length} dishes`)
+/* const ingredients = [
+  {
+    name: 'salt',
+    description: 'salty'
+  },
+  {
+    name: 'pepper',
+    description: 'spicy'
+  },
+  {
+    name: 'cheese',
+    description: 'cheesy'
+  },
+  {
+    name: 'milk',
+    description: 'dairy'
+  },
+  {
+    name: 'bread',
+    description: 'carbs'
+  },
+  {
+    name: 'water',
+    description: 'h2o'
+  }
+]; */
+
+Dish.create(foods, err => {
+  if (err) {
+    throw err;
+  }
+  console.log(`Created ${foods.length} dishes`);
 });
