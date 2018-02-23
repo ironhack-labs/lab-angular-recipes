@@ -9,5 +9,10 @@
     <p>{{ dish.name }}</p>
     <img src="{{ dish.image }}">
     <p>{{ dish.description }}</p>
-    <p>xx{{ dish.ingredients }}xx</p>
+    <p>xx   {{ dish.ingredients }}xx</p>
+
+    <p>All ingredients list</p>
+    <div *ngFor="let ingredient of ingredients">
+        <p> {{ ingredient.name }} </p>
+    </div>
 </div>
