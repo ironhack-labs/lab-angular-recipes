@@ -1,0 +1,10 @@
+<div *ngIf="!recipe">
+  <p>Loading recipe ...</p>
+</div>
+<div *ngIf="recipe">
+  <h2>{{recipe.name}}</h2>
+  <div class="recipe-detail">
+    <img [src]="recipe.image" />
+    <p>{{ recipe.description }}</p>
+  </div>
+</div>

@@ -4,12 +4,11 @@
 <div *ngIf="recipes" class="recipes-wrapper">
   <h1>Dishes List</h1>
   <div *ngFor="let recipe of recipes" class="recipes-list">
-    <!-- <app-single-entry [entry]="entry"></app-single-entry> -->
-    <!-- <a [routerLink]="['/journal-entries', entry._id]"> -->
+    <a [routerLink]="['/recipe', recipe._id]">
       <div class="recipe-item">
         <h3>{{ recipe.name }}</h3>
         <img [src]="recipe.image" />
       </div>
-    <!-- </a> -->
+    </a>
   </div>
 </div>
