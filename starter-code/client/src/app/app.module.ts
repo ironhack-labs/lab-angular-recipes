@@ -10,6 +10,7 @@ import { RecipesListComponent } from './components/recipes-list/recipes-list.com
 import { DishesService } from './services/dishes.service';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { IngredientsService } from './services/ingredients.service';
 
 const routes: Routes = [
   { path: '' , component: RecipesListComponent, pathMatch:'full' },
@@ -29,7 +30,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService],
+  providers: [DishesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
