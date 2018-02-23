@@ -12,6 +12,7 @@ export class DishDetailsComponent implements OnInit {
   recipe:Object;
   recipeId:string;
   ingredients:Array<Object>;
+  
 
   constructor(private dishService: ListDishesService, private listIngredientService: ListIngredientsService , private route: ActivatedRoute) {  }
 
@@ -25,6 +26,10 @@ export class DishDetailsComponent implements OnInit {
     this.listIngredientService.getIngredients()
     .then(result => this.ingredients = result);
 
+  }
+  
+  postIngredient(ingredientId, quantity){
+    this.dishService.addIngredient(this.recipeId, ingredientId, quantity);
   }
 
 }

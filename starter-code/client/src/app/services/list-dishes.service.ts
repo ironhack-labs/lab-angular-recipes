@@ -21,4 +21,10 @@ export class ListDishesService {
          .then((res: Response) => res.json());
   }
 
+  addIngredient(idDish, idIngredient, qty): Promise<any> {
+    return this.http.post(`${this.API_URL}/dishes/${idDish}/ingredients/${idIngredient}/add`, {quantity: qty})
+      .toPromise()
+      .then((res: Response) => res.json());
+  }
+
 }
