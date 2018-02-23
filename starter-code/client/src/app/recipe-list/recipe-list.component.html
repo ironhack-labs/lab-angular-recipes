@@ -1,0 +1,12 @@
+<p>
+  recipe-list works!
+</p>
+<div class="recipe" *ngFor="let recipe of recipeList">
+  <p>
+    {{recipe.name}} 
+  </p>
+  
+  <a [routerLink]="['recipe', recipe._id]"><img [src]="recipe.image" height="100"></a>
+  </div>
+  
+

@@ -1,0 +1,20 @@
+<div *ngIf="recipe">
+  <p>
+    {{recipe.name}}
+  </p>
+  <img [src]="recipe.image" height="100">
+
+  <p>{{recipe.description}}</p>
+  <hr>
+  
+  <h4>Ingredients</h4>
+  <div>
+    <form method="post" action=''>
+      <input type="text" name='quantity' placeholder='ingredient'>
+      <button>Add</button>
+    </form>
+  </div>
+
+  <a [routerLink]="['']"> Back to list </a>
+
+</div>
