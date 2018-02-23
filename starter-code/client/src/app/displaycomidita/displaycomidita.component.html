@@ -1,0 +1,10 @@
+<p>
+  displaycomidita works!
+</p>
+<div *ngFor='let item of recipes'>
+  <p> 
+    {{item.name}}
+  </p>
+  <img src="{{item.image}}" alt="" width="200" height="100">
+<a [routerLink]="['dishes', item._id]">DETALLEEEEEEEEEE</a>
+</div>
