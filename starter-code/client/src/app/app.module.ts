@@ -9,12 +9,15 @@ import { AppComponent } from './app.component';
 import { RecipComponent } from './recip/recip.component';
 import { recipService } from 'services/recip.service';
 import { RecipDetailsComponent } from './recip-details/recip-details.component';
+import { IngredientsService } from 'services/ingredients.service';
+import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipComponent,
     RecipDetailsComponent,
+    AddIngredientComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { RecipDetailsComponent } from './recip-details/recip-details.component';
     HttpModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [recipService],
+  providers: [recipService,IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
