@@ -1,0 +1,10 @@
+<p>
+  recipes-detail works!
+</p>
+<div *ngIf="recipe">
+  <ul>
+    <li>{{recipe.name}}</li>
+    <li>{{recipe.description}}</li>
+    <img src={{recipe.image}}>
+  </ul>
+</div>
