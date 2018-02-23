@@ -7,6 +7,10 @@
   
   <p>{{comidita.description}}</p>
   </div>
+  <h1>Ingredients</h1>
+  <ul *ngFor="let i of ingredients">
+  <h3>-{{i.name}}</h3> <button (click)="addIngredient()">Add</button>
+  </ul>
 </div>
 
 <a [routerLink]="['/']"> Back to past</a>
