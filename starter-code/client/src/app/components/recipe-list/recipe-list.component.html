@@ -9,8 +9,8 @@
 <div>
   <ul *ngIf="recipes">
     <li *ngFor="let recipe of recipes">
-      {{ recipe.name }}
-      {{ recipe.image }}
+      <a [routerLink]="['/dishes', recipe._id]">{{ recipe.name }}</a>
+      <p>{{ recipe.image }}</p>
     </li>
   </ul>
 </div>

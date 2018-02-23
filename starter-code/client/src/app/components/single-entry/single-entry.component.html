@@ -1,0 +1,13 @@
+<p>
+  single-entry works!
+</p>
+
+<div *ngIf="!singleEntry">
+  loading ...
+</div>
+
+<div *ngIf="singleEntry">
+  <p>{{ singleEntry.name }}</p>
+  <p>{{ singleEntry.image }}</p>
+  <p>{{ singleEntry.description }}</p>
+</div>

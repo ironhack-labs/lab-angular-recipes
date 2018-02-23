@@ -14,4 +14,9 @@ export class DishesService {
     .then((res: Response) => res.json());
   }
 
+  getSingleEntry(entryId):Promise<any> {
+    return this.http.get(`${this.BASE_URL}/api/dishes/${entryId}`)
+    .toPromise()
+    .then((res: Response) => res.json());
+  }
 }
