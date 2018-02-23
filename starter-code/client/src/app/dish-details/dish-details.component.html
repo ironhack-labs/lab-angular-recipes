@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Ingredient</th>
+    <th>Image</th>
+    <th>Add Ingredient to this Recipe</th>
+  </tr>
+  <tr class="dish" *ngFor="let ingred of ingredientsList">
+    <td>{{ ingred.name }}</td>
+    <td><img [src]="ingred.image"  height="80"/></td>
+    <td>
+      QUANTITY
+      <input type="number" value="1" #quantity class="cantidad">
+      <input (click)="addIngredient(ingred._id, quantity.value)" type="button" value="ADD">
+    </td>
+  </tr>
+  </table>
