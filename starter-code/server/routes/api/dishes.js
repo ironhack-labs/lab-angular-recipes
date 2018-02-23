@@ -5,7 +5,6 @@ const Dish      = require('../../models/dish');
 router.get('/', (req, res, next) => {
   Dish.find({}, (err, dishes) => {
     if (err) { return res.json(err).status(500); }
-
     return res.json(dishes);
   });
 });
