@@ -4,11 +4,9 @@
 
 <div class="parent">
   <div class="el" *ngFor="let dishes of dishesList">
-      <a [routerLink]="['/dishes',dishes._id]">
-          <img [src]="dishes.image"  height="200"/>
-      </a>
+      <img [src]="dishes.image"  height="200"/>
       <h3> {{ dishes.name }} </h3>
       <p> {{ dishes.brand }} </p>
-      <a [routerLink]="['dishes', dishes._id]"> View Details </a>
+      <a [routerLink]="['dish', dishes._id]"> View Details </a>
   </div>
 </div>

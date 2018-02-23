@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { DishesListComponent } from './dishes-list/dishes-list.component';
-// import { PhoneDetailsComponent } from './phone-details/phone-details.component';
+import { DishDetailsComponent } from './dish-details/dish-details.component';
 
 export const routes: Routes = [
     { path: '', component: DishesListComponent},
-    // { path: 'phone/:id', component: PhoneDetailsComponent},
+    { path: 'dish/:id', component: DishDetailsComponent},
     // { path: '**', redirectTo: '' }
 ];

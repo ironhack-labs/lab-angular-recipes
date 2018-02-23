@@ -12,10 +12,10 @@ export class DishesService {
       .map((res) => res.json());
   }
   
-  // get(id) {
-  //   return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
-  //     .map((res) => res.json());
-  // }
+  get(id) {
+    return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
+      .map((res) => res.json());
+  }
   
   // edit(phone) {
   //   return this.http.put(`${this.BASE_URL}/api/dishes/${phone.id}`, phone)
