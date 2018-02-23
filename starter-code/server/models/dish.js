@@ -1,5 +1,7 @@
+'use strict';
+
 const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const DishSchema = new Schema({
   name: {
@@ -23,4 +25,6 @@ const DishSchema = new Schema({
   ]
 });
 
-module.exports = mongoose.model('Dish', DishSchema);
+const Dish = mongoose.model('Dish', DishSchema);
+
+module.exports = Dish;

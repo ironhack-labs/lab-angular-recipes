@@ -1,0 +1,11 @@
+<h1>DELICIOUS DISHES</h1>
+
+<div class='main-container'>
+  <div class='dish-container' *ngFor = "let dish of dishes">
+    <p>{{ dish.name }}</p>
+    <img class='dish-pic' [src] = "dish.image">
+    <a [routerLink] = "['/dish', dish._id]"><p>Go to detail</p></a>
+  </div>
+</div>
+
+

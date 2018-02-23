@@ -1,0 +1,33 @@
+<p *ngIf="!dish">
+  Loading, please wait...
+</p>
+
+<div class='dish-detail' *ngIf="dish">
+  <h2> {{ dish.name }}</h2>
+  <img class='dish-pic' [src] = "dish.image">
+  <p> {{ dish.description }} </p>
+  <div *ngFor="let ingredient of dish.ingredients"> 
+    <p> Ingredient: {{ ingredient.ingredientId.name }} </p>
+    <p> How much?: {{ ingredient.quantity }} </p>
+  </div>
+</div>
+
+<p *ngIf="!ingredients">
+  Loading ingredients...
+</p>
+
+<div class='ingredients-container' *ngIf="ingredients">
+  <h3>Add an ingredient</h3>
+  <div class='add-ingredient' *ngFor="let ingredient of ingredients">
+      <div class = 'name'>
+        <p> {{ ingredient.name }}</p>
+      </div>
+      <div class = 'input-field'>
+        <label for='quantity'>quantity: </label>
+        <input #quantityInput class='quantity' type="number" name="quantity">
+        <button (click)="addIngredient(ingredient._id, quantityInput.value)" class='ingredient-submit'>Add</button>
+      </div>
+  </div>
+</div>
+
+<a [routerLink] = "['/']">Go to home page</a>

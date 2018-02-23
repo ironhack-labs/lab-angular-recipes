@@ -1,5 +1,7 @@
+'use strict';
+
 const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const IngredientSchema = new Schema({
   name: {
@@ -10,4 +12,6 @@ const IngredientSchema = new Schema({
   image: String
 });
 
-module.exports = mongoose.model('Ingredient', IngredientSchema);
+const Ingredient = mongoose.model('Ingredient', IngredientSchema);
+
+module.exports = Ingredient;
