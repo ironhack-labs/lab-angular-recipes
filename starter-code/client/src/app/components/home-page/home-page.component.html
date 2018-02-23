@@ -1,0 +1,20 @@
+<h1>Recipes: </h1>
+
+<a [routerLink]="['']"> Back to list </a>
+
+<div class="loading" *ngIf="!recipes">
+  loading
+</div>
+
+<ul *ngIf="recipes">
+
+  <li *ngFor="let recipe of recipes">
+      <p>{{recipe.name}}</p>
+      <p><img src="{{recipe.image}}"></p>
+      <a [routerLink]="['/recipe', recipe._id]"> details </a> 
+  </li>
+  
+</ul>
+
+
+

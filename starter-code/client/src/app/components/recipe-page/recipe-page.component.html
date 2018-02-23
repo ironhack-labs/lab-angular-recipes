@@ -1,0 +1,12 @@
+
+<div class="loading" *ngIf="!recipe">
+  loading
+</div>
+
+<div *ngIf="recipe">
+    <a [routerLink]= "['/recipe', recipe.id]"></a>
+
+  <p>{{recipe.name}}</p>
+  <p><img src="{{recipe.image}}"></p>
+
+</div>
