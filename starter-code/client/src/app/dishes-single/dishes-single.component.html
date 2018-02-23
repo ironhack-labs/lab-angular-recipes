@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 text-center">
+      <div><h1>{{dish.name}}</h1></div>
+      <img src="{{dish.image}}" alt="" class="recetas">
+      <div><p>{{dish.description}}</p></div>
+    </div>
+    <div class="col-md-3 text-center ingredientes">
+      <h1>Lista de Ingredientes</h1>
+      <div>
+        <div *ngFor="let ing of DishesList">
+          <div>
+            <img src="{{ing.image}}" class="">
+            <h6>{{ing.name}}</h6>
+            <button type="submit" class="btn btn-warning">Añadir ingrediente</button>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center boton">
+      <a [routerLink]="['']"><button type="submit" class="btn btn-success">Inicio</button></a>
+    </div>
+  </div>
+</div>
