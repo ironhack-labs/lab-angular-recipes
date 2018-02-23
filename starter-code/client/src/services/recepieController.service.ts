@@ -16,9 +16,9 @@ export class RecepieControllerService{
 
      }
 
-     /*get(id) {
+     get(id) {
       return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
         .map((res) => res.json());
-     }*/
+     }
 
 }

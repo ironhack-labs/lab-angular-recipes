@@ -4,6 +4,6 @@ import {RecipeIngredientComponent} from './recipe-ingredient/recipe-ingredient.c
 
 export const routes: Routes = [
     { path: '', component: RecipeListComponent},
-    { path: 'dishes/:id', component: RecipeIngredientComponent},
+    { path: 'api/dishes/:id', component: RecipeIngredientComponent},
     { path: '**', redirectTo: '' }
 ];
