@@ -26,7 +26,8 @@ export class DetailListComponent implements OnInit {
     this.ingredientsService.getIngredient()
     .subscribe((ing) => {
       this.ingredient = ing,
-      console.log(ing)
+      console.log("el siguiente console.log lista los ingredientes, pero estan vacios...")
+        console.log(ing)
     })
   }
   getDishDetails(id) {
@@ -35,12 +36,7 @@ export class DetailListComponent implements OnInit {
         this.recipe = recipe;
       });
   }
-  // getIngredients(id) {
-  //   this.ingredientsService.getIngredient(id)
-  //     .subscribe((ingredient) => {
-  //     this.ingredient = ingredient;
-  //   })
-  // }
+ }
 
 
-}
+

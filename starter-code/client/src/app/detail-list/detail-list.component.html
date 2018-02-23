@@ -1,4 +1,4 @@
-<div *ngIf="recipe && ingredient">
+<div *ngIf="recipe">
   <p>
     {{recipe.name}}
   </p>
@@ -6,9 +6,9 @@
 
   <p>{{recipe.description}}</p>
   <hr>
+  
   <h4>Ingredients</h4>
   <div>
-    
     <form method="post" action=''>
       <input type="text" name='quantity' placeholder='ingredient'>
       <button>Add</button>
