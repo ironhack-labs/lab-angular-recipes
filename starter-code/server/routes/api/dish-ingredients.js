@@ -29,15 +29,14 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
         dish.ingredients.push(possibleIngred);
       }
 
-
       dish.save( (err) => {
         if (err) { return res.status(500).json(err) }
 
         Ingredient.findById(id, (err, ingredient) => {
           if (err) { return res.status(500).json(err) }
-
-          const lastIndex = dish.ingredients.length - 1;
-          dish.ingredients[lastIndex].ingredientId = ingredient;
+          
+          // const lastIndex = dish.ingredients.length - 1;
+          // dish.ingredients[lastIndex].ingredientId = ingredient;
 
           return res.status(200).json(dish);
         });

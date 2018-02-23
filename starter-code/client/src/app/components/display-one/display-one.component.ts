@@ -32,10 +32,13 @@ export class DisplayOneComponent implements OnInit {
   }
 
   addIngredient(quantity, ingredientId) {
-    // console.log(quantity, ingredient)
     this.dishService
     .addingIngredients(quantity, ingredientId, this.dishId)
-    .then(() => {
+    .then((dish) => {
+      this.dishService.getOne(this.dishId)
+      .then((dish) => {
+        this.dish = dish
+      })
       console.log('ingredient added')
     })
   }

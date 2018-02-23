@@ -4,6 +4,7 @@
 <ul *ngIf="ingredients">
     <li *ngFor="let ingredient of dish.ingredients">
         {{ingredient.ingredientId.name}}
+        {{ingredient.quantity}}
     </li>
 </ul>
 
