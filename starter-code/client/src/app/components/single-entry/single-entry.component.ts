@@ -13,6 +13,8 @@ export class SingleEntryComponent implements OnInit {
   singleEntry: Object;
   entryId: string;
   ingredients: Array<{}>;
+  quantity: Number;
+
 
   constructor(private dishesService : DishesService, private route: ActivatedRoute, private ingredientsService: IngredientsService) { }
 
@@ -25,6 +27,11 @@ export class SingleEntryComponent implements OnInit {
 
     this.ingredientsService.getIngredientList()
     .then((ingredients) => this.ingredients = ingredients);
-  }
 
+  }
+  
 }
+
+// sendValues(): void {
+//   //do sth with the str e.g. console.log(this.str);
+//   }
