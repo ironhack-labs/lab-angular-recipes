@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class RecipesService {
+export class IngredientsService {
 
   API_URL = 'http://localhost:3000/api'
 
@@ -11,17 +11,8 @@ export class RecipesService {
 
   getList(): Promise<any> {
 
-    return this.http.get(`${this.API_URL}/dishes`)
+    return this.http.get(`${this.API_URL}/ingredients`)
       .toPromise()
       .then((res: Response) => res.json())
-  }
-
-  getRecipe(id): Promise<any> {
-
-    return this.http.get(`${this.API_URL}/dishes/${id}`)
-      .toPromise()
-      .then((res: Response) => res.json())
-
   }
 }
-

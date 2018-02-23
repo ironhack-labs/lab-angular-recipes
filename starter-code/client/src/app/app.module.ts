@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RecipesService } from './services/recipes.service';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
+import { IngredientsService } from './services/ingredients.service';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -26,7 +27,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [RecipesService],
+  providers: [RecipesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

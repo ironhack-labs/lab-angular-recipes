@@ -1,5 +1,7 @@
 <h1>Recipes: </h1>
 
+<a [routerLink]="['']"> Back to list </a>
+
 <div class="loading" *ngIf="!recipes">
   loading
 </div>
@@ -11,5 +13,8 @@
       <p><img src="{{recipe.image}}"></p>
       <a [routerLink]="['/recipe', recipe._id]"> details </a> 
   </li>
-  <app-recipe-page [recipe]="recipe"></app-recipe-page>
+  
 </ul>
+
+
+

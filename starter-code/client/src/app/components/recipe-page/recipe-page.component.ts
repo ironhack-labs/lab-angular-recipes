@@ -9,18 +9,20 @@ import { RecipesService } from '../../services/recipes.service';
 })
 export class RecipePageComponent implements OnInit {
 
-  @Input() recipe: any;
-
-
+  recipe: any;
   id: String;
 
   constructor(private activatedRoute: ActivatedRoute, private recipesService: RecipesService) { }
 
   ngOnInit() {
-    // this.activatedRoute.params
-    // .subscribe(params => {
-    //   this.id = params.id
-    //   this.recipe._id = this.recipesService.getRecipe(this.id)
-    // })
+
+    this.activatedRoute.params
+    .subscribe(params => {
+      this.id = params['id'];
+      this.recipesService.getRecipe(this.id)
+        .then (res =>  {
+          this.recipe = res;
+        })
+    })
   }
 }

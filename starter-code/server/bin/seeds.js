@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// const Ingredient = require('../models/ingredient');
+const Ingredient = require('../models/ingredient');
 const Dish = require('../models/dish');
 
 const dbName = 'recipe-app';
@@ -91,4 +91,9 @@ const foods = [
 Dish.create(foods, (err) => {
   if (err) { throw (err); }
   console.log(`Created ${foods.length} dishes`);
+});
+
+Ingredient.create(foods.ingredients, (err) => {
+  if (err) { throw (err); }
+  console.log(`Created ${foods.ingredients.length} ingredient`);
 });
