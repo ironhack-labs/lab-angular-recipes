@@ -10,5 +10,8 @@
   <div>
     <img src="{{recipe.image}}">
   </div>
+  <div>
+    <a [routerLink]="['/single-recipe', recipe._id]">Details</a>
+  </div>
   </li>
 </ul>
