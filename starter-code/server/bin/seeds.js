@@ -3,7 +3,7 @@ const Ingredient = require('../models/ingredient');
 const Dish = require('../models/dish');
 
 const dbName = 'recipe-app';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(`mongodb://localhost:27017/${dbName}`);
 
 const foods = [
   {
@@ -90,5 +90,6 @@ const foods = [
 
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
-  console.log(`Created ${foods.length} dishes`)
+  console.log(`Created ${foods.length} dishes`);
+  mongoose.connection.close();
 });
