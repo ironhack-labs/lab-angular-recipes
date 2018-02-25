@@ -92,3 +92,20 @@ Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
 });
+
+const ingredients = [
+  {
+    name: "Corn",
+  },
+  {
+    name: "Tomato"
+  },
+  {
+    name: "Mushrooms"
+  }
+]
+
+Ingredient.create(ingredients, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${ingredients.length} ingredients`)
+});

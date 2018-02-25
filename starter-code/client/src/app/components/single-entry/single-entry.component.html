@@ -1,0 +1,28 @@
+<p>
+  single-entry works!
+</p>
+
+<div *ngIf="!singleEntry">
+  loading ...
+</div>
+
+<div *ngIf="singleEntry">
+  <p>{{ singleEntry.name }}</p>
+  <p>{{ singleEntry.image }}</p>
+  <p>{{ singleEntry.description }}</p>
+</div>
+
+
+<div *ngIf="!ingredients">
+    loading ...
+</div>
+
+<div>
+  <ul *ngIf="ingredients">
+    <li *ngFor="let ingredient of ingredients">
+      <p>{{ ingredient.name }}</p>
+      <input type="number" placeholder="0" #input>
+      <button type="submit" (click)="sendValues(ingredient._id, input)">Add</button>
+    </li>
+  </ul>
+</div>

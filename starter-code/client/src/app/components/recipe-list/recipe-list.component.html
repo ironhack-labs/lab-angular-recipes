@@ -1,0 +1,16 @@
+<p>
+  recipe-list works!
+</p>
+
+<div *ngIf="!recipes">
+  loading ...
+</div>
+
+<div>
+  <ul *ngIf="recipes">
+    <li *ngFor="let recipe of recipes">
+      <a [routerLink]="['/dishes', recipe._id]">{{ recipe.name }}</a>
+      <p>{{ recipe.image }}</p>
+    </li>
+  </ul>
+</div>
