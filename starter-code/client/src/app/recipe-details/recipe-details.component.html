@@ -1,0 +1,23 @@
+<h1> Recipe details </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+<div class="dish-info">
+  <h2> {{ recipe.name }}&nbsp;</h2>
+  <div *ngIf="recipe">
+    <div class="dish-thumbnail">
+      <img height="300" [src]="recipe.image" />
+    </div>
+    <h3> {{ recipe.description }} </h3>
+
+    <a [routerLink]="['']"><h3 class="col-sm-12">Back to list</h3></a>
+
+<h1 class="col-sm-12">Ingredients</h1>
+<div class="row col-sm-12 ingredient-container" *ngFor="let ingredient of ingredients">
+  <h3 class="col-sm-4">{{ingredient.name}}</h3>
+  <div class="col-sm-8 ingredient-container">
+    <button class="btn btn-default" (click)="addIngredient(ingredient._id, elem.value)">+</button>
+    <div class="form-group" [ngClass]="{'has-error': errorQuantityInput && errorQuantityInput == ingredient._id}">
+      <input type="number" min="1" class="inline form-control" value="1" #elem (keyup)="0">
+    </div>
+  </div>
+</div>
