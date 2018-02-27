@@ -1,0 +1,11 @@
+.recipe-item {
+  display: inline-block;
+  margin: 0px 5px 20px;
+  width: 300px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  text-align: center;
+}
+.recipe-img img{
+  height: 150px;
+}

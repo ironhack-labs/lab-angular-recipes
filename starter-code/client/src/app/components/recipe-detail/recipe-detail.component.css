@@ -1,0 +1,16 @@
+.recipe-detail img{
+  width: 400px;
+}
+.ingredients-wrapper{
+  display: flex;
+}
+.ingredients-list{
+  flex: 0 1 50%;
+}
+.ingredient-item {
+  border-bottom: 1px solid #444;
+  padding: 10px 0;
+}
+.selected-ingredients{
+  flex: 0 1 50%;  
+}
