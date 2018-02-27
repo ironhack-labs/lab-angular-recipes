@@ -1,0 +1,22 @@
+<div *ngIf="dish">
+    {{dish.name}}
+    <p>ingredients: </p>
+<ul *ngIf="ingredients">
+    <li *ngFor="let ingredient of dish.ingredients">
+        {{ingredient.ingredientId.name}}
+        {{ingredient.quantity}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let ingredient of ingredients" >
+        {{ingredient.name}}
+        <label for="quantity">quantity:</label>
+        <input type="number" name='quantity' #quantityInput>
+        <button (click)="addIngredient(quantityInput.value, ingredient._id)">Add</button>
+
+    </li>
+</ul>
+</div>
+
+<a [routerLink]="['']">go home </a> 
