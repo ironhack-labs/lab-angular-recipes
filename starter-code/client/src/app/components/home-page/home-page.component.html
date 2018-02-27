@@ -1,0 +1,13 @@
+<h1>Dishes: </h1>
+
+<div class="loading" *ngIf="!dishes">
+  loading
+</div>
+
+<ul *ngIf="dishes">
+
+  <li *ngFor="let dish of dishes">
+   <app-dish-list [dish]="dish"></app-dish-list>
+  </li>
+
+</ul>
