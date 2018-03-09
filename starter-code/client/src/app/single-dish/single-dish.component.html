@@ -1,0 +1,21 @@
+<div>
+  <button [routerLink]="['../home']">Back Home</button>
+    <b>{{dish.name}}</b>
+    <br/>
+    {{dish.description}}
+    <img [src]="dish.image">
+    <h3>My Ingredients</h3>
+    <ul>
+      <li *ngFor="let ing of dish.ingredients">
+        {{ing.ingredientId.name}}
+        {{ing.quantity}}
+      </li>
+    </ul>
+</div>
+
+<h2>Add Ingredients</h2>
+<div>
+  <div *ngFor="let ing of myIngredients">
+    {{ing.name}} <input type="number" [(ngModel)]="ing.addQuantity"><button (click)="addIngredient(ing._id, ing.addQuantity)">Add</button>
+  </div>
+</div>

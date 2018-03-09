@@ -1,0 +1,12 @@
+
+<button [routerLink]="['../newDish']">Add New Recipe</button>
+<button [routerLink]="['../newIng']">Add New Ingredient</button>
+<ul>
+  <li *ngFor = "let dish of myDishes">
+          <div>
+            <p>{{dish.name}}</p>
+                  <a [routerLink]="['../', dish._id]">Details</a>
+              <img [src]="dish.image">
+          </div>
+  </li>
+</ul>

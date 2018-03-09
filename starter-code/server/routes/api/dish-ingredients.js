@@ -9,27 +9,30 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
   const { dishId, id } = req.params;
   let { quantity } = req.body;
   quantity = Number(quantity);
-
+  console.log(dishId, id, quantity)
   Dish
     .findById(dishId)
     .populate('ingredients.ingredientId')
     .exec(
      (err, dish) => {
+       console.log(dish)
       if (err)    { return res.status(500).json(err) };
       if (!dish)  { return res.status(404).json(new Error('404')) };
 
       let possibleIngred = dish.ingredients.filter(ingred => {
          return ingred.ingredientId._id.toString() === id;
       })[0];
-
+      console.log(possibleIngred)
+      let array = dish.ingredients
       if (possibleIngred){
         possibleIngred.quantity += quantity;
       } else {
         possibleIngred = { ingredientId: id, quantity: quantity }
-        dish.ingredients.push(possibleIngred);
+        array.push(possibleIngred);
       }
-
-
+      console.log(dish)
+      dish.ingredients=array;
+      console.log(dish)
       dish.save( (err) => {
         if (err) { return res.status(500).json(err) }
 
