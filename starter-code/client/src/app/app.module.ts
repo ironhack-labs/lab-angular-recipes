@@ -5,16 +5,29 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+
+import { DishesService } from './services/dishes.service';
+
+import {Routes, RouterModule} from '@angular/router';
+import { DishesListComponent } from './dishes-list/dishes-list.component';
+
+const ruta : Routes =[
+  {path: "home", component: DishesListComponent}
+]
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    DishesListComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(ruta)
   ],
-  providers: [],
+  providers: [DishesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
