@@ -10,12 +10,16 @@ import { DishService } from './shared/services/dish.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/misc/home/home.component';
 import { DishListComponent } from './components/dish/dish-list/dish-list.component';
+import { DishBaseComponent } from './components/dish/dish-base/dish-base.component';
+import { DishItemComponent } from './components/dish/dish-item/dish-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DishListComponent
+    DishListComponent,
+    DishBaseComponent,
+    DishItemComponent
   ],
   imports: [
     BrowserModule,

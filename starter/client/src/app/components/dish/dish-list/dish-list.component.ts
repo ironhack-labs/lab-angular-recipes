@@ -21,4 +21,7 @@ export class DishListComponent implements OnInit {
     .subscribe(dishes=>this.dishes=dishes);
   }
 
+  showDishDetails(id:string){
+    this.router.navigate(['/dishes', id]);
+  }
 }

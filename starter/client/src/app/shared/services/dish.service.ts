@@ -1,3 +1,4 @@
+import { Dish } from './../models/dish.model';
 import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions  } from '@angular/http';
@@ -20,6 +21,11 @@ export class DishService {
       .catch((error: Response) => this.handleError(error));
   }
 
+  get(id: string): Observable<Dish> {
+    return this.http.get(`${DishService.DISHES_API}/${id}`, DishService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch((error: Response) => this.handleError(error));
+  }
 
   private handleError(error: Response): Observable<any> {
     if (!environment.production) {
