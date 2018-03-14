@@ -3,7 +3,7 @@ const Ingredient = require('../models/ingredient');
 const Dish = require('../models/dish');
 
 const dbName = 'recipe-app';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(`mongodb://localhost/${dbName}`, { useMongoClient: true });
 
 const foods = [
   {
