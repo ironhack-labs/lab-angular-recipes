@@ -7,11 +7,13 @@ import './rxjs.operators';
 
 import { routes } from './app.routes';
 import { DishService } from './shared/services/dish.service';
+import { IngredientService } from './shared/services/ingredient.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/misc/home/home.component';
 import { DishListComponent } from './components/dish/dish-list/dish-list.component';
 import { DishBaseComponent } from './components/dish/dish-base/dish-base.component';
 import { DishItemComponent } from './components/dish/dish-item/dish-item.component';
+import { IngredientListComponent } from './components/ingredient/ingredient-list/ingredient-list.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,15 @@ import { DishItemComponent } from './components/dish/dish-item/dish-item.compone
     HomeComponent,
     DishListComponent,
     DishBaseComponent,
-    DishItemComponent
+    DishItemComponent,
+    IngredientListComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpModule
   ],
-  providers: [DishService],
+  providers: [DishService,IngredientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

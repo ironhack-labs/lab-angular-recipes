@@ -1,0 +1,19 @@
+<h1>INGREDIENTS TO ADD</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ingredient of ingredients">
+      <td>{{ ingredient.name }}</td>
+      <td>{{ ingredient.description }}</td>
+      <td>
+        <button (click)="addIngredient(ingredient?.id)">Add Ingredient</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
