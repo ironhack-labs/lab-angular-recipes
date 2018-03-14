@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/misc/home/home.component';
 import { routes } from './app.routes';
+import { DishListComponent } from './components/dish/dish-list/dish-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    DishListComponent
   ],
   imports: [
     BrowserModule,
