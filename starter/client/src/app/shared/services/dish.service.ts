@@ -29,6 +29,18 @@ export class DishService {
       .catch((error: Response) => this.handleError(error));
   }
 
+  addIngredient(ingId:string,dishId:string,quantit:string): Observable<Dish> {
+    let caden=`${DishService.DISHES_API}/${dishId}/ingredients/${ingId}/add`;
+    let quantity={quantity:Number(quantit)};
+    return this.http.post(`${DishService.DISHES_API}/${dishId}/ingredients/${ingId}/add`, 
+    JSON.stringify(quantity), DishService.defaultOptions)
+      // .map((res: Response) =>{
+      //   console.log(res);
+      //   debugger
+      //   res.json();
+      // } )
+      .catch((error: Response) => this.handleError(error));
+  }
   private handleError(error: Response): Observable<any> {
     if (!environment.production) {
       console.error(error);

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -27,7 +28,8 @@ import { IngredientListComponent } from './components/ingredient/ingredient-list
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [DishService,IngredientService],
   bootstrap: [AppComponent]

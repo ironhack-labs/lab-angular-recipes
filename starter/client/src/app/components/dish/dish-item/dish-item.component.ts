@@ -3,6 +3,7 @@ import { DishService } from './../../../shared/services/dish.service';
 import { Dish } from './../../../shared/models/dish.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Ingredient } from '../../../shared/models/ingredient.model';
 
 @Component({
   selector: 'app-dish-item',
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DishItemComponent implements OnInit {
   dish:Dish;
+  ingredients:Array<String>=[];
 
   constructor(
     private dishService:DishService,
@@ -22,8 +24,20 @@ export class DishItemComponent implements OnInit {
       .parent
       .params.subscribe(params => {
         this.dishService.get(String(params['id']))
-          .subscribe(dish => this.dish = dish);
+          .subscribe(dish => {
+            this.dish = dish;
+          });
     });
   }
 
+  onUpdateIngred(dishId:string){
+    this.routes
+      .parent
+      .params.subscribe(params => {
+        this.dishService.get(String(params['id']))
+          .subscribe(dish => {
+            this.dish = dish;
+          });
+    });
+  }
 }

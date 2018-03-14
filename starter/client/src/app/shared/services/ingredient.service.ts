@@ -1,3 +1,4 @@
+import { Ingredient } from './../models/ingredient.model';
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions  } from '@angular/http';
 
@@ -12,6 +13,7 @@ export class IngredientService {
   private static readonly INGREDIENTS_API: string = `${IngredientService.BASE_API}/ingredients`;
   private static defaultHeaders = new Headers({ 'Content-Type': 'application/json' });
   private static defaultOptions = new RequestOptions({ headers: IngredientService.defaultHeaders });
+  
 
   constructor(
     private http: Http
@@ -22,6 +24,7 @@ export class IngredientService {
       .map((res: Response) => res.json())
       .catch((error: Response) => this.handleError(error));
   }
+
 
   private handleError(error: Response): Observable<any> {
     if (!environment.production) {
