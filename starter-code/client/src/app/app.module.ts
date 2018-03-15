@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
+import { routes } from './app.routes';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [RecipesService],
   bootstrap: [AppComponent]
