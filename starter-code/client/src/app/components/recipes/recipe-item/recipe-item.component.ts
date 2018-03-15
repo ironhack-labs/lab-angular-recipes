@@ -21,8 +21,10 @@ export class RecipeItemComponent implements OnInit {
     this.routes.params
       .subscribe(params => {
         this.recipesService.get(params['id'])
-          .subscribe((recipe) => this.recipe = recipe);
-      })
+          .subscribe((recipe) => {
+            this.recipe = recipe;
+          });
+      });
   }
 
 }
