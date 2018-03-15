@@ -21,6 +21,16 @@ const DishSchema = new Schema({
       _id: false
     }
   ]
+}, {
+  timestamps: true,
+  toJSON: {
+    transform: (doc, ret) => {
+        ret.id = doc._id;
+        delete ret._id;
+        delete ret.__v;
+        return ret;
+    }
+}
 });
 
 module.exports = mongoose.model('Dish', DishSchema);

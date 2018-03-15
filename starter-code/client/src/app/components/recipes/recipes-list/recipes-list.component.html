@@ -3,6 +3,6 @@
   <div *ngFor="let recipe of recipes" class="recipe">
     <h3> {{ recipe.name }} </h3>
     <img [src]="recipe.image" />
-    <a [routerLink]="['/recipes', recipe._id]">View details</a> 
+    <a [routerLink]="['/recipes', recipe.id]">View details</a> 
   </div>
 </div>
