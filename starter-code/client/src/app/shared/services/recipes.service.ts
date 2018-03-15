@@ -20,6 +20,12 @@ export class RecipesService {
       .catch(error => this.handleError(error));
   }
 
+  get(id: string): Observable<Recipe> {
+    return this.http.get(`${RecipesService.RECIPES_API}/${id}`, RecipesService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
   handleError(error: Response): Observable<any> {
     if(!environment.production) {
       console.error(`Recipe Service error: ${error.json()}`);
