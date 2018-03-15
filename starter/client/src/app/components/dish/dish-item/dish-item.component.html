@@ -1,0 +1,13 @@
+<div>
+  <h3>
+    {{dish?.name}}
+  </h3>
+  <div>
+    <img src="{{dish?.image}}" alt="">
+    <p>{{dish?.description}}</p>
+    <p  *ngFor="let ingredient of dish?.ingredients">
+        Name = {{ingredient.ingredientId.name}} - Quantity = {{ingredient.quantity}}</p>
+  </div>
+  <app-ingredient-list [dishId]=dish?.id (onCreate)="onUpdateIngred($event)"></app-ingredient-list>
+  
+</div>

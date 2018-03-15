@@ -1,0 +1,28 @@
+<h1>INGREDIENTS TO ADD</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ingredient of ingredients">
+      <td>{{ ingredient.name }}</td>
+      <td>{{ ingredient.description }}</td>
+      <td>
+        <form (ngSubmit)="onSubmitaddIngredient(addForm, ingredient.id)" #addForm="ngForm">
+          <div>
+            <label for="quantity">Quantity</label>
+            <input type="text" name="quantity" [(ngModel)]="quantities" #quantity="ngModel" required>
+            <ul *ngIf="quantity.errors && quantity.touched">
+              <li *ngIf="quantity.errors.required">Quantity is required</li>
+            </ul>
+          </div>
+          <button type="submit" [disabled]="!addForm.valid">Add Ingredient</button>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
