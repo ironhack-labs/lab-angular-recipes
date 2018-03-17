@@ -10,12 +10,14 @@ import { routes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-item.component';
 import { IngredientsService } from './shared/services/ingredients.service';
+import { IngredientsListComponent } from './components/ingredients/ingredients-list/ingredients-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesListComponent,
-    RecipeItemComponent
+    RecipeItemComponent,
+    IngredientsListComponent
   ],
   imports: [
     BrowserModule,

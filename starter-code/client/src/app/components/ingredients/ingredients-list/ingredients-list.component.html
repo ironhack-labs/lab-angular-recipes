@@ -1,0 +1,7 @@
+<div *ngIf="ingredients">
+    <div *ngFor="let ingredient of ingredients">
+          <label for="quantity">Qty</label>
+          <input type="number" name="quantity" [(ngModel)]="ingredient.quantity" required>
+          <button (click)="onClickIngredient(recipe,ingredient)">{{ ingredient.name }}</button>
+    </div>
+</div>

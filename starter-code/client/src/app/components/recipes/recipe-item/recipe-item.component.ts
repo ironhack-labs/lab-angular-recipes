@@ -13,12 +13,10 @@ import { Ingredient } from '../../../shared/models/ingredient.model';
 export class RecipeItemComponent implements OnInit {
   recipe: Recipe = new Recipe();
   error: Object;
-  ingredients: Array<Ingredient> = [];
 
   constructor(
     private routes: ActivatedRoute,
-    private recipesService: RecipesService,
-    private ingredientsService: IngredientsService
+    private recipesService: RecipesService
   ) { }
 
   ngOnInit() {
@@ -29,11 +27,12 @@ export class RecipeItemComponent implements OnInit {
             this.recipe = recipe;
           });
       });
+  }
 
-      this.ingredientsService.list()
-        .subscribe((ingredients) => {
-          this.ingredients = ingredients;
-        });
+  onClickIngredient(recipe, ingredient): Recipe {
+    this.recipesService.addIngredient(recipe.id, ingredient.id)
+      .subscribe((recipe: Recipe) => this.recipe = recipe)
+      return;
   }
 
 }

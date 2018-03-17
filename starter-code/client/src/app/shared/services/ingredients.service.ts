@@ -11,7 +11,9 @@ export class IngredientsService {
   private static defaultHeaders: Headers = new Headers({ 'Content-type': 'application/json' });
   private static defaultOptions: RequestOptions = new RequestOptions({ headers: IngredientsService.defaultHeaders });
 
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http
+  ) { }
 
   list(): Observable<Array<Ingredient>> {
     return this.http.get(IngredientsService.INGREDIENTS_API, IngredientsService.defaultOptions)

@@ -30,7 +30,7 @@ const DishSchema = new Schema({
         delete ret.__v;
         return ret;
     }
-}
+  }
 });
 
 module.exports = mongoose.model('Dish', DishSchema);
