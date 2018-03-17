@@ -9,7 +9,7 @@ const foods = [
   {
     name: "Pizza",
     image: "https://i.imgur.com/eTmWoAN.png",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     name: "Salad",
@@ -91,4 +91,27 @@ const foods = [
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
+});
+
+const ingredients = [
+  {
+    name: "Tomato",
+    description: "Tomato",
+    image: "Tomato URL"
+  },
+  {
+    name: "Cheese",
+    description: "Cheese",
+    image: "Cheese URL"
+  },
+  {
+    name: "Olive Oil",
+    description: "Olive Oil",
+    image: "Olive Oil URL"
+  },
+]
+
+Ingredient.create(ingredients, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${ingredients.length} ingredients`)
 });

@@ -14,5 +14,14 @@
   <div>
       <h3> {{ recipe.description }} </h3>
   </div>
+
+  <div *ngIf="ingredients">
+      <div *ngFor="let ingredient of ingredients">
+            <label for="qty">Qty</label>
+            <input type="text" name="qty">
+            <button>{{ ingredient.name }}</button>
+      </div>
+      
+  </div>
   
 </div>

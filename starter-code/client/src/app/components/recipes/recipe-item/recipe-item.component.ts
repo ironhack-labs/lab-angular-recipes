@@ -2,6 +2,8 @@ import { Recipe } from './../../../shared/models/recipe.model';
 import { RecipesService } from './../../../shared/services/recipes.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IngredientsService } from '../../../shared/services/ingredients.service';
+import { Ingredient } from '../../../shared/models/ingredient.model';
 
 @Component({
   selector: 'app-recipe-item',
@@ -11,10 +13,12 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipeItemComponent implements OnInit {
   recipe: Recipe = new Recipe();
   error: Object;
+  ingredients: Array<Ingredient> = [];
 
   constructor(
     private routes: ActivatedRoute,
-    private recipesService: RecipesService
+    private recipesService: RecipesService,
+    private ingredientsService: IngredientsService
   ) { }
 
   ngOnInit() {
@@ -25,6 +29,11 @@ export class RecipeItemComponent implements OnInit {
             this.recipe = recipe;
           });
       });
+
+      this.ingredientsService.list()
+        .subscribe((ingredients) => {
+          this.ingredients = ingredients;
+        });
   }
 
 }

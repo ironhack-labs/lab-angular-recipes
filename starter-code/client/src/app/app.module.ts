@@ -9,6 +9,7 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
 import { routes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-item.component';
+import { IngredientsService } from './shared/services/ingredients.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { RecipeItemComponent } from './components/recipes/recipe-item/recipe-ite
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [RecipesService],
+  providers: [RecipesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
