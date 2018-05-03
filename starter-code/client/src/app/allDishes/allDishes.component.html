@@ -1,0 +1,6 @@
+<div *ngFor="let d of dishes">
+  <p>{{d.name}}</p>
+
+  <img [src]="d.image" [width]="100" [alt]="">
+  <a [routerLink] = "['', d._id]">To the recipee</a>
+</div>
