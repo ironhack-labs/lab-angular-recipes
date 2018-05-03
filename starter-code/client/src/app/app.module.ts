@@ -1,20 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { RecipesListComponent} from './pages/recipes-list/recipes-list.component'
+import { DishesListService } from './services/dishes-list.service';
+
+const routes: Routes = [
+  { path: '',  component: RecipesListComponent },
+
+];
 
 @NgModule({
   declarations: [
     AppComponent,
+    RecipesListComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    RouterModule.forRoot(routes),
+    HttpClientModule  
   ],
-  providers: [],
+  providers: [DishesListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
