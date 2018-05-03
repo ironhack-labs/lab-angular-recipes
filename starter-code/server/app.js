@@ -6,10 +6,14 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const routes       = require('./routes/index');
 const cors         = require('cors');
+const mongoose = require('mongoose');
 
 require('./config/database');
+
 const app = express();
+
 app.use(cors());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
