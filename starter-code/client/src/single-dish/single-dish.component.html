@@ -1,0 +1,8 @@
+
+<div *ngIf="dish">
+  <h3>{{dish.name}}</h3>
+  <img src="{{dish.image}}" alt="image" width="150">
+   <p>{{dish.description}}</p>
+   <button>Add</button>
+</div>
+<a [routerLink]='["/"]'>Back</a>

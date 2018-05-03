@@ -1,0 +1,9 @@
+<h1>List of recipes</h1>
+
+<ul>
+  <li *ngFor='let dish of dishes'>
+    <div>{{dish.name}}</div>
+    <img src="{{dish.image}}" alt="image" width="150">  
+    <a [routerLink]='["dish", dish._id]'>Entry details</a>
+  </li>
+</ul>
