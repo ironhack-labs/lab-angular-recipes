@@ -8,9 +8,14 @@ export class ListingRecipesService {
   constructor(private http: Http) {}
 
   getRecipes() {
-    console.log("lo pide")
     return this.http
       .get(`${this.BASE_URL}/dishes`)
+      .map((res: Response) => res.json());
+  }
+
+  getRecipe(id) {
+    return this.http
+      .get(`${this.BASE_URL}/dishes/${id}`)
       .map((res: Response) => res.json());
   }
 }
