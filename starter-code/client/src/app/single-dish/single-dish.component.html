@@ -3,6 +3,11 @@
 <img [src]="dish.image" width="600" alt="Bocatadepollo">
 <p>{{dish.description}}</p>
 </div>
+<div class="container" *ngFor="let ingredient of ingredients">
+  <p>{{ingredient.name}}</p>
+  <input type="number">
+  <button>Add</button>
+</div>
 <a [routerLink]='["/"]'>Ir a la home</a>
 
 

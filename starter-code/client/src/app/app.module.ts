@@ -9,11 +9,12 @@ import { MyDishesComponent } from './my-dishes/my-dishes.component';
 import { DishesServiceService } from './dishes-service.service';
 import {routes} from './routes';
 import { SingleDishComponent } from './single-dish/single-dish.component';
+import { MyIngredientsService } from './my-ingredients.service';
 
 @NgModule({
   declarations: [AppComponent, MyDishesComponent, SingleDishComponent],
   imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(routes)],
-  providers: [DishesServiceService],
+  providers: [DishesServiceService, MyIngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
