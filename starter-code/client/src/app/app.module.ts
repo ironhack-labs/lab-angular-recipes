@@ -1,20 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
+import { RouterModule } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { FoodComponent } from './component/food/food.component';
+import { ShiftService } from './service/shift.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
+  declarations: [AppComponent, FoodComponent],
+  imports: [BrowserModule, FormsModule, HttpModule],
+  providers: [ShiftService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
