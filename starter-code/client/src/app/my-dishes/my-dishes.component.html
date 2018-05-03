@@ -4,8 +4,8 @@
 <div class="item" *ngFor="let dish of dishes">
   <h3>{{dish.name}}</h3>
   <img [src]="dish.image" width="300">
+  <a [routerLink]='["/dish/",dish._id]'>Ir al articulo</a>
 </div>
-
 </div>
 
 

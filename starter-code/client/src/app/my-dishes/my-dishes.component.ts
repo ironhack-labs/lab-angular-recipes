@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DishesServiceService } from '../dishes-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-dishes',
@@ -8,10 +9,12 @@ import { DishesServiceService } from '../dishes-service.service';
 })
 export class MyDishesComponent implements OnInit {
   dishes: Array<object>;
-  constructor(public dishesService: DishesServiceService) { }
+  constructor(
+    public dishesService: DishesServiceService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.dishesService.getDishes().subscribe( dishes => this.dishes = dishes);
+    this.dishesService.getDishes().subscribe(dishes => (this.dishes = dishes));
   }
-
 }
