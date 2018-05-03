@@ -26,10 +26,7 @@ export class DetailsRecipeComponent implements OnInit {
   }
 
   getRecipeDetail(id) {
-    return this.DishesserverService.getRecipeDetail(id)
-    .subscribe(
-      (entry) => { this.recipe = recipe; }
-    );
+    
   }
 
 }
