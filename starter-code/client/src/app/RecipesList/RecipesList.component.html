@@ -1,4 +1,6 @@
 <div *ngFor="let recipe of recipesList">
-  <h2>{{recipe.name}}</h2>
-  <img [src]="recipe.image" [alt]="recipe.name">
+  <a [routerLink]="['',recipe._id]">
+    <h2>{{recipe.name}}</h2>
+  </a>
+  <img [src]="recipe.image" [alt]="recipe.name" width=100>
 </div>
