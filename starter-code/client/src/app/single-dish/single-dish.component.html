@@ -1,0 +1,10 @@
+<p>
+  single-dish works!
+</p>
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="dish">
+<h2>{{ dish.name }} </h2>
+<img [src]="dish.image" width=200/>
+<p>{{ dish.description}}</p>
+</div>

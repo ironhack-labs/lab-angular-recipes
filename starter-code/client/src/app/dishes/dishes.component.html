@@ -1,0 +1,15 @@
+<p>
+  dishes works!
+</p>
+
+
+<div>
+  <div class="dish" *ngFor="let dish of dishes$ | async">
+    <a [routerLink]="['/',dish._id]">
+      Go to Dish
+    </a>
+    <h3> {{ dish.name }} </h3>
+    <img [src]="dish.image" width=100/>
+  </div>
+</div>
+
