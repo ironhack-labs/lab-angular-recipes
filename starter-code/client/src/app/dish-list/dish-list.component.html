@@ -1,0 +1,10 @@
+<p>
+  dish-list works!
+</p>
+
+<ul>
+  <li *ngFor="let d of dish$ | async">
+    {{d.name}}
+    <img src="{{d.image}}" alt="" width="50">
+  </li>
+</ul>
