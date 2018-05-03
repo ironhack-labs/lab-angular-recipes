@@ -12,7 +12,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
 
   Dish
     .findById(dishId)
-    .populate('ingredients.ingredientId')
+    .populate('ingredients.ingredient')
     .exec(
      (err, dish) => {
       if (err)    { return res.status(500).json(err) };
@@ -31,15 +31,9 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
 
 
       dish.save( (err) => {
-        if (err) { return res.status(500).json(err) }
-
-        Ingredient.findById(id, (err, ingredient) => {
-          if (err) { return res.status(500).json(err) }
-
-          const lastIndex = dish.ingredients.length - 1;
-          dish.ingredients[lastIndex].ingredientId = ingredient;
-
-          return res.status(200).json(dish);
+        if (err) { return console.log(err) }
+        dish.populate('ingredients.ingredient', (err) => {
+          return res.status(200).json(dish.ingredients);
         });
       });
     });
