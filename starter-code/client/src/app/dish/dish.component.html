@@ -1,0 +1,17 @@
+<p>
+  dish works!
+</p>
+<ul>
+  <li ng-if="dish">
+    <h1>{{dish.name}}</h1>
+    <img src="{{dish.image}}" alt="" width="900" height="auto">
+    <p>{{dish.description}}</p>
+    <a [routerLink]="['']">Go home</a>
+  </li>
+  <li *ngFor="let i of ingredients">
+      <h1> Name: {{i.name}}</h1>
+      <img src="{{i.image}}" alt="">
+      <input type="number" #quantity value="1">
+      <button (click)="addIngredientToDish(dish._id,i._id,quantity.value)">Add ingredients </button> 
+  </li>
+</ul>

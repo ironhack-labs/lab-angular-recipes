@@ -9,7 +9,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
   const { dishId, id } = req.params;
   let { quantity } = req.body;
   quantity = Number(quantity);
-
+ 
   Dish
     .findById(dishId)
     .populate('ingredients.ingredientId')
@@ -38,7 +38,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
 
           const lastIndex = dish.ingredients.length - 1;
           dish.ingredients[lastIndex].ingredientId = ingredient;
-
+          console.log(dish)
           return res.status(200).json(dish);
         });
       });
