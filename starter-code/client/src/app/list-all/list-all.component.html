@@ -1,0 +1,8 @@
+<h1>List All</h1>
+
+<div *ngFor="let e of showAll$ | async">
+  <h3>{{e.name}}</h3>
+  <img src="{{e.image}}" alt="">
+  <a [routerLink]="['/',e._id]">Show more...</a>
+
+</div>

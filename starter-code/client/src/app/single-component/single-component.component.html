@@ -1,0 +1,7 @@
+<h1>Single Recipe</h1>
+<a [routerLink]="['/']"> Back to list </a>
+<div *ngIf="single">
+    <h3>{{single.name}}</h3>
+    <img src="{{single.image}}" alt="">
+    <p>{{single.description}}</p>
+</div>
