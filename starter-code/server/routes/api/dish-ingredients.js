@@ -6,13 +6,15 @@ const Ingredient = require('../../models/ingredient');
 const Dish       = require('../../models/dish');
 
 router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
+  console.log(req.params, req.body)
   const { dishId, id } = req.params;
   let { quantity } = req.body;
   quantity = Number(quantity);
+  console.log(quantity)
 
   Dish
     .findById(dishId)
-    .populate('ingredients.ingredientId')
+    .populate('ingredients.ingredient')
     .exec(
      (err, dish) => {
       if (err)    { return res.status(500).json(err) };
@@ -31,15 +33,9 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
 
 
       dish.save( (err) => {
-        if (err) { return res.status(500).json(err) }
-
-        Ingredient.findById(id, (err, ingredient) => {
-          if (err) { return res.status(500).json(err) }
-
-          const lastIndex = dish.ingredients.length - 1;
-          dish.ingredients[lastIndex].ingredientId = ingredient;
-
-          return res.status(200).json(dish);
+        if (err) { return console.log(err) }
+        dish.populate('ingredients.ingredient', (err) => {
+          return res.status(200).json(dish.ingredients);
         });
       });
     });
