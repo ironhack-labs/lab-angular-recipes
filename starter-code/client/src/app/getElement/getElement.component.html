@@ -1,0 +1,18 @@
+<div *ngIf="element">
+  {{element.name}}
+  <div [ngStyle]="{ 'background': 'url(' + element.image + ') no-repeat', 'background-size': 'contain', 'height': '200px' }"></div>
+  <ul *ngFor="let i of element.ingredients">
+    <li>{{i.ingredientId.name}}</li>
+    <p>{{i.quantity}}</p>
+    <br>
+  </ul>
+<br>
+  <ul *ngFor="let i of ingredients">
+    <li>{{i.name}}</li>
+    <div [ngStyle]="{ 'background': 'url(' + i.image + ') no-repeat', 'background-size': 'contain', 'height': '200px' }"></div>
+    <p>{{i.description}}</p>
+    <input type="number" name="" #quantity>
+    <button (click)="addIng(element._id, i._id, quantity.value )" >Add</button>
+  </ul>
+  <button [routerLink]="['/']">Home</button>
+</div>
