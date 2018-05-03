@@ -3,7 +3,9 @@ const router     = express.Router();
 const Dish      = require('../../models/dish');
 
 router.get('/', (req, res, next) => {
+console.log("??")
   Dish.find({}, (err, dishes) => {
+    console.log("dishes: ",dishes)
     if (err) { return res.json(err).status(500); }
 
     return res.json(dishes);
