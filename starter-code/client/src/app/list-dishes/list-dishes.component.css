@@ -1,0 +1,6 @@
+.dishes{
+    display: flex;
+}
+.dishes h3{
+    margin-right: 30px
+}

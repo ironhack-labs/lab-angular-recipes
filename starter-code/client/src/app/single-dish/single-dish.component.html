@@ -1,0 +1,24 @@
+<h1> Single dishes </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="dish">
+  <div class="imgdish">
+    <img height="300" [src]="dish.image" />
+  </div>
+  <div class="dish-info">
+    <h2> {{ dish.name }}</h2>
+    <h3> {{ dish.description }} </h3>
+    </div>
+</div>
+
+<div>
+  <select #select>
+      <option *ngFor="let ingredient of ingredients" [value]="ingredient.name">
+        {{ingredient.name}}
+      </option>
+    </select>
+    <input type=number placeholder="Quantity" #qty>
+    <button><a (click)=addIngredient(dish._id,ingredient._id,qty.value)>Add</a></button>
+</div>
+   
+ 
