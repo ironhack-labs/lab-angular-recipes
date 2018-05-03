@@ -3,7 +3,6 @@ const router     = express.Router();
 const Dish      = require('../../models/dish');
 
 router.get('/', (req, res, next) => {
-console.log("??")
   Dish.find({}, (err, dishes) => {
     console.log("dishes: ",dishes)
     if (err) { return res.json(err).status(500); }
@@ -27,7 +26,7 @@ router.post('/', (req, res, next) => {
   const newDish = new Dish({
     name: req.body.name,
     description: req.body.description,
-    image: req.body.image
+  //  image: req.body.image
   });
 
   newDish.save( (err) => {
