@@ -3,18 +3,27 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+
 import { AppComponent } from './app.component';
+import { DishesComponent } from '../dishes/dishes.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './RecipesRoutes.routing';
+import { RecipesService } from 'recipes.service';
+import { SingleDishComponent } from '../single-dish/single-dish.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-  ],
+    DishesComponent,
+    SingleDishComponent
+],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [RecipesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
