@@ -4,7 +4,9 @@
 <a [routerLink]="['']"> Back to list </a>
 
 <div *ngIf="dish">
-<h2>{{ dish.name }} </h2>
+<h1>{{ dish.name }} </h1>
 <img [src]="dish.image" width=200/>
 <p>{{ dish.description}}</p>
 </div>
+
+<app-ingredients></app-ingredients>

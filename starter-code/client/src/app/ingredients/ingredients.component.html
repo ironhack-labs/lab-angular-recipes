@@ -1,0 +1,15 @@
+<h2>
+  ingredients!!!
+</h2>
+
+
+<div>
+  <div class="ingredient" *ngFor="let ingredient of ingredients$ | async">
+
+    <h3> {{ ingredient.name }} </h3>
+    <img [src]="ingredient.image" width=100/>
+    <p>{{ ingredient.description }}</p>
+    <button>Add</button>
+    <input type="number" name="quantity">
+  </div>
+</div>

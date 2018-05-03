@@ -16,7 +16,8 @@ export class DishesComponent implements OnInit {
 
   ngOnInit() {
     this.dishes$ = this.dishesService.getList()
-    console.log(this.dishes$)
+      console.log(this.dishes$)
   }
+ 
 
 }

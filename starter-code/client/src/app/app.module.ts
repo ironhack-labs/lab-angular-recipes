@@ -4,11 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+import {routes} from './routes';
 import { AppComponent } from './app.component';
 import { DishesComponent } from './dishes/dishes.component';
-import {routes} from './routes';
 import { DishesService } from './services/dishes.service'
+import { IngredientsService } from './services/ingredients.service';
 import { SingleDishComponent } from './single-dish/single-dish.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
+
 
 const routesA: Routes = routes;
 
@@ -16,7 +19,8 @@ const routesA: Routes = routes;
   declarations: [
     AppComponent,
     DishesComponent,
-    SingleDishComponent
+    SingleDishComponent,
+    IngredientsComponent
 ],
   imports: [
     BrowserModule,
@@ -24,7 +28,7 @@ const routesA: Routes = routes;
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService],
+  providers: [DishesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
