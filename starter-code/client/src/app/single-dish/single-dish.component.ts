@@ -11,6 +11,8 @@ import { MyIngredientsService } from '../my-ingredients.service';
 })
 export class SingleDishComponent implements OnInit {
   dish: object;
+  name: string;
+
   ingredients: Array<object>;
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +28,9 @@ export class SingleDishComponent implements OnInit {
       .subscribe(ingredients => (this.ingredients = ingredients));
   }
 
-  ngOnInit() {
-    console.log(this.ingredients)
+  addIngredient(dishId, ingId, quantity) {
+    console.log(dishId, ingId, quantity);
+    this.dishesService.addIngredient(dishId, ingId, quantity).subscribe();
   }
+  ngOnInit() {}
 }
