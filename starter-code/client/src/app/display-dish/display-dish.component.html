@@ -1,0 +1,30 @@
+
+
+<h2>{{dish.name}}</h2>
+<img src="{{dish.image}}" alt="dish">
+<h4>{{dish.description}}</h4>
+
+
+<h3>Ingredients:</h3>
+<ul>
+  <li *ngFor="let ingrediente of dish.ingredients">
+      <h6>{{ingrediente.ingredientId.name}}</h6>
+      <h6>{{ingrediente.quantity}}</h6>
+  </li>
+</ul>
+
+<a [routerLink]="['/home']">
+Go to receipes list</a>
+
+<ul>
+  <li *ngFor="let ingredient of ingredients$">
+      <h6>{{ingredient.name}}</h6>
+      <img src="{{ingredient.image}}" alt="dish">
+      <h6>{{ingredient.description}}</h6>
+
+      
+      <input #myQuantity type="number" name="quantity" placeholder="Quantity">
+      <button (click)="addIngredient(dish._id, ingredient._id, myQuantity.value)">ADD</button>
+  </li>
+
+</ul>
