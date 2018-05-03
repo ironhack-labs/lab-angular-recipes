@@ -1,0 +1,15 @@
+<p>
+  display-dishes works!
+</p>
+
+<ul>
+  <li *ngFor="let dish of dishes$ | async">
+    <h2>{{dish.name}}</h2>
+    <img src="{{dish.image}}" alt="dish">
+    <h4>{{dish.description}}</h4>
+    <a [routerLink]="['/home',dish._id]">
+      Go Receipe
+    </a>
+
+  </li>
+</ul>
