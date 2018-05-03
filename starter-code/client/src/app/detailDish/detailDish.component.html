@@ -1,0 +1,10 @@
+{{singleDish.name}}
+<img src="{{singleDish.image}}" alt="" width="200">
+{{singleDish.description}}
+<div *ngFor="let i of ingredients">
+    {{i.name}}
+    <img src="{{i.image}}" alt="" width="150">
+    <input type="number" name="" id="" placeholder="quantity" #quantity>
+    <button (click)="addIngredient(singleDish._id, i._id, quantity)">Add</button>
+</div>
+<a [routerLink]="['']">Go back</a>
