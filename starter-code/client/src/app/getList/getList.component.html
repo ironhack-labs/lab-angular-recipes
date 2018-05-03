@@ -1,0 +1,9 @@
+<p>
+  getList works!
+</p>
+<ul *ngFor="let list of lists">
+  <li>{{list.name}}</li>
+  <a [routerLink]="['/list',list._id]">
+  <div [ngStyle]="{ 'background': 'url(' + list.image + ') no-repeat', 'background-size': 'contain', 'height': '200px' }"></div>
+  </a>
+</ul>
