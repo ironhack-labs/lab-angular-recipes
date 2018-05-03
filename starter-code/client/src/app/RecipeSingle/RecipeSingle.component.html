@@ -2,8 +2,16 @@
   <a [routerLink]="['/']">Home</a>
 </div>
 
-<div>
+<div *ngIf="recipe">
   <h2>{{recipe.name}}</h2>
   <img [src]="recipe.image" [alt]="recipe.name" width=100>
   <p>{{recipe.description}}</p>
+
+  <table *ngIf="ingredients">
+    <tr *ngFor="let i of ingredients">
+      <td>{{i.name}}</td>
+      <td><img [src]="i.image" [alt]="i.name" width="100"></td>
+      <td><input type="number" placeholder="Quantity" min="1"><button>Add</button></td>
+    </tr>
+  </table>
 </div>
