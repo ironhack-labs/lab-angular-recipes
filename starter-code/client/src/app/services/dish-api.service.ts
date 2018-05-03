@@ -18,4 +18,8 @@ export class DishApiService {
     return this.http.get(`${this.BASE_URL}/api/dishes/${id}`)
       .map((res) => res.json());
   }
+
+  addIngredientToDish(dishID, ingredientID, quantity){
+    
+  }
 }

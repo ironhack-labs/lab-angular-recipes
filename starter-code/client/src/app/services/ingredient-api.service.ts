@@ -18,4 +18,5 @@ export class IngredientApiService {
     return this.http.get(`${this.BASE_URL}/api/ingredients/${id}`)
       .map((res) => res.json());
   }
+
 }

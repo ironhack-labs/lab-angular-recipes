@@ -1,18 +1,24 @@
 <div *ngIf="myDish">
-    <div class="dish-thumbnail">
-      <img height="300" [src]="myDish.image" />
-    </div>
-  
-    <div class="dish-info">
-      <h2> {{ myDish.name }}&nbsp;</h2>
-  
-      </div>
-    </div>
-
-  <div *ngIf="myIngredients">
-      
-    <div class="ingredient-pill" *ngFor="let ingredient of myIngredients">{{ingredient.name}} <div class="inputDiv"><label>Qty:</label><input><button>Add</button></div></div>
-    
+  <div class="dish-thumbnail">
+    <img height="300" [src]="myDish.image" />
   </div>
 
-<a [routerLink] = "['']">Home</a>
+  <div class="dish-info">
+    <h2> {{ myDish.name }}&nbsp;</h2>
+
+  </div>
+</div>
+
+<div *ngIf="myIngredients">
+
+  <div class="ingredient-pill" *ngFor="let ingredient of myIngredients"><b>{{ingredient.name}}</b>
+    <div class="inputDiv">
+      <label>Qty:</label>
+      <input type="number" #quantity value="0">
+      <button (click)="addIngredient(ingredient._id,quantity.value)">Add</button>
+    </div>
+  </div>
+
+</div>
+
+<a [routerLink]="['']">Home</a>

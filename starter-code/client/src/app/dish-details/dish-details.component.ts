@@ -36,10 +36,15 @@ export class DishDetailsComponent implements OnInit {
     
     this.dishService.get(id)
     .subscribe((dishResult) => {
-      console.log(dishResult);
       this.myDish = dishResult;
     });
   }
+
+  addIngredient(id, qty){
+   console.log(id) 
+   console.log(qty) 
+  }
+
 
 
 }
