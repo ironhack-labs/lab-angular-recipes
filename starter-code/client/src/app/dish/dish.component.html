@@ -1,0 +1,17 @@
+<div *ngIf = "dish">
+<h1>{{dish.name}}</h1>
+<div class="container">
+<img [src]="dish.image" alt = "{{dish.name}}"/>
+<p>{{dish.description}}</p>
+</div>
+</div>
+
+<div *ngIf = "ingredients" class="container-dos">
+  <div *ngFor = "let i of ingredients">
+    <p>{{i.name}}</p>
+    <img [src]="i.image" alt="Ingrediente" class ="ing"/>
+    <button>+ Add</button>
+    <input type="number" name="quantity" [(ngModel)]="quantity"
+    #myQuantity="ngModel" placeholder="quantity" />
+  </div>
+</div>
