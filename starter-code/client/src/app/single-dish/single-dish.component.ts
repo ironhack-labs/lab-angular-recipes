@@ -3,6 +3,7 @@ import { DishesServiceService } from '../dishes-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MyDishesComponent } from '../my-dishes/my-dishes.component';
 import { MyIngredientsService } from '../my-ingredients.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-single-dish',
@@ -10,7 +11,7 @@ import { MyIngredientsService } from '../my-ingredients.service';
   styleUrls: ['./single-dish.component.css']
 })
 export class SingleDishComponent implements OnInit {
-  dish: object;
+  dish = {};
   name: string;
 
   ingredients: Array<object>;
@@ -21,7 +22,10 @@ export class SingleDishComponent implements OnInit {
     private ingredientsService: MyIngredientsService
   ) {
     route.params.subscribe(params => {
-      dishesService.getOne(params.id).subscribe(dish => (this.dish = dish));
+      dishesService.getOne(params.id).subscribe(dish => {
+        this.dish = dish;
+        console.log(this.dish);
+      });
     });
     ingredientsService
       .getIngredients()
@@ -30,7 +34,9 @@ export class SingleDishComponent implements OnInit {
 
   addIngredient(dishId, ingId, quantity) {
     console.log(dishId, ingId, quantity);
-    this.dishesService.addIngredient(dishId, ingId, quantity).subscribe();
+    this.dishesService
+      .addIngredient(dishId, ingId, quantity)
+      .subscribe(() => console.log(this.dish));
   }
   ngOnInit() {}
 }

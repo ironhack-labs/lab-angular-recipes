@@ -3,7 +3,9 @@
 <img [src]="dish.image" width="600" alt="Bocatadepollo">
 <p>{{dish.description}}</p>
 </div>
-
+<div class="container" *ngFor="let ingredient of dish.ingredients">
+  <p>{{ingredient.name}}</p>
+</div>
 <div class="container" *ngFor="let ingredient of ingredients">
   <p [id]="ingredient._id">{{ingredient.name}}</p>
   <input type="number" #quantity value="1">
