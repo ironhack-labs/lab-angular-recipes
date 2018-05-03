@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { ListAllComponent } from './list-all/list-all.component';
 
 import { MyServiceService } from './services/my-service.service';
+import { SingleComponentComponent } from './single-component/single-component.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListAllComponent
+    ListAllComponent,
+    SingleComponentComponent
 ],
   imports: [
     BrowserModule,
