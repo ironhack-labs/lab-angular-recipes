@@ -1,0 +1,20 @@
+<h1>Recipe details</h1>
+<a [routerLink]="['/recipes']">Back to recipes list</a>
+
+<div *ngIf="recipe">
+  
+    <div class="recipe-info">
+      <h2> {{ recipe.name }}</h2>
+  </div>
+
+  <div class="recipe-thumbnail">
+      <img [src]="recipe.image" />
+  </div>
+
+  <div>
+      <h3> {{ recipe.description }} </h3>
+  </div>
+
+<app-ingredients-list></app-ingredients-list>
+  
+</div>
