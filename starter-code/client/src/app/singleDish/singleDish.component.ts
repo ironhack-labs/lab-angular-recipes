@@ -12,7 +12,6 @@ import { IngredientsServicesService } from "../ingredientsServices.service";
 })
 export class SingleDishComponent implements OnInit {
   single: any;
-
   ingredients:Array<object>=[];
   
   constructor(
@@ -37,7 +36,7 @@ export class SingleDishComponent implements OnInit {
     
   }
   saveIngredients(id,ingredient_id, qty){
-    this.ingredientServices.saveIngredients(id,ingredient_id, qty.value).subscribe()
+    this.ingredientServices.saveIngredients(id,ingredient_id, qty.value).subscribe( res => console.log(res))
   }
       
 }

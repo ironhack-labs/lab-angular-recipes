@@ -10,11 +10,10 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
   const { dishId, id } = req.params;
   let { quantity } = req.body;
   quantity = Number(quantity);
-  console.log(quantity)
 
   Dish
     .findById(dishId)
-    .populate('ingredients.ingredient')
+    .populate('ingredients.ingredientId')
     .exec(
      (err, dish) => {
       if (err)    { return res.status(500).json(err) };
@@ -33,12 +32,23 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
 
 
       dish.save( (err) => {
-        if (err) { return console.log(err) }
-        dish.populate('ingredients.ingredient', (err) => {
-          return res.status(200).json(dish.ingredients);
+        if (err) { return res.status(500).json(err) }
+
+        Ingredient.findById(id, (err, ingredient) => {
+          if (err) { return res.status(500).json(err) }
+
+          const lastIndex = dish.ingredients.length - 1;
+          dish.ingredients[lastIndex].ingredientId = ingredient;
+
+          return res.status(200).json(dish);
         });
       });
     });
 });
+
+
+
+
+module.exports = router;
 
 module.exports = router;

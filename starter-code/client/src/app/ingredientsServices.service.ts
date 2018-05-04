@@ -13,9 +13,9 @@ getIngredients(id) {
   return this.http.get(`${this.BASE_URL}/api/ingredients`)
     .map((res) => res.json());
 }
-saveIngredients(id,ingredient_id, qty) {
-  console.log(id,ingredient_id, qty)
-return this.http.post(`${this.BASE_URL}/api/dishes/${id}/ingredients/${ingredient_id}/add`,{qty})
+saveIngredients(id,ingredient_id, quantity) {
+  console.log(id,ingredient_id, quantity)
+return this.http.post(`${this.BASE_URL}/api/dishes/${id}/ingredients/${ingredient_id}/add`,{quantity})
 .map((res) => res.json())
 }
 
