@@ -1,0 +1,8 @@
+
+<div *ngFor="let recipe of recipes">
+  <h2>{{recipe.name}}</h2>
+  <!-- <p>{{recipe.description}}</p> -->
+  <img [src]="recipe.image" width=100>
+  <hr>
+  <a [routerLink]="[recipe._id]">View detail</a>
+</div>
