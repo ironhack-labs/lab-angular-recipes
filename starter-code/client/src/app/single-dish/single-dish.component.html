@@ -4,7 +4,8 @@
 <p>{{dish.description}}</p>
 </div>
 <div class="container" *ngFor="let ingredient of dish.ingredients">
-  <p>{{ingredient.name}}</p>
+  <p>{{ingredient.ingredientId.name}}</p>
+  <p>{{ingredient.quantity}}</p>
 </div>
 <div class="container" *ngFor="let ingredient of ingredients">
   <p [id]="ingredient._id">{{ingredient.name}}</p>
