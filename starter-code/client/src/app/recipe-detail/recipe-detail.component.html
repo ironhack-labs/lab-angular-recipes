@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>{{recipe.name}}</h3>
+  <img [src]="recipe.image" alt="pizza" width="600">
+  <p>{{recipe.description}}</p>
+<ul *ngFor="let ingredient of ingredients">
+  <li>Ingredient: {{ingredient.name}}  <a [routerLink]="">Add</a></li>
+</ul>
+
+  <a [routerLink]="['']">Go home</a>
+</div>
