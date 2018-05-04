@@ -13,12 +13,12 @@
 
 <div>
   <select #select>
-      <option *ngFor="let ingredient of ingredients" [value]="ingredient.name">
-        {{ingredient.name}}
+      <option *ngFor="let e of ingredients" [value]="e._id">
+        {{e.name}}
       </option>
     </select>
     <input type=number placeholder="Quantity" #qty>
-    <button><a (click)=addIngredient(dish._id,ingredient._id,qty.value)>Add</a></button>
+    <button><a (click)=addIngredient(dish._id,select.value,qty.value)>Add</a></button>
 </div>
    
  
