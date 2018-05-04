@@ -1,0 +1,20 @@
+<a [routerLink]="['']"> Home </a>
+
+<div *ngIf="recipe">
+  <div class="recipe-info">
+    <h2> {{ recipe.name }}&nbsp;</h2>
+    <img [src]="recipe.image" alt="">
+    <p> {{ recipe.description }} </p>
+  </div>
+</div>
+
+<tr *ngFor="let ingredient of ingredient">
+  <td>{{ingredient.name}}</td>
+  <td>
+    <img [src]="ingredient.image" width="100">
+  </td>
+  <td>
+    <input type="number" name="quantity" placeholder="Cantidad" min="1" value="1" #quantity>
+    <button (click)="aIngredient(quantity.value, recipe._id, ingredient._id)">añadir</button>
+  </td>
+</tr>

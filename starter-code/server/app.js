@@ -6,8 +6,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const routes       = require('./routes/index');
 const cors         = require('cors');
+const mongoose = require('mongoose');
 
-require('./config/database');
+mongoose.connect(`mongodb://localhost/recipe-app`);
+
 const app = express();
 app.use(cors());
 // view engine setup
@@ -24,6 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
+// app.all('/*', function (req, res) {
+//   res.sendfile(__dirname + '/public/index.html');
+// });
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
