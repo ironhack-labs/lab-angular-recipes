@@ -24,4 +24,8 @@ export class DishesService {
       .get(`${this.BASE_URL}/api/ingredients`)
       .map(res => res.json());
   }
+  addIngredient(myQuantityvalue, dish_id, i_id) {
+    return this.http.post(`${this.BASE_URL}/api/dishes/${dish_id}/ingredients/${i_id}/add`, {myQuantityvalue})
+      .map((res) => res.json());
+  }
 }

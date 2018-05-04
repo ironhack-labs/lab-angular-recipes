@@ -32,4 +32,7 @@ export class DishComponent implements OnInit {
       this.ingredients = e
     });
   }
+  addIngredient(myQuantityvalue, dish_id, i_id){
+     this.DishesService.addIngredient(myQuantityvalue, dish_id, i_id).subscribe();
+  }
 }

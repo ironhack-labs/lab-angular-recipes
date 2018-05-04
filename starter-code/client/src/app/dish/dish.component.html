@@ -10,7 +10,7 @@
   <div *ngFor = "let i of ingredients">
     <p>{{i.name}}</p>
     <img [src]="i.image" alt="Ingrediente" class ="ing"/>
-    <button>+ Add</button>
+    <button (click)="addIngredient(myQuantity.value, dish._id, i._id)">+ Add</button>
     <input type="number" name="quantity" [(ngModel)]="quantity"
     #myQuantity="ngModel" placeholder="quantity" />
   </div>
