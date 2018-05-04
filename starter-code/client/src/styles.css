@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  box-sizing: border-box;
+  min-width: 300px;
+  padding: 36px;
+}

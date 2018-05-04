@@ -1,0 +1,20 @@
+<div class="container">
+<h1>{{dish.name}}</h1>
+<img [src]="dish.image" width="600" alt="Bocatadepollo">
+<p>{{dish.description}}</p>
+</div>
+<div class="container" *ngFor="let ingredient of dish.ingredients">
+  <p>{{ingredient.ingredientId.name}}</p>
+  <p>{{ingredient.quantity}}</p>
+</div>
+<div class="container" *ngFor="let ingredient of ingredients">
+  <p [id]="ingredient._id">{{ingredient.name}}</p>
+  <input type="number" #quantity value="1">
+  <button (click)="addIngredient(dish._id, ingredient._id, quantity.value)">Add</button>
+</div>
+
+<a [routerLink]='["/"]'>Ir a la home</a>
+
+
+
+
