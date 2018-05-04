@@ -1,0 +1,13 @@
+<h2>Recipe</h2>
+
+<div *ngIf="singleDish">
+  <img src="{{singleDish.image}}">
+  <h3>{{singleDish.name}}</h3>
+  <p>{{singleDish.description}}</p>
+  <h5>Ingredients:</h5>
+  <div *ngFor="let ing of ingredients$ | async">
+    <p>{{ing.name}}</p>
+  </div>
+</div>
+
+<a [routerLink]="['/']"> Back to list </a>
