@@ -1,0 +1,7 @@
+<div *ngFor="let dish of myDishList">
+ <a [routerLink]="['/dish/',dish._id]">{{dish.name}}</a>
+</div>
+
+
+
+<a [routerLink]="['/dish/:id']">Detail</a>
