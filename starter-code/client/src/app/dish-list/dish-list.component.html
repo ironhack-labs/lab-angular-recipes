@@ -6,5 +6,6 @@
   <li *ngFor="let d of dish$ | async">
     {{d.name}}
     <img src="{{d.image}}" alt="" width="50">
+    <a [routerLink]="['', d._id]">Detalles</a>
   </li>
 </ul>

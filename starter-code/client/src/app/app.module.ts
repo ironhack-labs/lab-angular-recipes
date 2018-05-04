@@ -7,17 +7,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RetrieveService } from './retrieve.service';
 import { DishListComponent } from './dish-list/dish-list.component';
+import { OneDishComponent } from './one-dish/one-dish.component';
+import { IngredientsService } from './ingredients.service';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '',  component: DishListComponent },
-  // { path: ':id', component: SingleEntryComponent }
+  { path: ':id', component: OneDishComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     DishListComponent,
+    OneDishComponent
 ],
   imports: [
     BrowserModule,
@@ -25,7 +28,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [RetrieveService],
+  providers: [RetrieveService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
