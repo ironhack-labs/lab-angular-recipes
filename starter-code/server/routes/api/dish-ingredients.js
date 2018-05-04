@@ -6,6 +6,7 @@ const Ingredient = require('../../models/ingredient');
 const Dish       = require('../../models/dish');
 
 router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
+  console.log(req.params, req.body)
   const { dishId, id } = req.params;
   let { quantity } = req.body;
   quantity = Number(quantity);
@@ -44,5 +45,10 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
       });
     });
 });
+
+
+
+
+module.exports = router;
 
 module.exports = router;
