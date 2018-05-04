@@ -1,0 +1,8 @@
+<h1>My Recipe Book</h1>
+<div class="container">
+  <div *ngFor="let d of dishes">
+<h2>{{d.name}}</h2>
+<img [src]="d.image" alt = "{{d.name}}"/>
+<a [routerLink]="['/dish', d._id]"> View Details </a>
+  </div>
+</div>
