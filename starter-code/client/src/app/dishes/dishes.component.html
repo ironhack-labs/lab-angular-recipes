@@ -1,0 +1,12 @@
+<p>
+  dishes works!
+</p>
+
+<div>
+  <div class="dish" *ngFor="let d of dishes">
+     <a [routerLink]="['/entry',d._id]">Details</a> 
+    <h3> {{ d.name }} </h3>
+    <img [src]="d.image" alt="image" class="im-user">
+   
+  </div>
+</div>
