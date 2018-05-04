@@ -31,6 +31,14 @@ export class RecipeSingleComponent implements OnInit {
         .subscribe(recipe => (this.recipe = recipe));
     });
 
-    this.ingredientService.getIngredients().subscribe(ingredients => this.ingredients = ingredients );
+    this.ingredientService
+      .getIngredients()
+      .subscribe(ingredients => (this.ingredients = ingredients));
+  }
+
+  addIngredient(quantity, recipe, ingredient) {
+    this.ingredientService
+      .addIngredient(quantity, recipe, ingredient)
+      .subscribe(() => console.log("success post"));
   }
 }

@@ -10,8 +10,13 @@
   <table *ngIf="ingredients">
     <tr *ngFor="let i of ingredients">
       <td>{{i.name}}</td>
-      <td><img [src]="i.image" [alt]="i.name" width="100"></td>
-      <td><input type="number" placeholder="Quantity" min="1"><button>Add</button></td>
+      <td>
+        <img [src]="i.image" [alt]="i.name" width="100">
+      </td>
+      <td>
+        <input type="number" name="quantity" placeholder="Quantity" min="1" value="1" #quantity>
+        <button (click)="addIngredient(quantity.value, recipe._id, i._id)">Add</button>
+      </td>
     </tr>
   </table>
 </div>
