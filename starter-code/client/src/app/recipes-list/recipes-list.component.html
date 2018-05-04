@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngFor="let dish of dishes" class="row">
+    <div class="col">
+      <h1>{{dish.name}}</h1>
+      <a [routerLink]="['/dish', dish._id]">
+        <img [src]="dish.image"/>
+      </a>
+    </div>
+  </div>
+</div>

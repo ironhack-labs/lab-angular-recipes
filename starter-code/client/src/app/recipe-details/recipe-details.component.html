@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="dish" class="col">
+      <h3>{{dish.name}}</h3>
+      <img [src]="dish.image" alt="Dish Image">
+      <p>{{dish.description}}</p>
+    </div>
+  </div>
+  <a [routerLink]="['/']">Back to home</a>
+</div>
+
+<ul *ngFor="let ingredient of ingredients">
+  <li>{{ingredient.name}} <button (click)="addIngredients(dish._id, ingredient._id)">Add</button></li>
+</ul>
+
+<label for="quantity">Quantity</label>
+<input type="text" id="quantity" [(ngModel)]="quantity">
