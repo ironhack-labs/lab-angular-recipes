@@ -1,0 +1,27 @@
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="dish">
+
+  <div class="dish-info">
+        <h2>{{ dish.name }}&nbsp;</h2>
+      <img src="{{dish.image}}" alt="" width="100px">
+  
+      <h3>{{ dish.description }}</h3>
+
+  </div>
+
+</div>
+
+<div id="cont">
+    <div *ngFor='let ingredient of ingredients$' class="container" >
+    
+        <h2>{{ ingredient.name }}</h2>
+      <img src="{{ingredient.image}}" alt="" width="50px">
+      <input [(ngModel)]="ingredient">
+      <button (click)="addIngredient()"> Add Ingredient </button>
+    </div>
+    </div>
+  
+
+
+

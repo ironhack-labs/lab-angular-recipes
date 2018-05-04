@@ -1,0 +1,8 @@
+<div id="cont">
+  <div *ngFor='let dish of dishes$ | async' class="container" >
+    <a [routerLink]="['/home',dish._id]">
+      <h2>{{ dish.name }}</h2>
+    </a>
+    <img src="{{dish.image}}" alt="" width="100px">
+    </div>
+  </div>
