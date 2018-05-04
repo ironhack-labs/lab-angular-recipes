@@ -1,0 +1,10 @@
+
+
+<div id="cont">
+  <div *ngFor='let recipe of recipes$ | async' class="container" >
+    <a [routerLink]="['/home',recipe._id]">
+      <h2>{{ recipe.name }}</h2>
+    </a>
+  <img [src]="recipe.image" alt="">
+  </div>
+</div>
