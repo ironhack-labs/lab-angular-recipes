@@ -7,6 +7,6 @@ const dishIngredients   = require('./dish-ingredients');
 
 router.use('/dishes', dishes);
 router.use('/ingredients', ingredients);
-router.use('/', dishIngredients);
+router.use('/dishes', dishIngredients);
 
 module.exports = router;
