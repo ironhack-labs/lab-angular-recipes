@@ -1,0 +1,24 @@
+<p>
+  Single Dish!
+</p>
+
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="dish">
+  
+
+  <div class="dish-info">
+    <h2> {{ dish.name }}</h2>
+    <img [src]="dish.image" alt="image" class="im-user">
+    <h3>{{ dish.description}}</h3>
+    <div class="ingredient" *ngFor="let i of ingredients">
+      <!-- <a [routerLink]="['/entry',d._id]">Details</a>  -->
+     <h3> {{ i.name }} </h3>
+     <img [src]="i.image" alt="image" class="im-user">
+     <h3>{{i.description}}</h3>
+     <input type="number" name="" id="" placeholder="quantity" #quantity>
+    <button (click)="addIngredient(dish._id, i._id, quantity)">Add</button>
+   </div>
+  </div>
+    
+  </div>

@@ -88,7 +88,46 @@ const foods = [
   }
 ]
 
+const ingrdnts = [
+  {
+    name: "Flour",
+    description: "añldkjfpald ñlakdsjfñlaksdj",
+    image: "http://i0.wp.com/www.farmersbag.com/wp-content/uploads/2016/10/fresh-wheat-atta.jpg?zoom=0.8999999761581421&resize=408%2C306"
+  },
+  {
+    name: "Eggs",
+    description: "añldkjfpald ñlakdsjfñlaksdj",
+    image: "http://img.timesnownews.com/story/1511260245-1507534229-eggs.PNG"
+  },
+  {
+    name: "Lettuce",
+    description: "añldkjfpald ñlakdsjfñlaksdj",
+    image: "https://www.rareseeds.com/assets/1/14/DimRegular/Iceburg-Web.jpg"
+  },
+  {
+    name: "Tomatoes",
+    description: "añldkjfpald ñlakdsjfñlaksdj",
+    image: "http://2.bp.blogspot.com/_nmO0yJXWrQY/TB9Lv9hpIkI/AAAAAAAAA_s/fK6HdVThH6Q/s400/TomatoSandDCITALIAN+Fest+004.JPG"
+  },
+  {
+    name: "Garlic",
+    description: "añldkjfpald ñlakdsjfñlaksdj",
+    image: "https://cdn-bewellbuzz.pressidium.com/wp-content/uploads/2012/08/garlic-antibiotic7.jpg"
+  },
+  {
+    name: "Onions",
+    description: "añldkjfpald ñlakdsjfñlaksdj",
+    image: "http://www.chennellsfarms.co.uk/Content/images/onion.png"
+  }
+ ]
+
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
 });
+
+Ingredient.create(ingrdnts, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${ingrdnts.length} ingredients`)
+});
+
