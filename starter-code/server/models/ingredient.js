@@ -6,8 +6,8 @@ const IngredientSchema = new Schema({
     type: String,
     required: true
   },
-  description: String,
-  image: String
+  image: String,
+  description: String
 });
 
 module.exports = mongoose.model('Ingredient', IngredientSchema);
