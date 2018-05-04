@@ -1,0 +1,8 @@
+<div class="card">
+  <ul>
+    <li *ngFor="let dish of dishes">
+      {{dish.name}}
+      <img [src]="dish.image"/>
+    </li>
+  </ul>
+</div>
