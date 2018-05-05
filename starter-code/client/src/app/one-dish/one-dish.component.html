@@ -1,0 +1,22 @@
+<p>
+  one-dish works!
+</p>
+
+
+<ul>
+  <li *ngIf="singleDish">
+    <img src="{{singleDish.image}}" alt="" width="200">
+    <p>
+      <b>{{singleDish.name}}</b>
+    </p>
+    <p>
+      {{singleDish.description}}
+    </p>
+  </li>
+</ul>
+
+<div *ngFor="let i of ingredients">
+  {{i.name}}
+  <img src="{{i.image}}" alt="" width="50"> 
+  <button (click)=addIngredient(i._id,singleDish._id)>Add</button>
+</div>
