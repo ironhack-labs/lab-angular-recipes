@@ -6,10 +6,24 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const routes       = require('./routes/index');
 const cors         = require('cors');
+const mongoose     = require('mongoose');
+
+const session      = require('express-session');
+const MongoStore   = require('connect-mongo')(session);
+
+mongoose.Promise = Promise;
+mongoose
+  .connect('mongodb://localhost/recipe-app', {useMongoClient: true})
+  .then(() => {
+    console.log('Connected to Mongo!')
+  }).catch(err => {
+    console.error('Error connecting to mongo', err)
+  });
 
 require('./config/database');
 const app = express();
 app.use(cors());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
