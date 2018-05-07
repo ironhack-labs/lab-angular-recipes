@@ -88,7 +88,41 @@ const foods = [
   }
 ]
 
+const ingredients = [
+  {
+    name: "mushroom"
+  },
+  {
+    name: "olive oil"
+  },
+  {
+    name: "salad"
+  },
+  {
+    name: "bacon"
+  },
+  {
+    name: "gnocchi"
+  },
+  {
+    name: "potatoes"
+  },
+  {
+    name: "ham"
+  },
+  {
+    name: "cheese"
+  },
+]
+
+Ingredient.create(ingredients, err => {
+  if(err) {throw err}
+  console.log(`Created ${ingredients.length} ingredients`);
+  mongoose.connection.close();
+});
+
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
+  mongoose.connection.close();
 });
