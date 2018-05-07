@@ -88,6 +88,32 @@ const foods = [
   }
 ]
 
+const ingredients = [
+  {
+      name: "peppers"
+    },
+    {
+      name: "onions"
+    },
+    {
+      name: "tomatoes"
+    },
+    {
+      name: "carrots"
+    },
+    {
+      name: "potatoes"
+    },
+    {
+      name: "spinach"
+    }
+  ]
+  
+  Ingredient.create(ingredients, err => {
+    if(err) {throw err}
+    mongoose.connection.close();
+  });
+
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)

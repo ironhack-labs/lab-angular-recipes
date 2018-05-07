@@ -1,0 +1,15 @@
+
+<h2>{{dishes?.name}}</h2>
+  <img *ngIf="dishes" [src]="dishes.image">
+
+ <p>{{dishes?.description}}</p>
+
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+     {{ingredient.name}}
+    <input type="number">
+    <button (click)="addIngredient(dishes._id, ingredient._id)">Add</button>
+   </li>
+  </ul>
+
+<a routerLink="/">Home</a> 
