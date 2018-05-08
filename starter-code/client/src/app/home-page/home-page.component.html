@@ -1,0 +1,13 @@
+<p>
+  Recipes List!
+</p>
+
+<ul>
+  <li *ngFor="let oneDish of dishes">
+    <h3>{{oneDish.name}}</h3>
+    <img [src]="oneDish.image" alt="">
+    <p>{{oneDish.description}}</p>
+    <a [routerLink]="['/dishes', oneDish._id]">see details</a>
+    <hr>
+  </li>
+</ul>
