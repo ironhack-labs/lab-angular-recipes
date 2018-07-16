@@ -1,0 +1,30 @@
+<h2>Dish Details</h2>
+
+<h3>{{dishItem?.name}}</h3>
+
+<h4>Ingredients</h4>
+<ul>
+  <li *ngFor="let oneIngredient of dishItem?.ingredients">
+    <p>{{oneIngredient.name}}</p>
+  </li>
+</ul>
+
+<img [src]="dishItem?.image" alt="Dish Image">
+
+
+<p>{{dishItem?.description}}</p>
+
+<ul>
+  <li *ngFor="let oneIngredient of ingredients">
+    <p>{{oneIngredient.name}}</p>
+    <form>
+      <label for="qty">Quantity</label>
+      <input [(ngModel)]="qty" type="string" id="qty" name="qty">
+      <button (click)='addIngredient(dishItem._id, oneIngredient._id, qty)'>Add Ingredient</button>
+    </form>
+
+  </li>
+</ul>
+
+
+<a [routerLink]="['']"> Back to Home</a>
