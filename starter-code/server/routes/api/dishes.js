@@ -10,6 +10,30 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.get("/dishes/:_id", (req, res, next) => {
+  const {_id} = req.params;
+
+  Phone.findById(_id)
+    .then((dishDoc) => {
+      if(!dishDoc) {
+     // show 404 if no phone was found
+        next();
+        return;
+      }
+       res.json(dishDoc);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+
+
+
+
+
+
+
 router.get('/:id', (req, res, next) => {
   Dish.findById(req.params.id)
     .populate('ingredients.ingredientId')
