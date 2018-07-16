@@ -1,0 +1,9 @@
+<h2>Your Recipes</h2>
+
+<ul>
+  <li *ngFor="let oneRecipe of myRecipeServ.getRecipes()">
+    <h3>{{oneRecipe.name}}</h3>
+    <p>{{oneRecipe.image}}</p>
+    <a [routerLink]="['/recipe', oneRecipe._id]">See Details</a>
+  </li>
+</ul>
