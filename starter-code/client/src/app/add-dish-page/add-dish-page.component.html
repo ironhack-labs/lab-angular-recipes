@@ -1,0 +1,26 @@
+<h2>Add A Dish</h2>
+
+<form (ngSubmit)="dishSubmit()">
+  <label>
+    Name: <input [(ngModel)]="userForm.name" name="name" type="text" placeholder="Spaghetti">
+  </label>
+  <br />
+
+  <label>
+    Description: <input [(ngModel)]="userForm.description" name="description" type="text" placeholder="Noodly Smoodly">
+  </label>
+  <br />
+
+  <label>
+    Image: <input [(ngModel)]="userForm.image" type="text" name="image" placeholder="http://example.com/spaghetti.jpeg">
+  </label>
+  <br />
+
+<!--
+  <label *ngFor="let item of ingredients; let i = 0; i++">
+    Ingredients: <input [(ngModel)]="userForm.ingredients[i]" type="text" placeholder="ingredients...">
+  </label>
+  <br /> -->
+
+  <button>Add Dish</button>
+</form>

@@ -1,0 +1,18 @@
+<h2>Dish Details</h2>
+
+<h3>{{dishItem?.name}}</h3>
+<img [src]="dishItem?.image">
+<p>{{dishItem?.description}}</p>
+
+<h3>Add Ingredients</h3>
+<ul>
+  <li *ngFor="let oneIngredient of ingredients">
+    <h4>{{oneIngredient.name}}</h4>
+    <img class="ingredient" [src]="oneIngredient.image">
+    <p>{{oneIngredient.description}}</p>
+    <label>
+      Quantity: <input [(ngModel)]="quantity" type="number">
+    </label>
+    <button (click)="ingredientSubmit(oneIngredient)">Add {{oneIngredient.name}}</button>
+  </li>
+</ul>

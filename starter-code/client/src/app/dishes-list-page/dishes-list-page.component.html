@@ -1,0 +1,35 @@
+<h2>Dishes</h2>
+
+<div [ngClass]="buttonState">
+  <button (click)="toggleHidden()">Add Ingredients</button>
+</div>
+
+<div [ngClass]="classState">
+  <form (ngSubmit)="ingredientAdd()">
+    <label>
+      Name: <input [(ngModel)]="userForm.name" name="name" type="text" placeholder="Noodles">
+    </label>
+    <br />
+
+    <label>
+      Description: <input [(ngModel)]="userForm.description" name="description" type="text" placeholder="Gluten-y">
+    </label>
+    <br />
+
+    <label>
+      Image: <input [(ngModel)]="userForm.image" type="text" name="image" placeholder="http://example.com/spaghetti.jpeg">
+    </label>
+    <br />
+
+    <button (click)="toggleHidden()">Add Ingredients</button>
+  </form>
+</div>
+
+<ul>
+  <li *ngFor="let oneDish of dishes">
+    <h3>{{oneDish.name}}</h3>
+    <img [src]="oneDish.image">
+    <br />
+    <a routerLink="/dish/{{oneDish._id}}">See Dish Info</a>
+  </li>
+</ul>
