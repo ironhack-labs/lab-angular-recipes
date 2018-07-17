@@ -1,0 +1,26 @@
+<header>
+  <h1>Foods</h1>
+
+  <nav>
+    <a routerLink="/" class="button">Home</a>
+  </nav>
+
+</header>
+
+
+<ul>
+  <li *ngFor="let oneDish of dishes">
+    <h3>{{oneDish.name}}</h3>
+    <!-- <p>{{oneDish.description}}</p> -->
+    <img [src]="oneDish.image" style="width: 250px" />
+    <br />
+    <a routerLink="/details/{{oneDish._id}}" class="button" style="margin-left: 158px; margin-top: 40px">Ingredients</a>
+    <!-- <a href="['/dish', oneDish.name]" class="button">See Ingredients</a> -->
+  </li>
+</ul>
+
+
+<footer>
+  <p>Made with ✈️ at Ironhack</p>
+</footer>
+
