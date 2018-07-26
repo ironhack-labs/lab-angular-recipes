@@ -7,6 +7,25 @@
     </div>
     <div>
       <p>{{recipe.description}}</p>
+      <div *ngIf="recipe.ingredients">
+        <h4>Ingredients</h4>
+        <ul>
+          <li *ngFor="let i of recipe.ingredients">
+            {{i.name}} - {{i.quantity}}
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
+  <div *ngIf="ingredients">
+    <hr>
+    <h4>Add ingredients</h4>
+    <ul>
+      <li *ngFor="let i of ingredients">
+        {{i.name}}
+        <input type="text">
+        <button>Add</button>
+      </li>
+    </ul>
   </div>
 </div>

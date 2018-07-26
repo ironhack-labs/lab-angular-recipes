@@ -6,11 +6,16 @@ import 'rxjs/add/operator/map';
 
 const { baseUrl } = environment;
 
+interface Ingredient {
+  name: string,
+  quantity: number
+}
+
 export interface Recipe {
   name: string,
   image: string,
   description: string,
-  ingredientes: Array<string>
+  ingredientes: Array<Ingredient>
 }
 
 @Injectable()
