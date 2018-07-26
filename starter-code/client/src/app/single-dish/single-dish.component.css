@@ -2,3 +2,7 @@ img{
   object-fit: cover;
   width: 200px;
 }
+
+.ingBtn{
+  display: inline-block;
+}

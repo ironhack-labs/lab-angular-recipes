@@ -6,9 +6,10 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DishesListComponent } from './dishes-list/dishes-list.component';
 import { DishesService } from 'services/dishes.service';
-import { RouterModule } from '../../node_modules/@angular/router';
+import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { SingleDishComponent } from './single-dish/single-dish.component';
+import { IngredientsService } from 'services/ingredients.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { SingleDishComponent } from './single-dish/single-dish.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesService],
+  providers: [DishesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,13 +6,13 @@ import 'rxjs/add/operator/map'
 const url = environment.BASEURL;
 
 @Injectable()
-export class DishesService {
+export class IngredientsService {
   constructor(private http: Http) {}
-  getAll() {
-    return this.http.get(`${url}/api/dishes`).map(res => res.json());
+  getIngredients() {
+    return this.http.get(`${url}/api/ingredients`).map(res => res.json());
   }
-  getById(id:string) {
-    return this.http.get(`${url}/api/dishes/${id}`).map(res => res.json());
+  getIngredientById(id:string) {
+    return this.http.get(`${url}/api/ingredients/${id}`).map(res => res.json());
   }
   // addEntry(title:string,content:string) {
   //   return this.http

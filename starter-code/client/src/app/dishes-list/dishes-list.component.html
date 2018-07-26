@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-4 element" *ngFor = 'let dish of dishes'>
-      <p>Name: {{dish.name}}</p>
+      <p [routerLink]= '["/dishes", dish._id]'>Name: {{dish.name}}</p>
      <img [routerLink]= '["/dishes", dish._id]' src="{{dish.image}}" alt="">
     </div>
   </div>
