@@ -1,0 +1,6 @@
+<div class="recipes-wrp" *ngIf="recipes">
+  <div class="item" *ngFor="let r of recipes">
+    <img src="{{r.image}}" alt="{{r.name}}">
+    <h3>{{r.name}}</h3>
+  </div>
+</div>
