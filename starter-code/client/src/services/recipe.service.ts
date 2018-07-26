@@ -13,4 +13,13 @@ export class RecipeService {
         return res.json();
       });
   }
+
+  getRecipe(id){
+    return this.http
+      .get(`http://localhost:3000/api/dishes/${id}`)
+      .map(res => {
+        console.log(res);
+        return res.json();
+      });
+  }
 }
