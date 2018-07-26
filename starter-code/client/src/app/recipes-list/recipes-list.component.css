@@ -1,0 +1,14 @@
+ul {
+    list-style: none;
+}
+.imgContainer{
+    width: 300px;
+    height: auto;
+} 
+
+.card {
+    width: 350px;
+    height: auto;
+    text-align: center;
+}
+

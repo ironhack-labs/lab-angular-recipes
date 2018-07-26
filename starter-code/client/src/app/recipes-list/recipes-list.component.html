@@ -1,0 +1,11 @@
+<p>
+  recipes-list works!
+</p>
+<div class=“contenedor”>
+  <div class="card" *ngFor="let recipe of recipes">
+    <h3>{{recipe.name}}</h3>
+    <img class="imgContainer" src="{{recipe.image}}">
+    <p>{{recipe.description}}</p>
+  </div>
+  <!-- <a [routerLink]="['/recipe', reci._id]"> View Details </a> -->
+</div>
