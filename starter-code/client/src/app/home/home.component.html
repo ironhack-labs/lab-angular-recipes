@@ -1,0 +1,8 @@
+
+<div class="dishes" *ngIf="dishes">
+  <div class="dish" *ngFor="let dish of dishes">
+    <h2>{{dish.name}}</h2>
+    <img src="{{dish.image}}">
+    <a [routerLink]="['dishes', dish._id]"><button>Details</button></a>
+  </div>
+</div>

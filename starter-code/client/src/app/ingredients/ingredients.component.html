@@ -1,0 +1,7 @@
+<div class="ingredients">
+  <h2>Ingredients</h2>
+  
+  <div class="ingredient" *ngFor="let ingredient of ingredients">
+    <input type="checkbox" id="{{ingredient.id}}"> - {{ingredient.name}}
+  </div>
+</div>
