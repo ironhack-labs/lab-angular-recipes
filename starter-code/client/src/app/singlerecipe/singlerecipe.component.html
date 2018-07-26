@@ -9,3 +9,20 @@
     </div>
   </div>
   </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Add</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ingredient of dishingredients">
+        <th scope="row">1</th>
+        <td>{{ingredient.name}}</td>
+        <td>{{ingredient.description}}</td>
+        <td>+</td>
+      </tr>

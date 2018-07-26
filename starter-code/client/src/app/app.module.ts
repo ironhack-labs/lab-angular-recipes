@@ -8,6 +8,7 @@ import { DishesComponent } from './dishes/dishes.component';
 import { DishesServiceService } from 'services/dishes-service.service';
 import { RouterModule } from '@angular/router';
 import { SinglerecipeComponent } from './singlerecipe/singlerecipe.component';
+import { IngredientsService } from 'services/ingredients.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { SinglerecipeComponent } from './singlerecipe/singlerecipe.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DishesServiceService],
+  providers: [DishesServiceService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
