@@ -24,4 +24,8 @@ export class RecipeDetailComponent implements OnInit {
     this.iS.getIngredients().subscribe(ingredients => this.ingredients = ingredients);
   }
 
+  addIngredient(ingredient, quantity) {
+    this.rS.addIngredient(this.recipe._id, ingredient._id, quantity).subscribe(recipe => this.recipe = recipe);
+  }
+
 }
