@@ -6,6 +6,7 @@
     <h3>{{recipe.name}}</h3>
     <img class="imgContainer" src="{{recipe.image}}">
     <p>{{recipe.description}}</p>
+    <a [routerLink]="['/recipe', recipe._id]"> View Details </a>
+
   </div>
-  <!-- <a [routerLink]="['/recipe', reci._id]"> View Details </a> -->
 </div>
