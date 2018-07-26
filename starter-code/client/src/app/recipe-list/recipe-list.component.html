@@ -1,0 +1,8 @@
+<h1>Recipes</h1>
+<div class="container">
+  <div *ngFor="let recipe of list">
+    <h2>{{recipe.name}}</h2>
+    <img [src]="recipe.image" alt="">
+  </div>
+</div>
+
