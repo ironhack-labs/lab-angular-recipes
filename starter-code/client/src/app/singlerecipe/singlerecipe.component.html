@@ -1,0 +1,11 @@
+<div class='estilo'>
+  <div class="card" style="width: 18rem;" *ngIf = "singledish">
+    <img class="card-img-top" [src]="singledish.image" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{singledish.name}}</h5>
+      <p class="card-text">{{singledish.description}}</p>
+      <!-- //<a [routerLink]="['/singledish, dish._id]" class="btn btn-primary">Go somewhere</a> -->
+      <a [routerLink] = "['/home']">Back to all dishes</a>
+    </div>
+  </div>
+  </div>
