@@ -1,0 +1,31 @@
+<a [routerLink]="['/']">Back</a>
+<div class="recipe" *ngIf="recipe">
+  <h1>{{recipe.name}}</h1>
+  <div class="details">
+    <div class="img-wrp">
+      <img src="{{recipe.image}}" alt="{{recipe.name}}">
+    </div>
+    <div>
+      <p>{{recipe.description}}</p>
+      <div *ngIf="recipe.ingredients">
+        <h4>Ingredients</h4>
+        <ul>
+          <li *ngFor="let i of recipe.ingredients">
+            {{i.ingredientId.name}} - {{i.quantity}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="ingredients">
+    <hr>
+    <h4>Add ingredients</h4>
+    <ul>
+      <li *ngFor="let i of ingredients">
+        {{i.name}}
+        <input type="text" #quantity min="1" value="1">
+        <button (click)="addIngredient(i, quantity.value);">Add</button>
+      </li>
+    </ul>
+  </div>
+</div>

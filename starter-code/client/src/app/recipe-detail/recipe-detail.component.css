@@ -1,0 +1,11 @@
+.recipe .details {
+  display: flex;
+}
+
+.recipe .details .img-wrp {
+  padding-right: 20px;
+}
+
+.recipe .details > div {
+  flex-grow: 1;
+}
