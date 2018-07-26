@@ -8,11 +8,13 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeService } from '../services/recipe.service'
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
+import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeListComponent,
+    SingleRecipeComponent,
   ],
   imports: [
     BrowserModule,
