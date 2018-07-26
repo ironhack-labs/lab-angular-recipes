@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { routes } from './routes';
 import { RouterModule } from '../../node_modules/@angular/router';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesComponent,
+    RecipeDetailComponent,
   ],
   imports: [
     BrowserModule,

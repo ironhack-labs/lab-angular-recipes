@@ -1,5 +1,5 @@
 <div class="recipes-wrp" *ngIf="recipes">
-  <div class="item" *ngFor="let r of recipes">
+  <div class="item" *ngFor="let r of recipes" [routerLink]="['/', r._id]">
     <img src="{{r.image}}" alt="{{r.name}}">
     <h3>{{r.name}}</h3>
   </div>

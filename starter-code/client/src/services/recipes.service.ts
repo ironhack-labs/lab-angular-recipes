@@ -21,5 +21,9 @@ export class RecipesService {
     getDishes():Observable<Array<Recipe>> {
       return this.http.get(`${baseUrl}/api/dishes`).map((res) => res.json());
     }
+
+    getDish(id):Observable<Recipe> {
+      return this.http.get(`${baseUrl}/api/dishes/${id}`).map((res) => res.json());
+    }
     
 }

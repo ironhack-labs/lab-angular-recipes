@@ -1,0 +1,12 @@
+<a [routerLink]="['/']">Back</a>
+<div class="recipe" *ngIf="recipe">
+  <h1>{{recipe.name}}</h1>
+  <div class="details">
+    <div class="img-wrp">
+      <img src="{{recipe.image}}" alt="{{recipe.name}}">
+    </div>
+    <div>
+      <p>{{recipe.description}}</p>
+    </div>
+  </div>
+</div>
