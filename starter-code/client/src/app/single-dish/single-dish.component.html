@@ -1,0 +1,16 @@
+<button [routerLink]= '["/"]'>List</button>
+<div *ngIf="dish">
+  <h2>Name: {{dish.name}}</h2>
+  <img src="{{dish.image}}" alt="">
+  <p>Description: {{dish.description}}</p>
+  Dish Ingredients
+  <ul *ngFor=" let ingredient of dish.ingredients">
+    <li>Ingredient: {{ingredient.ingredientId.name}} - Quantity: {{ingredient.quantity}}</li>
+  </ul>
+</div>
+
+<h4>Ingredients</h4>
+<li *ngFor=" let ingredient of ingredients">
+  {{ingredient.name}} 
+  <button class="ingBtn" (click)="addIngredientToDish(dish._id, ingredient._id, quantity)">Add</button> <input #quantity type="number" name="" id="" value=1>
+</li>

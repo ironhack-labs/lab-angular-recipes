@@ -1,0 +1,13 @@
+img{
+  width: 50%;
+  object-fit: cover;
+}
+
+.element{
+  margin: 10px auto;
+}
+
+h1{
+  text-align: center;
+  margin: 10px auto;
+}
