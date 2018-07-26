@@ -1,0 +1,9 @@
+<h2>All recipes</h2><div *ngIf="recipes">
+  <ul>
+    <li *ngFor="let recipe of recipes">
+      {{recipe.name}}
+      <img src="{{recipe.image}}" width=200>
+      <a [routerLink]="['/recipe', recipe._id]">Check recipe</a>
+    </li>
+  </ul>
+  </div>
