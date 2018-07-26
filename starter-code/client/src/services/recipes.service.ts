@@ -12,7 +12,7 @@ interface Ingredient {
 }
 
 export interface Recipe {
-  _id: string;
+  _id?: string;
   name: string;
   image: string;
   description: string;
@@ -31,11 +31,15 @@ export class RecipesService {
     return this.http.get(`${baseUrl}/api/dishes/${id}`).map(res => res.json());
   }
 
-  addIngredient(recipeId: string, ingredientId: string, quantity: number) {
+  addIngredient(recipeId: string, ingredientId: string, quantity: number): Observable<Recipe> {
     return this.http
       .post(`${baseUrl}/api/dishes/${recipeId}/ingredients/${ingredientId}/add`, {
         quantity
       })
       .map(res => res.json());
+  }
+
+  createDish(recipe: Recipe): Observable<Recipe> {
+    return this.http.post(`${baseUrl}/api/dishes/`, recipe).map(res => res.json());
   }
 }
