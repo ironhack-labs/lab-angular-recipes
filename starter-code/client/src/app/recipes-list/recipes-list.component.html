@@ -1,0 +1,6 @@
+<div *ngIf="recipes" class="container">
+  <div *ngFor="let recipe of recipes" class="recipesContainer">
+    <p>{{recipe.name}} - <a [routerLink]="[recipe._id]">Detail</a></p>
+    <img src="{{recipe.image}}" />
+  </div>
+</div>

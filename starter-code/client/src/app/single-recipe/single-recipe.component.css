@@ -1,0 +1,33 @@
+.container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 1000px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.recipeContainer {
+  width: 700px;
+  text-align: center;
+}
+
+.ingredientsContainer {
+  width: 300px;
+}
+
+.ingredient {
+  margin: 10px 20px;
+  text-align: right;
+}
+
+.quantity {
+  width: 100px;
+}
+
+img {
+  max-height: 450px;
+  max-width: 650px;
+}

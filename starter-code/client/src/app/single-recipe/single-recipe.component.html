@@ -1,0 +1,16 @@
+<div *ngIf="recipe" class="container">
+  <div class="recipeContainer">
+    <h1>{{recipe.name}}</h1>
+    <br />
+    <img src={{recipe.image}} />
+    <br />
+    <p>{{recipe.description}}</p>
+  </div>
+  <div *ngIf="ingredients" class="ingredientsContainer">
+    <div *ngFor="let ingredient of ingredients" class="ingredient">
+      <label>{{ingredient.name}}</label>
+      <input #quantity class="quantity" type="number" />
+      <input type="button" value="Add" (click)="addIngredient(ingredient._id, quantity.value)" />
+    </div>
+  </div>
+</div>
