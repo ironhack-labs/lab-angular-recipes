@@ -9,12 +9,14 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes.routing';
 import { RecipeComponent } from './components/Recipe/Recipe.component';
 import { RecipeListComponent } from './components/RecipeList/RecipeList.component';
+import { IngredientListComponent } from './components/ingredientList/ingredientList.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    IngredientListComponent
   ],
   imports: [
     BrowserModule,
