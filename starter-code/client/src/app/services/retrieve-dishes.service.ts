@@ -12,10 +12,8 @@ export class RetrieveDishesService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/dishes`, options)
-      .toPromise()
-      .then((res: Response) => console.log(res.json()));
-      // .then((res) => res.value.dishes);
+    return this.httpClient.get(`${this.baseUrl}/api/dishes`, options)
+      .toPromise();
 
   }
 
