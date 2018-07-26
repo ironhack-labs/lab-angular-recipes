@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import { environment } from "environments/environment";
-import 'rxjs/add/operator/map'
+import "rxjs/add/operator/map";
 
 const url = environment.BASEURL;
 
@@ -11,11 +11,15 @@ export class DishesService {
   getAll() {
     return this.http.get(`${url}/api/dishes`).map(res => res.json());
   }
-  getById(id:string) {
+  getById(id: string) {
     return this.http.get(`${url}/api/dishes/${id}`).map(res => res.json());
   }
-  addIngredientToDish(dishId:string,id:string, quantity){
-    return this.http.post(`${url}/api/dishes/${dishId}/ingredients/${id}/add`,{quantity}).map(res => res.json());
+  addIngredientToDish(dishId: string, id: string, quantity) {
+    return this.http
+      .post(`${url}/api/dishes/${dishId}/ingredients/${id}/add`, { quantity })
+      .map(res => res.json());
   }
- 
+  addDish(newDish) {
+    return this.http.post(`${url}/api/dishes/`, newDish).map(res => res.json());
+  }
 }

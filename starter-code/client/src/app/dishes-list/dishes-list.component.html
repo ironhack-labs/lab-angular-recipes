@@ -1,5 +1,6 @@
 <h1>DISHES LIST</h1>
-
+<button [routerLink]= '["/dishes/add/dish"]'>Add a dish</button>
+<button [routerLink]= '["/dishes/add/ingredient"]'>Add a ingredient</button>
 <div class="container">
   <div class="row">
     <div class="col-4 element" *ngFor = 'let dish of dishes'>

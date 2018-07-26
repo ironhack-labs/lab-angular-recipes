@@ -10,12 +10,16 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { SingleDishComponent } from './single-dish/single-dish.component';
 import { IngredientsService } from 'services/ingredients.service';
+import { DishFormComponent } from './dish-form/dish-form.component';
+import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DishesListComponent,
     SingleDishComponent,
+    DishFormComponent,
+    IngredientFormComponent,
   ],
   imports: [
     BrowserModule,
