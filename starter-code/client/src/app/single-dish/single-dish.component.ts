@@ -21,5 +21,11 @@ export class SingleDishComponent implements OnInit {
     })
     this.ingredientsService.getIngredients().subscribe(data => this.ingredients = data)
   }
-
+  addIngredientToDish(dishId,id, quantity){
+    console.log(dishId,id, quantity.value)
+    this.dishService.addIngredientToDish(dishId,id, quantity.value).subscribe(dish => {
+      console.log(dish)
+      this.dish = dish
+    })
+  }
 }

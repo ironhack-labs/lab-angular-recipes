@@ -14,8 +14,8 @@ export class DishesService {
   getById(id:string) {
     return this.http.get(`${url}/api/dishes/${id}`).map(res => res.json());
   }
-  // addEntry(title:string,content:string) {
-  //   return this.http
-  //     .post(`${url}/api/journal-entries`,{title, content})
-  // }
+  addIngredientToDish(dishId:string,id:string, quantity){
+    return this.http.post(`${url}/api/dishes/${dishId}/ingredients/${id}/add`,{quantity}).map(res => res.json());
+  }
+ 
 }

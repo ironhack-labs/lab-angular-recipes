@@ -6,10 +6,10 @@ const Ingredient = require('../../models/ingredient');
 const Dish       = require('../../models/dish');
 
 router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
+  console.log(req.params, req.body)
   const { dishId, id } = req.params;
   let { quantity } = req.body;
   quantity = Number(quantity);
-
   Dish
     .findById(dishId)
     .populate('ingredients.ingredientId')
@@ -26,9 +26,10 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
         possibleIngred.quantity += quantity;
       } else {
         possibleIngred = { ingredientId: id, quantity: quantity }
-        dish.ingredients.push(possibleIngred);
+        dish.ingredients.unshift(possibleIngred);
       }
 
+      console.log("Hola")
 
       dish.save( (err) => {
         if (err) { return res.status(500).json(err) }
