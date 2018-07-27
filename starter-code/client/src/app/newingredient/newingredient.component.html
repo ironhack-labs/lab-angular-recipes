@@ -1,0 +1,6 @@
+<h2>New ingredient</h2>
+<form (ngSubmit)="newIngredient(myForm)" #myForm="ngForm">
+    <label for="name">Name:</label>
+    <input type="text" name="name" [(ngModel)]="name">
+  <button type="submit">Add</button>
+</form>
