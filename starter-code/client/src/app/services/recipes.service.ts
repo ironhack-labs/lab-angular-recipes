@@ -19,5 +19,8 @@ constructor(public http:Http){}
          return res.json();
      })
  }
+ getId(id){
+    return this.http.get(`${BASE_URL}/api/dishes/${id}`).map((res) => res.json());
+}
 }
  

@@ -8,17 +8,20 @@ import { ListRecipesComponent } from './list-recipes/list-recipes.component';
 import { routes } from './routes';
 import { RouterModule } from '../../node_modules/@angular/router';
 import { RecipesService } from './services/recipes.service';
+import { DetailRecipesComponent } from './detail-recipes/detail-recipes.component';
 
 @NgModule({
    declarations: [
       AppComponent,
-      ListRecipesComponent
+      ListRecipesComponent,
+      DetailRecipesComponent
    ],
    imports: [
       BrowserModule,
       FormsModule,
       HttpModule,
       RouterModule.forRoot(routes)
+   
    ],
    providers: [RecipesService],
    bootstrap: [
