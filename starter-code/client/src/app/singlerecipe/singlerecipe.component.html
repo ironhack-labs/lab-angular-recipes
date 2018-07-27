@@ -24,5 +24,11 @@
         <th scope="row">1</th>
         <td>{{ingredient.name}}</td>
         <td>{{ingredient.description}}</td>
-        <td>+</td>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Quantity</span>
+          </div>
+          <input #cantidad type="text"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <button (click)="addIngredient(ingredient, cantidad)" class="btn btn-primary" type="submit">Add Ingredient</button>
+        </div>
       </tr>
