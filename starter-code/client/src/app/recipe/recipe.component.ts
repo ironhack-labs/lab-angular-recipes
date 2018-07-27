@@ -14,7 +14,7 @@ export class RecipeComponent implements OnInit {
 
   recipeId: String;
   recipe: Observable<Array<Object>>;
-  ingredients: Observable<Array<Object>>;
+  ingredients: Array<Object>;
   ingredientId: String;
 
   constructor(public rS: RecipesService, public iS: IngredientsService, private route: ActivatedRoute) { }
