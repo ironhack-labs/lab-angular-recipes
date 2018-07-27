@@ -28,13 +28,18 @@ quantity: Number = 0;
     });
   }
   addIngredient(ingredient, cantidad) {
-      console.log("Add ingredient has been called");
-      this.newIngredient = {
+    this.dish.addIngredient(this.dishId, ingredient._id, parseInt(cantidad.value))
+      .subscribe( res=> {
+        console.log(res)
+        this.dish.get(this.dishId).subscribe(res => this.singledish = res);
+      });
+      /* this.newIngredient = {
       id: ingredient._id,
       name: ingredient.name,
       quantity: parseInt(cantidad.value)
       };
-      console.log(this.newIngredient);
-  }
-  }
+      console.log(this.newIngredient); */
+ }
+ }
+
 
