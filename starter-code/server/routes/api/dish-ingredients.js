@@ -8,12 +8,15 @@ const Dish = require("../../models/dish");
 router.post("/dishes/:dishId/ingredients/:id/add", (req, res) => {
   const { dishId, id } = req.params;
   let { quantity } = req.body;
+  console.log(quantity)
   quantity = Number(quantity);
+  console.log("ruta");
 
   Dish.findById(dishId)
     .populate("ingredients.ingredientId")
     .exec((err, dish) => {
       if (err) {
+        console.log("error");
         return res.status(500).json(err);
       }
       if (!dish) {
@@ -33,6 +36,8 @@ router.post("/dishes/:dishId/ingredients/:id/add", (req, res) => {
 
       dish.save(err => {
         if (err) {
+          console.log("error");
+          console.log(err)
           return res.status(500).json(err);
         }
 
