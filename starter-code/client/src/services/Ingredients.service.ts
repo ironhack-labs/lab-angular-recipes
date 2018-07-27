@@ -9,12 +9,20 @@ export class IngredientsService {
 
   constructor(private http: Http) { }
 
-  getAllIngredients(){
+  getIngredients(){
     return this.http.get(`${environment.BASEURL}/api/ingredients`)
       .map(res => {
         console.log(res); 
         return res.json()
       })
   }
+
+  addIngredient(id){
+      return this.http.get(`${environment.BASEURL}/api/ingredients/${id}`)
+        .map(res => res.json())
+    }
+  
+
+  
 
 }

@@ -10,11 +10,13 @@ import { IngredientsService } from 'services/Ingredients.service';
   styleUrls: ['./recipe.component.css'],
   providers: [IngredientsService, RecipesService]
 })
+
+
 export class RecipeComponent implements OnInit {
 
   recipeId: String;
   recipe: Observable<Array<Object>>;
-  ingredients: Array<Object>;
+  ingredients: Observable<Array<Object>>;
   ingredientId: String;
 
   constructor(public rS: RecipesService, public iS: IngredientsService, private route: ActivatedRoute) { }
@@ -26,7 +28,15 @@ export class RecipeComponent implements OnInit {
             this.rS.getRecipesById(this.recipeId).subscribe(res=>this.recipe=res)
 
   })
-  this.iS.getAllIngredients()
-  .subscribe(ingredientslist=>this.ingredients=ingredientslist)
-  }
-}
+
+  
+  this.iS.getIngredients()
+  .subscribe(ingredientslist=>this.ingredients=ingredientslist);
+  
+  this.route.params.subscribe((params) => {
+    this.ingredientId = params['id'],
+    this.iS.addIngredient(this.ingredients).subscribe(res => this.ingredients = res)
+  })
+  
+
+}}

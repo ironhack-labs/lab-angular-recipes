@@ -4,6 +4,7 @@
 
 <ul><li *ngFor="let ingredient of ingredients">
   <h4>{{ingredient.name}}</h4>
+  <button (click)="addIngredient()">Add ingredient</button>
 </ul>
 
 <a [routerLink]="['/']">Back home</a></div>
