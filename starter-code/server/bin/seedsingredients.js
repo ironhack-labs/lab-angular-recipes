@@ -33,7 +33,7 @@ const ingredients = [
   },
 ]
 
-Dish.create(ingredients, (err) => {
+Ingredient.create(ingredients, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${ingredients.length} ingredients`)
 });
