@@ -1,0 +1,35 @@
+<a [routerLink]="['/']">Go home!</a> <br><br>
+
+<div *ngIf="dish">
+  <img src="{{dish.image}}" alt="" width="300">
+  <h3>{{dish.name}}</h3>
+  <p>{{dish.description}}</p>
+  <h4>Added Ingredients</h4>
+  <ul>
+    <li *ngFor="let ingredient of dish.ingredients">{{ingredient.ingredientId.name}} x {{ingredient.quantity}}</li>
+  </ul>
+  
+  <button (click)="allIngredients = !allIngredients">Show Add Ingredient</button><br>
+  <div *ngIf="allIngredients">
+    <h4>All Ingredients</h4>
+    <ul>
+      <li *ngFor="let ingredient of ingredients">
+        {{ingredient.name}}
+        <input type="number" #quantity>
+        <button (click)="addIngredientToRecipe(ingredient._id, dish._id, quantity.value)">Add</button>
+      </li>
+    </ul>
+  </div>
+
+  <br>
+  <button (click)="createNewIngredient = !createNewIngredient">Show Create Ingredient</button>
+  <div *ngIf="createNewIngredient">
+    <h4>Create Ingredient</h4>
+    <div>
+      Name: <input type="text" [(ngModel)]="newIngredient.name"> <br><br>
+      Description: <input type="text" [(ngModel)]="newIngredient.description"> <br><br>
+      Image: <input type="text" [(ngModel)]="newIngredient.image"> <br><br>
+      <button (click)="createIngredient()">New Ingredient</button>
+    </div>
+  </div>
+</div>
