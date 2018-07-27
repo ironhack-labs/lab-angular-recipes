@@ -25,5 +25,15 @@ dishingredients: Observable<any>
 
     });
   }
+  addIngredient(ingredient, cantidad) {
+      console.log("Add ingredient has been called");
+      this.dishingredients.push(this.newIngredient);
+      this.newIngredient = {
+      id: ingredient._id,
+      name: ingredient.name,
+      quantity: parseInt(cantidad.value)
+      };
+      console.log(this.newIngredient);
+  }
+  }
 
-}
