@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class IngredientListComponent implements OnInit {
   ingredients: Array<Object> = [];
   constructor(private recipeService: RecipesService, private route: ActivatedRoute) { }
-
+  dishId: string = '';
   ngOnInit() {
     this.recipeService.getAllIngredients()
       .subscribe(list => this.ingredients = list)
