@@ -10,7 +10,13 @@ export class RecipesService {
 
   getRecipes(){
     return this.http.get(`${environment.BASE_URL}/api/dishes`)
-      .map((res) => res.json());
+      .map( res => res.json());
   }
+
+  getSingleRecipe(id){
+    return this.http.get(`${environment.BASE_URL}/api/dishes/${id}`)
+      .map( res => res.json());
+  }
+  
 
 }
