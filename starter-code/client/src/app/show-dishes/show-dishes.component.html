@@ -1,0 +1,38 @@
+<p>
+  show-dishes works!
+</p>
+
+<div *ngIf="dishList" class='wrapper'>
+  <div *ngFor="let l of dishList" class="eachDish">
+    <div>
+      <h1>{{l.name}}</h1>
+      <br>
+      <img src={{l.image}} alt="dishimage" width="100px">
+      <br>
+      <a [routerLink]="['/', l._id]">Details</a>
+    </div>
+  </div>
+</div>
+
+<div class='formWrap'>
+  <div>
+    <h2>Add Dish</h2>
+    <form (ngSubmit)="submitForm(myForm)" #myForm='ngForm' class='form1'>
+      <input type="text" placeholder="Name" name="name" [(ngModel)]="name" required>
+      <br>
+      <input type="text" placeholder="Image" name="image" [(ngModel)]="image" required>
+      <br>
+      <input type="text" placeholder="Description" name="description" [(ngModel)]="description" required>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div>
+    <h2>Add Ingredient</h2>
+    <form (ngSubmit)="submitForm1(myForm1)" #myForm1='ngForm' class='form1'>
+      <input type="text" placeholder="Name" name="name" [(ngModel)]="name1" required>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

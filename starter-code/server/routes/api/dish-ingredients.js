@@ -6,6 +6,7 @@ const Ingredient = require('../../models/ingredient');
 const Dish       = require('../../models/dish');
 
 router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
+  console.log(req);
   const { dishId, id } = req.params;
   let { quantity } = req.body;
   quantity = Number(quantity);
@@ -15,6 +16,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
     .populate('ingredients.ingredientId')
     .exec(
      (err, dish) => {
+       console.log('entered')
       if (err)    { return res.status(500).json(err) };
       if (!dish)  { return res.status(404).json(new Error('404')) };
 
@@ -27,6 +29,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
       } else {
         possibleIngred = { ingredientId: id, quantity: quantity }
         dish.ingredients.push(possibleIngred);
+        console.log('pushed')
       }
 
 
@@ -35,6 +38,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
 
         Ingredient.findById(id, (err, ingredient) => {
           if (err) { return res.status(500).json(err) }
+          console.log('saved');
 
           const lastIndex = dish.ingredients.length - 1;
           dish.ingredients[lastIndex].ingredientId = ingredient;

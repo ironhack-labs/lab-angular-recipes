@@ -1,0 +1,22 @@
+.w{
+    display: flex;
+    justify-content: space-around
+}
+
+.right{
+    width: 300px;
+}
+
+.left{
+    text-align: center
+}
+
+img{
+    display: block
+}
+
+.wIngre{
+    margin-top:50px;
+    display: flex;
+    justify-content: center
+}

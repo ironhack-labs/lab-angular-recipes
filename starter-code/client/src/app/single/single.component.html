@@ -1,0 +1,27 @@
+<div class='w' *ngIf="dish">
+  <div class='left'>
+    <h1>{{dish.name}}</h1>
+    <img src={{dish.image}} alt="dishimage" width="300px">
+    <br>
+  </div>
+  <div class='right'>
+    <p> <strong>description: </strong>{{dish.description}}</p>
+    <strong>ingredients: </strong> 
+    <div *ngFor="let in of dish.ingredients">
+        {{in.ingredientId.name}} {{in.quantity}}
+    </div> 
+    <br>
+    <br>
+    <button (click)='goToHome()'>Home</button>
+  </div>
+</div>
+
+<div class='wIngre'>
+  <div *ngIf="ingredients">
+    <div *ngFor="let i of ingredients">
+      <br>{{i.name}}
+      <input type="number" value='1' #q required>
+      <button (click)="add(dish._id, i._id, q.value); q.value='1'">Add</button>
+    </div>
+  </div>
+</div>
