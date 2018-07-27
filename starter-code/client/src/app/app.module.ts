@@ -13,7 +13,7 @@ import { RecipesService } from './recipes.service';
 import { IngredientsService } from './Ingredients.service';
 
 //routes
-import routes from './routes';
+import { routes } from './routes';
 
 @NgModule({
   declarations: [
