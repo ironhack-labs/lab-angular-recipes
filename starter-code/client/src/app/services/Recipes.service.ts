@@ -20,9 +20,8 @@ export class RecipesService {
   }
 
   getAllIngredients(){
-    console.log('entra')
     return this.http.get(`${BASEURL}/api/ingredients`)
-      .map(res => {console.log('res'); return res.json()})
+      .map(res => res.json())
   }
 
   addIngredient(Dishid:string, id:string, ingredient: object){
