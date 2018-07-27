@@ -13,6 +13,8 @@ export class SinglerecipeComponent implements OnInit {
 dishId: String;
 singledish: Observable<any>
 dishingredients: Observable<any>
+newIngredient: Object = {};
+quantity: Number = 0;
 
   constructor(public dish: DishesServiceService, public ingredients: IngredientsService, private route: ActivatedRoute) { }
 
