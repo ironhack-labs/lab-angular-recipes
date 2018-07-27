@@ -1,0 +1,14 @@
+<div>
+  <h1>{{singleRecipe.name}}</h1>
+  <img [src]="singleRecipe.image" >
+  <p>{{singleRecipe.description}}</p>
+  <h4>Ingredients</h4>
+  <ul>
+    <li *ngFor="let ingredient of singleRecipe.ingredients">
+      <p>{{ingredient.ingredientId.name}}</p>
+    </li>
+  </ul>
+  <button [routerLink]="['/']">Go back</button>
+</div>
+
+<app-ingredient-list></app-ingredient-list>
