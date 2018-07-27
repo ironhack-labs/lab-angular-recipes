@@ -1,0 +1,23 @@
+<div class="desc-container" *ngIf="recipe">
+  <img src="{{recipe.image || 'https://www.ocf.berkeley.edu/~sather/wp-content/uploads/2018/01/food--1200x600.jpg'}}" alt="{{recipe.name}}">
+  <h2>{{recipe.name}}</h2>
+  <p>{{recipe.description}}</p>
+  <div class="ingredients-container">
+    <div class="possible-ingredients">
+      <h3>Possible Ingredients</h3>
+      <ul>
+        <li *ngFor="let i of ingredients">
+          <p>{{i.name}} <input type="number" [(ngModel)]="i.quantity" placeholder="Quantity"> <button (click)="addIngredient(recipe._id, i._id, i.quantity)">Add</button></p>
+        </li>
+      </ul>
+    </div>
+    <div class="possible-ingredients">
+      <h3>Added Ingredients</h3>
+      <ul>
+        <li *ngFor="let sel of recipe.ingredients">
+          <p>{{sel.ingredientId.name}} - {{sel.quantity}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
