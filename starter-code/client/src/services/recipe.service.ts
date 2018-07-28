@@ -18,4 +18,12 @@ export class RecipeService {
       .map((res) => res.json());
   }
   
+  addIngredient(recipeId: string, ingredientId: string, quantity: number) {
+    return this.http
+      .post(`${environment.BASE_URL}/api/dishes/${recipeId}/ingredients/${ingredientId}/add`, {
+        quantity
+      })
+      .map(res => res.json());
+  }
+
 }

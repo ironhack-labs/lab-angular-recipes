@@ -13,7 +13,7 @@ export class SingleRecipeComponent implements OnInit {
   recipe: any;
   recipeId: string;
   ingredients: Array<object>;
-  ingredientsId: string;
+  ingredientId: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,8 +28,15 @@ export class SingleRecipeComponent implements OnInit {
     this.recipeService.getRecipe(this.recipeId).subscribe(recipe => {
       this.recipe = recipe;
     });
-    this.ingredientsService.getIngredients().subscribe( ingredients => {
+    this.ingredientsService.getIngredients().subscribe(ingredients => {
       this.ingredients = ingredients;
-    })
+    });
   }
+
+  addIngredient(ingredient, quantity) {
+    this.recipeService
+      .addIngredient(this.recipe._id, ingredient._id, quantity)
+      .subscribe(recipe => (this.recipe = recipe));
+  }
+
 }

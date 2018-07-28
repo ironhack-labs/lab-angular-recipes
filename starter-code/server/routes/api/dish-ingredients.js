@@ -26,7 +26,8 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
         possibleIngred.quantity += quantity;
       } else {
         possibleIngred = { ingredientId: id, quantity: quantity }
-        dish.ingredients.push(possibleIngred);
+        //dish.ingredients.push(possibleIngred);
+        dish.ingredients.unshift(possibleIngred);  //no entiendo por que hay que poner esto sino da 500 internal server error 
       }
 
 
