@@ -1,0 +1,9 @@
+<h2>{{dish.name}}</h2>
+
+<img src="{{dish.image}}" alt="">
+
+<p>{{dish.description}}</p>
+<ul>
+  <p>Ingredients:</p>
+  <li *ngFor="let ingredient of dish.ingredients">{{ingredient}}</li>
+</ul>
