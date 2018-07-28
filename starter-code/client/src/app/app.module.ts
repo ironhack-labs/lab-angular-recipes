@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { AppComponent } from './app.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
-import { dishesService } from 'services/dishes.service';
 import { RecipesSingleComponent } from './recipes-single/recipes-single.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { RecipesSingleComponent } from './recipes-single/recipes-single.componen
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [dishesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

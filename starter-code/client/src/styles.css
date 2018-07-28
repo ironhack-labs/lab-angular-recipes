@@ -8,3 +8,11 @@ img{
 button{
   cursor: pointer;
 }
+
+.ingredient-list{
+  margin: 10px 0;
+}
+
+label{
+  display: block;
+}
