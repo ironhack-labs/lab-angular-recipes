@@ -12,6 +12,7 @@ export class RecipeDetailComponent implements OnInit {
   recipe: Object;
   recipeId : string;
   ingredients: Array<Object>;
+  ingredientId: string;
   constructor(public recipeService : RecipeService, public ingredientService: IngredientService,public route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -24,5 +25,8 @@ export class RecipeDetailComponent implements OnInit {
       this.ingredients = list;
     })
   }
-
+  addIngredient(dishId, id, quantity){
+    this.recipeService.addIngredient(dishId, id, quantity).subscribe(recipe => this.recipe = recipe)
+    console.log(quantity)
+  }
 }

@@ -1,0 +1,8 @@
+<h1>Creating an ingredient</h1>
+  <label for="name" >Name</label>
+  <input type="text" placeholder="name" [(ngModel)]="name">
+  <label for="description">Description</label>
+  <input type="text" placeholder="description" [(ngModel)]="description">
+  <label for="image">Image</label>
+  <input type="text" placeholder="ImageUrl" [(ngModel)]="image">
+  <button (click)="createIngredient(name, description, image)">Create ingredient</button>

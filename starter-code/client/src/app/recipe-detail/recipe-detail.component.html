@@ -2,17 +2,20 @@
 <div *ngIf="recipe">
   <h2>{{recipe.name}}</h2> 
   <img [src]="recipe.image" alt="recipe-img">
-  <p>{{recipe.description}}</p> 
+  <p>{{recipe.description}}</p>
+  <ul *ngFor="let ing of recipe.ingredients">
+    <li>{{ing.ingredientId.name}}  x{{ing.quantity}}</li>
+  </ul> 
   <a [routerLink]="['']" >Back to list</a>
 </div>
-<h1>Ingredients</h1>
+<h1>Adding ingredients</h1>
 <div class="container">
   <div *ngFor="let ingredient of ingredients">
     <h2>{{ingredient.name}}</h2>
     <img [src]="ingredient.image" alt="ingredient">
     <div>
-      <input type="number" placeholder="Quantity">
-      <button>Add</button>
+      <input type="number" placeholder="Quantity" #quantity>
+      <button (click)="addIngredient(recipe._id, ingredient._id, quantity.value)">Add</button>
     </div>
   </div>
 </div>

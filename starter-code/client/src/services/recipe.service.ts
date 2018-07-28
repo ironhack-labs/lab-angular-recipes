@@ -22,4 +22,20 @@ export class RecipeService {
         return res.json();
       });
   }
+  addIngredient(dishId, id, quantity){
+    return this.http
+      .post(`http://localhost:3000/api/dishes/${dishId}/ingredients/${id}/add`, {quantity})
+      .map(res => {
+        console.log(res);
+        return res.json();
+      });
+  }
+  createRecipe(recipe){
+    return this.http
+      .post(`http://localhost:3000/api/dishes`, recipe)
+      .map(res => {
+        console.log(res);
+        return res.json();
+      });
+  }
 }

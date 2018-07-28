@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { IngredientService } from 'services/ingredients.service';
+import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { IngredientService } from 'services/ingredients.service';
     AppComponent,
     RecipeListComponent,
     RecipeDetailComponent,
+    IngredientFormComponent,
+    RecipeFormComponent,
   ],
   imports: [
     BrowserModule,

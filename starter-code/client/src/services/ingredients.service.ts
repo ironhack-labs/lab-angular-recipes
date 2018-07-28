@@ -14,12 +14,12 @@ export class IngredientService {
       });
   }
 
-  //getRecipe(id){
-  //  return this.http
-  //    .get(`http://localhost:3000/api/ingredients/${id}`)
-  //    .map(res => {
-  //      console.log(res);
-  //      return res.json();
-  //    });
-  //}
+  createIngredient(ingredient){
+    return this.http
+      .post(`http://localhost:3000/api/ingredients`, ingredient)
+      .map(res => {
+        console.log(res);
+        return res.json();
+      });
+  }
 }
