@@ -1,0 +1,9 @@
+<h1>Dishes</h1>
+<section class="container">
+  <div *ngFor="let dish of dishes" class="card">
+    <a [routerLink]="['/home/', dish._id]">{{dish.name}}</a>
+    <img src="{{dish.image}}" alt="Dish">
+  </div>
+</section>
+
+<router-outlet></router-outlet>
