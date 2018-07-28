@@ -4,3 +4,10 @@
   <img src="{{recipe.image}}" width="250px">
   <p>{{recipe.description}}</p>
 </div>
+
+<h4>Ingredients</h4>
+<li *ngFor=" let ingredient of ingredients">
+  {{ingredient.name}} 
+  <button>Add</button>
+  <input type="text">
+</li> 

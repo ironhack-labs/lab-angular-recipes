@@ -88,6 +88,8 @@ const foods = [
   }
 ]
 
+
+
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)

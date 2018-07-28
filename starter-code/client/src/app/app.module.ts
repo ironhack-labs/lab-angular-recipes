@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { RecipeService } from '../services/recipe.service'
+import { RecipeService } from '../services/recipe.service';
+
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
+import { IngredientsService } from 'services/ingredient.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
     HttpModule,
     RouterModule.forRoot(routes) 
   ],
-  providers: [RecipeService],
+  providers: [RecipeService, IngredientsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
