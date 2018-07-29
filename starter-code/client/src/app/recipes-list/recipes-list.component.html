@@ -1,0 +1,8 @@
+<div class="recipes-container">
+  <div *ngFor="let r of recipes" class="recipe">
+    <a [routerLink]="['/recipe', r._id]">
+      <img src="{{r.image || 'https://www.ocf.berkeley.edu/~sather/wp-content/uploads/2018/01/food--1200x600.jpg'}}" alt="{{r.name}}">
+      <h3>{{r.name}}</h3>
+    </a>
+  </div>
+</div>
