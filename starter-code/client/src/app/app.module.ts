@@ -11,12 +11,16 @@ import { routes } from './routes'
 import { AppComponent } from './app.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { SingleRecipeComponent } from './single-recipe/single-recipe.component';
+import { NewRecipeComponent } from './new-recipe/new-recipe.component';
+import { NewIngredientComponent } from './new-ingredient/new-ingredient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesListComponent,
     SingleRecipeComponent,
+    NewRecipeComponent,
+    NewIngredientComponent,
   ],
   imports: [
     BrowserModule,

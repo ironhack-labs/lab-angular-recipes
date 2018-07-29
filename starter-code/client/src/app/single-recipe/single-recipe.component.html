@@ -11,13 +11,9 @@
     <p>{{recipe.description}}</p>
     <div *ngIf="recipe.ingredients">
       <h3>Ingredients</h3>
-      <ul>
-        <li *ngFor="let ingredient of recipe.ingredients">
-          <p>
-            {{ingredient.ingredientId.name}} x{{ingredient.quantity}}
-          </p>
-        </li>
-      </ul>
+      <p *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient.ingredientId.name}} x{{ingredient.quantity}}
+      </p>
     </div>
   </div>
   <div *ngIf="ingredients" class="ingredientsContainer">

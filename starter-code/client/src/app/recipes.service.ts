@@ -23,4 +23,22 @@ export class RecipesService {
     }
     return this.http.post(`${environment.BASE_URL}/api/dishes/${id}/ingredients/${ingredientId}/add`, postData)
   }
+
+  newRecipe(name: string, image: string, description: string) {
+    const postData = {
+      name,
+      image,
+      description
+    }
+    return this.http.post(`${environment.BASE_URL}/api/dishes`, postData)
+    .map((res) => console.log(res.json()))
+  }
+
+  newIngredient(name: string) {
+    const postData = {
+      name
+    }
+    return this.http.post(`${environment.BASE_URL}/api/ingredients`, postData)
+    .map((res) => console.log(res.json()))
+  }
 }
