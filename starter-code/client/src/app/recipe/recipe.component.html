@@ -1,0 +1,23 @@
+<div *ngIf="recipe"><h3>Recipe: {{recipe.name}}</h3>
+<p>{{recipe.description}}</p>
+<img src="{{recipe.image}}" width=300>
+
+<div class="dishingredients">
+  <h4>Dish ingredients</h4>
+  <ul>
+    <li *ngFor="let ingredient of recipe.ingredients">{{ingredient.ingredientId.name}} - {{ingredient.quantity}}</li>
+  </ul>
+</div>
+
+
+<h4>Add ingredients to the dish</h4>
+<ul><li *ngFor="let ingredient of ingredients">
+  <h4>{{ingredient.name}}</h4>
+  <h4>{{ingredient._id}}</h4>
+  
+  <input type="number" #quantity>
+  <button (click)="iS.addIngredient(recipe._id,ingredient._id, quantity.value).subscribe()">Add
+  </button>
+</ul>
+
+<a [routerLink]="['/']">Back home</a></div>
