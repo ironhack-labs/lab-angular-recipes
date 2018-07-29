@@ -3,21 +3,22 @@
   
   <div class="data-box">
     <input #text type="text" placeholder="Find..." [(ngModel)]="textSearch">
-    <button (click)="showForm()">Add New Ingredient</button>
+    <button class="btn btn-info" (click)="showForm()">Add New Ingredient</button>
     <form *ngIf="ingredientService.showForm" (ngSubmit)="addIngredient(ingredientForm)" #ingredientForm="ngForm">
         <div class="form-field">
-          <label for="name">Ingredient</label>
           <input name="name" type="text" placeholder="Ingredient" [ngModel]="name">
         </div>
-        <button type="submit">Add</button>
-        <button (click)="cancelForm()">Cancel</button>
+        <div class="buttons">
+          <button class="btn btn-success" type="submit">Add</button>
+          <button class="btn btn-danger" (click)="cancelForm()">Cancel</button>
+        </div>
       </form>
   </div>
 
   <div class="ingredient" >
     <ul>
       <li *ngFor="let ingredient of ingredients |filter:'name':textSearch">
-        <button (click)="addToRecipe(ingredient._id, quantity.value)">+</button> {{ingredient.name}} <input type="text" value="1" size="5" #quantity>
+        <button class="btn btn-warning" (click)="addToRecipe(ingredient._id, quantity.value)">+</button> {{ingredient.name}} <input type="text" value="1" size="5" #quantity>
       </li>
     </ul>
   </div>
