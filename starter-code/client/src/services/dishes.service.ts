@@ -9,6 +9,8 @@ import { Dish } from 'interfaces/Dish';
 @Injectable()
 export class DishesService {
 
+  showForm: boolean = false;
+
   constructor(private http: Http) {}
 
   getDishes(): Observable<Array<Dish>>{
@@ -17,6 +19,10 @@ export class DishesService {
 
   getDish(id:string): Observable<Dish>{
     return this.http.get(`http://localhost:3000/api/dishes/${id}`).map((res) => res.json());
+  }
+
+  addDish(newDish: Dish){
+    return this.http.post(`http://localhost:3000/api/dishes`, newDish).map((res)=>res.json())
   }
 }
 

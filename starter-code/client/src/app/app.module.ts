@@ -11,13 +11,15 @@ import { routes } from 'routes';
 import { OneDishComponent } from './oneDish/oneDish.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { IngredientsService } from 'services/ingredients.service';
+import { FilterPipe } from 'pipes/filter.pipe';
 
 @NgModule({
    declarations: [
       AppComponent,
       HomeComponent,
       OneDishComponent,
-      IngredientsComponent
+      IngredientsComponent,
+      FilterPipe
    ],
    imports: [
       BrowserModule,

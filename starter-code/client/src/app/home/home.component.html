@@ -1,8 +1,29 @@
+<div class="data-box">
+  <button (click)="showForm()">Add New Dish</button>
+  <form *ngIf="dishesService.showForm" (ngSubmit)="addDish(dishForm)" #dishForm="ngForm">
+    <div class="form-field">
+      <label for="name">Name</label>
+      <input name="name" type="text" placeholder="Name" [ngModel]="name">
+    </div>
+    <div class="form-field">
+      <label for="image">Image</label>
+      <input name="image" type="text" placeholder="Image URL" [ngModel]="image">
+    </div>
+    <div class="form-field">
+      <label for="description">Description</label>
+      <input name="description" type="text" placeholder="Description" [ngModel]="description">
+    </div>
+    <button type="submit">Add</button>
+    <button (click)="cancelForm()">Cancel</button>
+  </form>
+</div>
 
 <div class="dishes" *ngIf="dishes">
   <div class="dish" *ngFor="let dish of dishes">
     <h2>{{dish.name}}</h2>
     <img src="{{dish.image}}">
-    <a [routerLink]="['dishes', dish._id]"><button>Details</button></a>
+    <a [routerLink]="['dishes', dish._id]">
+      <button>Details</button>
+    </a>
   </div>
 </div>

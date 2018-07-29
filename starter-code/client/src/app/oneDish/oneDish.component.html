@@ -5,6 +5,12 @@
   <div class="text">
     <h1>{{dish.name}}</h1>
     <p>{{dish.description}}</p>
+    <h2>Ingredients</h2>
+    <ul>
+      <li *ngFor="let ingredient of dish.ingredients">
+        {{ingredient.quantity}} x {{ingredient.ingredientId.name}}
+      </li>
+    </ul>
     <a [routerLink]="['/']"><button>Home</button></a>
   </div>
   <div class="ingredients">
