@@ -21,6 +21,6 @@ const DishSchema = new Schema({
       _id: false
     }
   ]
-});
+}, {usePushEach: true});
 
 module.exports = mongoose.model('Dish', DishSchema);

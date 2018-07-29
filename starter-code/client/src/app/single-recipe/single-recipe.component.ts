@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./single-recipe.component.css']
 })
 export class SingleRecipeComponent implements OnInit {
-  recipe: Object
+  recipe: any
   ingredients: Array<Object>
 
   constructor(public recipesService: RecipesService, public ingredientsService: IngredientsService, private route: ActivatedRoute) { }
@@ -22,8 +22,8 @@ export class SingleRecipeComponent implements OnInit {
   }
 
   addIngredient(ingredientId, quantity) {
-    this.route.params.subscribe( params => {
-      this.recipesService.addIngredientToRecipe(params.id, ingredientId, quantity).subscribe()
+    this.recipesService.addIngredientToRecipe(this.recipe._id, ingredientId, quantity).subscribe( recipe => {
+      this.recipe = recipe.json()
     })
   }
 }
