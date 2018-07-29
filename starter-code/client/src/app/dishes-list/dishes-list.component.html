@@ -1,0 +1,9 @@
+<p>
+  dishes-list works!
+</p>
+
+<div *ngFor="let dish of dishes">
+  <img src="{{dish.image}}" width="100">
+  <p>{{dish.name}}</p>
+  <p><a [routerLink]="['dish', dish._id]">View Details</a></p>
+</div>
