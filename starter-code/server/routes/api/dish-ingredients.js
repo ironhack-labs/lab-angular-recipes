@@ -29,9 +29,8 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
         dish.ingredients.push(possibleIngred);
       }
 
-
-      dish.save( (err) => {
-        if (err) { return res.status(500).json(err) }
+      Dish.findByIdAndUpdate(dishId,dish, (err) => {
+        if (err) { return res.status(500).json({message:"errorrr"}) }
 
         Ingredient.findById(id, (err, ingredient) => {
           if (err) { return res.status(500).json(err) }
