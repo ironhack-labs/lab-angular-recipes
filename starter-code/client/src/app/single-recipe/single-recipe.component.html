@@ -3,5 +3,8 @@
   <img height="50" src="{{dish.image}}" />
   <p>{{dish.description}}</p>
   <a [routerLink]="['']">Back to list</a>
+  <ul >
+    <li *ngFor="let ingredient of dish.ingredients">{{ingredient[0]}}</li>
+  </ul>
 </div>
 

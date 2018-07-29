@@ -9,5 +9,13 @@ import { map } from 'rxjs/operators';
 })
 export class IngredientsService {
 
-  constructor() { }
+  url = 'http://localhost:3000/api/ingredients/'
+
+  constructor(private http: Http) { }
+
+  getAllIngredients() {
+    return this.http.get(this.url)
+    .pipe(map((res: Response) => res.json()))
+  }
+  
 }
