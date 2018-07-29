@@ -1,0 +1,11 @@
+<p>
+  shoh-dishes works!
+</p>
+<ul *ngFor = "let dish of dishes">
+  <li>
+    {{dish.name}}
+    
+    <img [src]="dish.image"   width="100">
+    <a [routerLink]="['/single',dish._id]">See More</a>
+  </li>
+</ul>

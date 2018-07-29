@@ -1,0 +1,11 @@
+<p>
+  single-dish works!
+</p>
+<div *ngIf="!dish">Loading</div>
+
+<div *ngIf="dish">
+<h2>{{dish.name}}</h2>
+ <img [src]="dish.image" width="400" >
+ <p>{{dish.description}}</p>
+<button [routerLink]="['/']">Go back</button>
+</div>
