@@ -1,0 +1,26 @@
+<p *ngIf="!recipe">
+  Loading recipe info
+</p>
+
+<div *ngIf="recipe" class="container">
+  <div class="recipeContainer">
+    <h1>{{recipe.name}}</h1>
+    <br />
+    <img src={{recipe.image}} />
+    <br />
+    <p>{{recipe.description}}</p>
+    <div *ngIf="recipe.ingredients">
+      <h3>Ingredients</h3>
+      <p *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient.ingredientId.name}} x{{ingredient.quantity}}
+      </p>
+    </div>
+  </div>
+  <div *ngIf="ingredients" class="ingredientsContainer">
+    <div *ngFor="let ingredient of ingredients" class="ingredient">
+      <label>{{ingredient.name}}</label>
+      <input #quantity class="quantity" type="number" min="1"/>
+      <button (click)="addIngredient(ingredient._id, quantity.value)"> Add </button>
+    </div>
+  </div>
+</div>
