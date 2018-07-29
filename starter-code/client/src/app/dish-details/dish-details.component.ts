@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './dish-details.component.html',
   styleUrls: ['./dish-details.component.css']
 })
+
 export class DishDetailsComponent implements OnInit {
   dish:any;
   ingredients: Array<any>;
@@ -18,11 +19,13 @@ export class DishDetailsComponent implements OnInit {
     public route: ActivatedRoute
   ) { }
 
-  // Revisar
+  // Revisar params y fallos
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.DishesService.getOneDish().subscribe(data => this.dish = data)
+      let id = params.id;
+      this.DishesService.getOneDish(id).subscribe(data => this.dish = data)
     })
     this.IngredientsService.getIngredients().subscribe(data => this.ingredients = data)
   }
-  }
+}
+        

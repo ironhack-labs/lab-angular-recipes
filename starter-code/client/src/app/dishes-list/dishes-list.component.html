@@ -3,10 +3,7 @@
 </p>
 
 <div *ngFor="let dish of dishes">
-  <p>{{dish.name}}</p>
   <img src="{{dish.image}}" width="100">
-  <br>
-  <a [routerLink]="['dish', d._id]">View Details</a>
+  <p>{{dish.name}}</p>
+  <p><a [routerLink]="['dish', dish._id]">View Details</a></p>
 </div>
-
-

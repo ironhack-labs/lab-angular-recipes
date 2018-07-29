@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DishesListComponent } from './dishes-list/dishes-list.component';
 import { DishDetailsComponent } from './dish-details/dish-details.component';
+import { DishesService } from 'services/dishes.service';
+import { IngredientsService } from 'services/ingredients.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { DishDetailsComponent } from './dish-details/dish-details.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  //Revisar si los servicios se agregan en app module o no
+  providers: [DishesService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

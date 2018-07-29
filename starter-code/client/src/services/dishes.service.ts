@@ -11,10 +11,10 @@ export class DishesService {
   constructor(public http: Http) {}
 
   getAllDishes() {
-    return this.http.get('${BASEURL}/api/dishes').map(res => res.json());
+    return this.http.get(`${BASEURL}/api/dishes`).map(res => res.json());
   }
 
-  getOneDish() {
-    return this.http.get('${BASEURL}/api/dishes/${id}').map(res => res.json());
+  getOneDish(id) {
+    return this.http.get(`${BASEURL}/api/dishes/${id}`).map(res => res.json());
   }
 }
