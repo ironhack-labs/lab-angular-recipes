@@ -88,7 +88,29 @@ const foods = [
   }
 ]
 
+
+const ingredients =[
+  {name:"pepperoni",
+  description:"pepperoni",
+  image:"https://media.istockphoto.com/photos/heap-of-pepperoni-picture-id169943249?k=6&m=169943249&s=612x612&w=0&h=uHY_zqmS3c4BYPaQZPr4cUlEgb4rcDdKa2Kra13Uxxg="
+  },
+  {
+    name:"lettuce",
+    image:"https://www.frutadelasarga.com/server/Portal_0008706/img/products/lechuga-romana_3416302.jpg",
+    description:"lechuga verde"
+  },
+  {
+    name:"tomato",
+    image:"http://www.elhuertodelabuelo.es/37-large_default/tomate-cana-andaluz.jpg",
+    description:"tomate rojo"
+  }
+]
+
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
+});
+Ingredient.create(ingredients, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${ingredients.length} ingredients`)
 });

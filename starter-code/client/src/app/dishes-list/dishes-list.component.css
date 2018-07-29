@@ -1,0 +1,13 @@
+img{
+    width: 200px
+}
+
+.dishes{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:20px;
+}
+.dish{
+    border-bottom:1px solid black
+}
