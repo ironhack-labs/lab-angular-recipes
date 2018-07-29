@@ -1,0 +1,22 @@
+<p>
+  dish-details works!
+</p>
+
+<a [routerLink]="['/']">GO HOME</a>
+
+<div>
+  <img src="{{dish.image}}" width="100">
+  <p>{{dish.name}}</p>
+  <p>{{dish.description}}</p>
+  <br>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+      {{ingredient.name}}
+      <input type="number" #guantity>
+      <button (click)="addIngredient(ingredient._id, dish._id, quantity.value)">Add</button>
+    </li>
+  </ul>
+</div>
