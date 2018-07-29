@@ -1,27 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { RecipesService } from '../services/recipes.service';
-import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { RecipesService } from "../services/recipes.service";
+import { IngredientsService } from "../services/ingredients.service";
 
 @Component({
-  selector: 'app-detail-recipes',
-  templateUrl: './detail-recipes.component.html',
-  styleUrls: ['./detail-recipes.component.css']
+  selector: "app-detail-recipes",
+  templateUrl: "./detail-recipes.component.html",
+  styleUrls: ["./detail-recipes.component.css"]
 })
 export class DetailRecipesComponent implements OnInit {
-
-  constructor(public recipeService: RecipesService, public route: ActivatedRoute) { }
   recipe: any;
+  id: string;
+  ingredients: any;
+
+  constructor(
+    public recipesSevice: RecipesService,
+    public router: ActivatedRoute,
+    public ingredientsService: IngredientsService
+  ) {}
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.recipeService.getRecipes['id'];
+    this.router.params.subscribe(params => {
+      this.id = params.id;
+      this.recipesSevice.getId(this.id).subscribe(data => (this.recipe = data));
     });
-
+    this.ingredientsService
+      .getIngredients()
+      .subscribe(data => (this.ingredients = data));
   }
-  getRecipeId(id) {
-    this.recipeService.getId(id).subscribe((recipe) => {
-      this.recipe = recipe;
-
-    });
+  addIngredientToDish(dishId, id, quantity) {
+    console.log(dishId, id, quantity.value);
+    this.recipesSevice
+      .addIngredientToRecipe(dishId, id, quantity.value)
+      .subscribe(recipe => {
+        this.recipe = recipe;
+      });
   }
 }

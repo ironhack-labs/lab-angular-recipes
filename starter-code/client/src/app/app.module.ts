@@ -9,12 +9,17 @@ import { routes } from './routes';
 import { RouterModule } from '../../node_modules/@angular/router';
 import { RecipesService } from './services/recipes.service';
 import { DetailRecipesComponent } from './detail-recipes/detail-recipes.component';
+import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
+import { IngredientsService } from './services/ingredients.service';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       ListRecipesComponent,
-      DetailRecipesComponent
+      DetailRecipesComponent,
+      IngredientFormComponent,
+      RecipeFormComponent
    ],
    imports: [
       BrowserModule,
@@ -23,7 +28,7 @@ import { DetailRecipesComponent } from './detail-recipes/detail-recipes.componen
       RouterModule.forRoot(routes)
    
    ],
-   providers: [RecipesService],
+   providers: [RecipesService,IngredientsService],
    bootstrap: [
       AppComponent
    ]

@@ -7,10 +7,11 @@ import { RecipesService } from '../services/recipes.service';
   styleUrls: ['./list-recipes.component.css']
 })
 export class ListRecipesComponent implements OnInit {
-recipes:any[];
+
+  recipes:any;
   constructor( public recipesService:RecipesService) { }
 
-  ngOnInit() {
+ngOnInit() {
 this.recipesService.getRecipes()
 .subscribe((recipes)=>{
 this.recipes=recipes;

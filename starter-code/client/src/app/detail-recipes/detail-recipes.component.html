@@ -1,11 +1,17 @@
-<div class="container">
-  <div class="row">
-    <div class="col" *ngIf="recipe">
-      <img [src]="recipe.image" alt="recipe-img">
-      <h1>{{recipe.name}}</h1>
-      <p>{{recipe.description}}</p>
-      <a [routerLink]="['']">Back to list</a>
-    </div>
-
-  </div>
+<button [routerLink]= '["/"]' class="btn btn-primary">List</button>
+<div *ngIf="recipe">
+  <h2>Name: {{recipe.name}}</h2>
+  <img src="{{recipe.image}}" alt="">
+  <p>Description: {{recipe.description}}</p>
+  Dish Ingredients
+  <ul *ngFor=" let ingredient of recipe.ingredients">
+    <li>Ingredient: {{ingredient.ingredientId.name}} - Quantity: {{ingredient.quantity}}</li>
+  </ul>
 </div>
+
+<h4>Ingredients</h4>
+<li *ngFor=" let ingredient of ingredients">
+  {{ingredient.name}} 
+  <button class="btn btn-primary" (click)="addIngredientToRecipe(recipe._id, ingredient._id, quantity)">Add</button> 
+  <input #quantity type="number" name="" id="" value=1>
+</li>

@@ -7,7 +7,7 @@ const IngredientSchema = new Schema({
     required: true
   },
   description: String,
-  image: String
+  image: {type:String ,default:""}
 });
 
 module.exports = mongoose.model('Ingredient', IngredientSchema);
