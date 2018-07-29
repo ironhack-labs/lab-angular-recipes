@@ -17,8 +17,10 @@ export class IngredientsService {
       })
   }
 
-  addIngredient(id){
-      return this.http.get(`${environment.BASEURL}/api/ingredients/${id}`)
+  addIngredient(recipeId, ingredientId, quantity){
+    console.log(ingredientId)
+    console.log(quantity)
+      return this.http.post(`${environment.BASEURL}/api/dishes/${recipeId}/ingredients/${ingredientId}/add`, {quantity})
         .map(res => res.json())
     }
   
