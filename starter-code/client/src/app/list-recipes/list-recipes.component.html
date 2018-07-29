@@ -1,0 +1,16 @@
+<button [routerLink]= '["/recipes/add/dish"]'class="btn btn-primary">Add a Recipe</button>
+<button [routerLink]= '["/recipes/add/ingredient"]'class="btn btn-primary">Add a ingredient</button>
+
+<div class="container">
+  <div class="row">
+    
+    <div clas="col-3">
+      <div class="recipe" *ngFor="let recipe of recipes">
+        <h3>{{recipe.name}}</h3>
+        <img src='{{recipe.image}}'>
+        <a class="btn btn-primary"[routerLink]='["/recipes", recipe._id]' class="btn btn-primary">Details</a>
+
+      </div>
+    </div>
+  </div>
+</div>
