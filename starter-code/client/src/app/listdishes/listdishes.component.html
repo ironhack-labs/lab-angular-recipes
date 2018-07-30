@@ -1,0 +1,11 @@
+ 
+<a [routerLink]="['/add-ingredient']">Create new ingredient</a><br>
+<a [routerLink]="['/add-recipe']">Create new dish</a>
+<h1>DISHES</h1>
+
+<div *ngFor='let dish of list' class='dishContainer'>
+<h3>{{dish.name}}</h3>
+<img src="{{dish.image}}" alt="">
+<a [routerLink]="[dish._id]">Details</a>
+<br><br><br>
+</div>
