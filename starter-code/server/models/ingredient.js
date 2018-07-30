@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const IngredientSchema = new Schema({
   name: {
@@ -7,7 +7,7 @@ const IngredientSchema = new Schema({
     required: true
   },
   description: String,
-  image: String
+  image: { type: String, default: "" }
 });
 
 module.exports = mongoose.model('Ingredient', IngredientSchema);
