@@ -1,0 +1,5 @@
+<div *ngFor="let dish of dishes">
+  <p>{{dish.name}}</p>
+  <img [src]="dish.image" alt='imagen de {{dish.name}}'>
+  <button [routerLink]="['/', dish._id]">+ INFO</button>
+</div>
