@@ -1,0 +1,10 @@
+<div class="wrapper">
+
+  <h1>Recipes</h1>
+    
+  <div *ngFor="let recipe of recipes">
+     <a [routerLink]="['/recipe', recipe._id]">{{recipe.name}}</a>
+     <br><img src="{{recipe.image}}" alt="{{recipe.name}}">
+  </div>
+  
+  </div>
