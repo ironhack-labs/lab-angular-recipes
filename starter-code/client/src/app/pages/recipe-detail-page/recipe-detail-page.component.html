@@ -9,14 +9,8 @@
   <img [src]="dish.image" />
 
   <h3>Ingredients</h3>
-  <form (ngSubmit)="handleAddIngredient(form)" #form="ngForm">
-    <select [(ngModel)]="ingredientId" name="ingredientId" required>
-      <option value="">-- choose ingredient --</option>
-      <option *ngFor="let ingredient of ingredients" [value]="ingredient._id">{{ingredient.name}}</option>
-    </select>
-    <input [(ngModel)]="quantity" name="quantity" type="number" placeholder="e.g.: 3" required/>
-    <button>add to ingredients</button>
-  </form>
+
+  <app-add-ingredient-form (submit)="handleAddIngredient($event)"></app-add-ingredient-form>
 
   <ul class="ingredients">
     <li *ngFor="let item of dish.ingredients">

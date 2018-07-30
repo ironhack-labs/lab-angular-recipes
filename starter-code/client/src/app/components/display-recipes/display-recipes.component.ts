@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DishesService } from '../../services/dishes.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DishesService } from '../../services/dishes.service';
   templateUrl: './display-recipes.component.html',
   styleUrls: ['./display-recipes.component.css']
 })
-export class DisplayRecipesComponent implements OnInit {
+export class DisplayRecipesComponent {
   dishesList: Array<object>;
 
   constructor(private dishesService: DishesService) {
@@ -17,9 +17,6 @@ export class DisplayRecipesComponent implements OnInit {
       .catch((err) => {
         console.log(err);
       });
-  }
-
-  ngOnInit() {
   }
 
 }

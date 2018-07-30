@@ -1,9 +1,5 @@
 <ul>
   <li *ngFor="let item of dishesList">
-    <a [routerLink]="['detail', item._id]">
-      <p>Name: {{item.name}}</p>
-      <p>Description: {{item.description}}</p>
-      <img [src]="item.image" />
-    </a>
+    <app-dish-card [dish]="item"></app-dish-card>
   </li>
 </ul>
