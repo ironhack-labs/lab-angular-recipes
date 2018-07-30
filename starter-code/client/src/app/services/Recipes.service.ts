@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map'
 const BASEURL = 'http://localhost:3000'
 @Injectable()
 export class RecipesService {
+  dishId: string;
 
   constructor(private http: Http) { }
 
@@ -28,5 +29,14 @@ export class RecipesService {
     return this.http.post(`${BASEURL}/api/dishes/${Dishid}/ingredients/${id}/add`, ingredient)
       .map(res =>{
         return res.json()})
+  }
+
+  setDishId(id: string){
+    this.dishId = id;
+  }
+
+  getDishId(){
+    console.log('dishId', this.dishId);
+    return this.dishId;
   }
 }
