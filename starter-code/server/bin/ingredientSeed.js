@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 const Ingredient = require('../models/ingredient');
-const Dish = require('../models/dish');
 
 const dbName = 'recipe-app';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
-const foods = [
+const ingredients = [
   {
     name: "Pizza",
     image: "https://i.imgur.com/eTmWoAN.png",
@@ -88,9 +87,9 @@ const foods = [
   }
 ]
 
-Dish.collection.drop();
+Ingredient.collection.drop();
 
-Dish.create(foods, (err) => {
+Ingredient.create(ingredients, (err) => {
   if (err) { throw(err) }
-  console.log(`Created ${foods.length} dishes`)
+  console.log(`Created ${ingredients.length} ingredients`)
 });
