@@ -1,0 +1,6 @@
+<h2>Ingredient List</h2>
+<div *ngFor="let ingredient of ingredients">
+  <img src="{{ingredient.image}}" alt="">
+  <h3>{{ingredient.name}}</h3>
+  <button (click)="addIngredient(ingredient._id, ingredient)">+</button>
+</div>

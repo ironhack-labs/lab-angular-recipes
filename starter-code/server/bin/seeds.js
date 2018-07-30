@@ -92,3 +92,8 @@ Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)
 });
+
+Ingredient.create(foods, (err) => {
+  if (err) { throw(err) }
+  console.log(`Created ${foods.length} ingredients`)
+});
