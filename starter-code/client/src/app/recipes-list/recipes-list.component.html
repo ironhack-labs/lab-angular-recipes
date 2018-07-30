@@ -1,0 +1,9 @@
+<div>
+</div>
+
+  <div *ngFor = "let dish of recipesList" class="containerList">
+      <h3><h2>Nombre: {{dish.name}}</h2>
+      <img src="{{dish.image}}"><br>
+      <a [routerLink]="['dish', dish._id]">Detalle</a></h3>
+      <br><br>
+  </div>
