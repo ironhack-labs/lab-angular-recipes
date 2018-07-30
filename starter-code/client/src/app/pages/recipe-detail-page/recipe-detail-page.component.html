@@ -1,0 +1,27 @@
+<div class="loading" *ngIf="!dish">
+  ...loading...
+</div>
+
+<div class="page" *ngIf="dish">
+  <h2>Detail of {{dish.name}}</h2>
+  <a [routerLink]="['/']">back to list</a>
+  <p>Description: {{dish.description}}</p>
+  <img [src]="dish.image" />
+
+  <h3>Ingredients</h3>
+  <form (ngSubmit)="handleAddIngredient(form)" #form="ngForm">
+    <select [(ngModel)]="ingredientId" name="ingredientId" required>
+      <option value="">-- choose ingredient --</option>
+      <option *ngFor="let ingredient of ingredients" [value]="ingredient._id">{{ingredient.name}}</option>
+    </select>
+    <input [(ngModel)]="quantity" name="quantity" type="number" placeholder="e.g.: 3" required/>
+    <button>add to ingredients</button>
+  </form>
+
+  <ul class="ingredients">
+    <li *ngFor="let item of dish.ingredients">
+      <p>Quantity: {{item.quantity}}</p>
+      <p>of: {{item.ingredientId.name}}</p>
+    </li>
+  </ul>
+</div>
