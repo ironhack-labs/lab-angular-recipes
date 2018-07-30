@@ -30,7 +30,6 @@ export class DishComponent implements OnInit {
   }
 
   addIngredientToDish(dishId, id, quantity) {
-    console.log(dishId, id, quantity.value);
     this.dishService
       .addIngredientToDish(dishId, id, quantity.value)
       .subscribe(dish => {

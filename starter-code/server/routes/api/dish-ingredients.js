@@ -26,7 +26,7 @@ router.post('/dishes/:dishId/ingredients/:id/add', (req, res) => {
         possibleIngred.quantity += quantity;
       } else {
         possibleIngred = { ingredientId: id, quantity: quantity }
-        dish.ingredients.push(possibleIngred);
+        dish.ingredients.unshift(possibleIngred);
       }
 
 
