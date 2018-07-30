@@ -88,6 +88,7 @@ const foods = [
   }
 ]
 
+Dish.collection.drop();
 Dish.create(foods, (err) => {
   if (err) { throw(err) }
   console.log(`Created ${foods.length} dishes`)

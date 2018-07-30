@@ -24,6 +24,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
+const index = require('./routes/index');
+app.use('/', index);
+
+app.all('/*', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
@@ -43,3 +50,5 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = app;
+
+
