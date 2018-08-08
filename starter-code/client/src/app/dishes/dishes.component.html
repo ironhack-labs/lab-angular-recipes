@@ -1,0 +1,11 @@
+<div class='estilo'>
+<div class="card" style="width: 18rem;" *ngFor='let dish of dishes'>
+  <img class="card-img-top" [src]="dish.image" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{dish.name}}</h5>
+    <p class="card-text">{{dish.description}}</p>
+    <!-- //<a [routerLink]="['/singledish, dish._id]" class="btn btn-primary">Go somewhere</a> -->
+    <a [routerLink] = "['/singledish', dish._id]">Ver entrada</a>
+  </div>
+</div>
+</div>

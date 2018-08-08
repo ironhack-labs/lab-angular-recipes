@@ -1,0 +1,39 @@
+<div class='estilo'>
+  <div class="card" style="width: 18rem;" *ngIf="singledish">
+    <img class="card-img-top" [src]="singledish.image" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{singledish.name}}</h5>
+      <p class="card-text">{{singledish.description}}</p>
+      <ul *ngFor="let ingredient of singledish.ingredients">
+        <li>{{ingredient.quantity}}X{{ingredient.ingredientId.name}}</li>
+      </ul>
+      <!-- //<a [routerLink]="['/singledish, dish._id]" class="btn btn-primary">Go somewhere</a> -->
+      <a [routerLink]="['/home']">Back to all dishes</a>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Add</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ingredient of dishingredients">
+      <th scope="row">1</th>
+      <td>{{ingredient.name}}</td>
+      <td>{{ingredient.description}}</td>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Quantity</span>
+        </div>
+        <input #cantidad type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <button (click)="addIngredient(ingredient, cantidad)" class="btn btn-primary" type="submit">Add Ingredient</button>
+      </div>
+    </tr>
+  </tbody>
+</table>
