@@ -32,6 +32,8 @@ body{
   text-align: center;
   width: 100%;
   color: #fff;
+  text-shadow: 1px 1px 1px #000;
+
 }
 .dish-card .name{
   font-size: 13px;
