@@ -1,0 +1,8 @@
+<div class="flex-container">
+  <div *ngFor="let dish of dishesEntries" class="dish-card">
+      <a [routerLink]="['/dish', dish._id]">
+        <img [src]="dish.image" alt="">
+      <h2 class="name">{{dish.name}}</h2>
+    </a>
+  </div>
+</div>
