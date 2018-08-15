@@ -1,3 +1,19 @@
+<input [ngStyle]="dishBtn" type="button" value="Add Dish" (click)="showForm('dishForm', 'dishBtn')">
+
+<form [ngStyle]="dishForm" #dishF="ngForm" (ngSubmit)="addDish(dishF)">
+  <input type="text" placeholder="Name" name="name" ngModel>
+  <input type="text" placeholder="Description" name="description" ngModel>
+  <input type="text" placeholder="Image" name="image" ngModel>
+  <input type="submit" value="Add Dish">
+</form>
+
+<input [ngStyle]="ingBtn" type="button" value="Add ingredient" (click)="showForm('ingForm', 'ingBtn')">
+<form [ngStyle]="ingForm" #ingF="ngForm" (ngSubmit)="addIng(ingF)">
+  <input type="text" placeholder="Name" name="name" ngModel>
+  <input type="text" placeholder="Description" name="description" ngModel>
+  <input type="submit" value="Add Ingredient">
+</form>
+
 <div class="dish-list">
   <div *ngFor="let dish of dishes">
     {{dish.name}}

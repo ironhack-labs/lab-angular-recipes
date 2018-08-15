@@ -16,4 +16,19 @@ export class IngredientService {
     return this.http.get(`${environment.BASE_URL}/api/ingredients`)
       .pipe(map(res => res.json()))
   }
+
+  addIngredient(quantity, ingredientId, dishId){
+    return this.http.post(`${environment.BASE_URL}/api/dishes/${dishId}/ingredients/${ingredientId}/add`, {quantity:quantity})
+      .pipe(map(res => {
+        console.log(res.json())
+        res.json()
+      }))
+  }
+
+  createIngredient(body){
+    return this.http.post(`${environment.BASE_URL}/api/ingredients`, body)
+      .pipe(map(res => {
+        res.json()
+      }))
+  }
 }
