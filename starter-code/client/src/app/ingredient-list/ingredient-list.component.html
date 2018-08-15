@@ -1,0 +1,5 @@
+<div *ngFor="let ingredient of ingredients">
+  {{ingredient.name}}
+  <input type="number" [(ngModel)]="ingredient._idQuantity" min="1">
+  <input type="button" (click)="addIngredient(ingredient._idQuantity, ingredient._id)" value="Add {{ingredient._idQuantity}} {{ingredient.name}}">
+</div>

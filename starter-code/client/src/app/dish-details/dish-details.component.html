@@ -1,0 +1,14 @@
+<h2>{{dish.name}}</h2>
+<img [src]="dish.image">
+<p>{{dish.description}}</p>
+<h4>{{dish.name}}'s Ingredients</h4>
+<div *ngIf="dish.ingredients">
+    <div *ngFor="let ingredient of dish.ingredients">
+        x{{ingredient.quantity}} {{ingredient.ingredientId.name}}
+    </div>
+</div>
+
+<br>
+<a [routerLink]="['']">Go Home</a>
+
+<app-ingredient-list></app-ingredient-list>
