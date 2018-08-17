@@ -1,0 +1,9 @@
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="dishes">
+    <div class="">
+        <img [src]="dishes.image" />
+        <h2> {{ dishes.name }}&nbsp;</h2>
+        <p> {{ dishes.description }} </p>
+    </div>
+</div>
