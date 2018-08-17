@@ -18,6 +18,7 @@ export class TheDishComponent implements OnInit {
   constructor(
     private dish: RetrieveDishesService,
     private ingredient: RetrieveIngredientsService,
+    private Ingredients: RetrieveIngredientsService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -26,6 +27,12 @@ export class TheDishComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.getDishDetails(params['id']);
     });
+    
+    console.log(this.ingredient);
+    this.ingredient.getList()
+      .subscribe((ingredients) => {
+        this.ingredients = ingredients;
+    })
   }
 
   getDishDetails(id) {
@@ -38,7 +45,7 @@ export class TheDishComponent implements OnInit {
 
   submitForm(myForm){
     
-    let item: Object = {title: myForm.value.title, content: myForm.value.content};
+    let item: Object = {name: myForm.value.name, description: myForm.value.description, };
 
     if(!myForm.value.title){
       alert("Please fill out the title")

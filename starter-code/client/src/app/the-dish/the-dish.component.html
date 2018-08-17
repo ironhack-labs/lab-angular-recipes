@@ -2,19 +2,18 @@
 
 <div *ngIf="dishes">
     <div class="">
-        <img [src]="dishes.image" />
+        <img class="Img-Dish" [src]="dishes.image" />
         <h2> {{ dishes.name }}&nbsp;</h2>
         <p> {{ dishes.description }} </p>
-        <label>Quantity</label>
-        <input type="number" name="quantity">
       </div>
 </div>
 
 <div *ngFor="let ingredient of ingredients">
   <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">  
     <h3> {{ ingredient.name }} </h3>
+    <img class="Img-Ingredient" [src]="ingredient.image" />
     <label>Quantity</label>
-    <input type="number" name="quantity" [(ngModel)]="quantity" #myIngredient="ngModel" required>
+    <input type="number" name="quantity" [(ngModel)]="quantity" #myIngredient="ngModel" value="ingredient.value" required>
     <div *ngIf="myIngredient.errors && (myIngredient.dirty || myIngredient.touched)">
         <p class="error" [hidden]="!myIngredient.errors.required">
           A valid number for this ingredient is required
