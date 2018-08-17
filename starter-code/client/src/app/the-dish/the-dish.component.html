@@ -5,5 +5,21 @@
         <img [src]="dishes.image" />
         <h2> {{ dishes.name }}&nbsp;</h2>
         <p> {{ dishes.description }} </p>
-    </div>
+        <label>Quantity</label>
+        <input type="number" name="quantity">
+      </div>
+</div>
+
+<div *ngFor="let ingredient of ingredients">
+  <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">  
+    <h3> {{ ingredient.name }} </h3>
+    <label>Quantity</label>
+    <input type="number" name="quantity" [(ngModel)]="quantity" #myIngredient="ngModel" required>
+    <div *ngIf="myIngredient.errors && (myIngredient.dirty || myIngredient.touched)">
+        <p class="error" [hidden]="!myIngredient.errors.required">
+          A valid number for this ingredient is required
+        </p>
+    </div>  
+    <button type="submit">Send</button>
+  </form>
 </div>

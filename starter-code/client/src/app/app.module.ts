@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RetrieveDishesService } from './retrive-dishes/retrieve-dishes.service';
+import { RetrieveIngredientsService  } from './retrieve-ingredients/retrieve-ingredients.service'
 import { DishesComponent } from './dishes/dishes.component';
 import { TheDishComponent } from './the-dish/the-dish.component'
 
@@ -23,7 +24,7 @@ import { TheDishComponent } from './the-dish/the-dish.component'
     FormsModule,
     HttpModule
   ],
-  providers: [RetrieveDishesService],
+  providers: [RetrieveDishesService, RetrieveIngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

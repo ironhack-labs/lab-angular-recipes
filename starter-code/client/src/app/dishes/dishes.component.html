@@ -6,4 +6,7 @@
     <p> {{ dish.description }} </p>
     <a [routerLink]="['dishes', dish._id]"> View Details </a>
   </div>
+  <div *ngFor="let ingredient of ingredients">
+    <h3> {{ ingredient.name }} </h3>
+  </div>
 </div>
