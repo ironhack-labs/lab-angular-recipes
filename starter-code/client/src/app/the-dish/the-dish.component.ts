@@ -18,7 +18,7 @@ export class TheDishComponent implements OnInit {
   constructor(
     private dish: RetrieveDishesService,
     private ingredient: RetrieveIngredientsService,
-    private Ingredients: RetrieveIngredientsService,
+    // private Ingredients: RetrieveIngredientsService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -43,18 +43,19 @@ export class TheDishComponent implements OnInit {
       });
   }
 
-  submitForm(myForm){
+  submitForm(myForm, ingredient){
     
-    let item: Object = {name: myForm.value.name, description: myForm.value.description, };
-
-    if(!myForm.value.title){
-      alert("Please fill out the title")
+    // let item: Object = { ingredientId: ingredient._id, quantity: myForm.value.quantity};
+    console.log(ingredient);
+    if(!myForm.value.quantity){
+      alert("Must be more than 0")
+    
     } else {
-    this.ingredient.addIt(item)    
-      .subscribe((ingredients) => {
-      this.ingredients = ingredients;
-    });
-    console.log(item)
+      console.log(this.dishes._id, ingredient._id, myForm.value.quantity)
+      this.ingredient.addIt(this.dishes._id, ingredient._id, myForm.value.quantity)    
+      .subscribe((dish) => {
+        this.router.navigate(["dishes", this.dishes._id])
+      });
     }
 
   }

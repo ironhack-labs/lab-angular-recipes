@@ -28,6 +28,8 @@ router.post('/', (req, res, next) => {
     image: req.body.image
   });
 
+  console.log(newDish)
+
   newDish.save( (err) => {
     if (err) { return res.status(500).json(err); }
 

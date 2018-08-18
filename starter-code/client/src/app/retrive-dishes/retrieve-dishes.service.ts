@@ -33,4 +33,10 @@ export class RetrieveDishesService {
     return this.http.post(`${environment.BASE_URL}/api/dishes`, dish)
       .pipe(map((res) => res.json()))
   }
+
+  addDishS(dish) {
+    console.log(dish);
+    return this.http.post(`${environment.BASE_URL}/api/dishes`, dish)
+    .pipe(map(dish => dish.json()))	    
+  }
 }

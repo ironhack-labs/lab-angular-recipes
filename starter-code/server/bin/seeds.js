@@ -5,6 +5,35 @@ const Dish = require('../models/dish');
 const dbName = 'recipe-app';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
+
+const ingredients = [	  
+  {  
+    name: 'Garlic',	    
+    description: 'A bitter taste',
+    image: 'http://www.socalpain.com/wp-content/uploads/2014/08/GarlicCloves.jpg'
+  },
+  {
+    name: 'Tomato',
+    description: 'Tastes like ketchup. I wonder why',
+    image: 'https://ressources.soscuisine.com/media/images/recettes/high_resolution/1383.jpg'
+  },
+  {
+    name: 'Clover',
+    description: 'If you find one with four leaves your food will turn into wishmakers',
+    image: 'https://media.wired.com/photos/593272134dc9b45ccec5e11a/master/w_1600,c_limit/126588542-web.jpg'
+  },
+  {
+    name: 'Pesto',
+    description: 'Green stuff that goes well on your pasta',
+    image: 'https://alzheimersactivities.files.wordpress.com/2015/04/basilpesto.jpg'
+  }
+];
+ 
+Ingredient.create(ingredients, (err) => {
+  if (err) { throw(err)}
+  console.log(`Created ${ingredients.length} ingredients`)
+})
+
 const foods = [
   {
     name: "Pizza",
@@ -88,7 +117,7 @@ const foods = [
   }
 ]
 
-Dish.create(foods, (err) => {
-  if (err) { throw(err) }
-  console.log(`Created ${foods.length} dishes`)
-});
+// Dish.create(foods, (err) => {
+//   if (err) { throw(err) }
+//   console.log(`Created ${foods.length} dishes`)
+// });
