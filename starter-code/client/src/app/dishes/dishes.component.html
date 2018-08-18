@@ -1,0 +1,27 @@
+<h1> Dishes </h1>
+<div>
+  <div *ngFor="let dish of dishes">
+    <img [src]="dish.image" />
+    <h3> {{ dish.name }} </h3>
+    <p> {{ dish.description }} </p>
+    <a [routerLink]="['dishes', dish._id]"> View Details </a>
+  </div>
+  <div *ngFor="let ingredient of ingredients">
+    <h3> {{ ingredient.name }} </h3>
+  </div>
+</div>
+
+<input [ngStyle]="dishBtn" type="button" value="Add Dish" (click)="showForm('dishForm', 'dishBtn')">
+ <form [ngStyle]="dishForm" #dish="ngForm" (ngSubmit)="addDishS(dish)">
+  <input type="text" placeholder="Name" name="name" ngModel>
+  <input type="text" placeholder="Description" name="description" ngModel>
+  <input type="text" placeholder="Image" name="image" ngModel>
+  <input type="submit" value="Add Dish">
+</form>
+ <input [ngStyle]="ingBtn" type="button" value="Add ingredient" (click)="showForm('ingForm', 'ingBtn')">
+<form [ngStyle]="ingForm" #ingredient="ngForm" (ngSubmit)="addIngredientS(ingredient)">
+  <input type="text" placeholder="Name" name="name" ngModel>
+  <input type="text" placeholder="Description" name="description" ngModel>
+  <input type="text" placeholder="Image" name="image" ngModel>
+  <input type="submit" value="Add Ingredient">
+</form>
