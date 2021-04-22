@@ -1,6 +1,6 @@
 ![Ironhack logo](https://i.imgur.com/1QgrNNw.png)
 
-# Angular 2 & Express API | MyRecipeBook
+# Angular 2 & Express API | My RecipeBook
 
 ## Introduction
 
