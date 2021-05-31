@@ -1,0 +1,19 @@
+<div class="dish" *ngIf="dish">
+  <div class="image-wrap">
+    <img src="{{dish.image}}">
+  </div>
+  <div class="text">
+    <h1>{{dish.name}}</h1>
+    <p>{{dish.description}}</p>
+    <h2>Ingredients</h2>
+    <ul>
+      <li *ngFor="let ingredient of dish.ingredients">
+        {{ingredient.quantity}} x {{ingredient.ingredientId.name}}
+      </li>
+    </ul>
+    <a [routerLink]="['/']"><button class="btn btn-secondary" >Home</button></a>
+  </div>
+  <div class="ingredients">
+    <router-outlet></router-outlet>
+  </div>
+</div>
