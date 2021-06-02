@@ -1,0 +1,5 @@
+
+<div *ngFor="let recipe of recipesList">
+      <a [routerLink]="['/recipe', recipe._id]">{{recipe.name}}</a>
+      <img src="{{recipe.image}}" width="250px">
+</div>
