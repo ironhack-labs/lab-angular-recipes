@@ -1,0 +1,21 @@
+<div class="loading" *ngIf="!dish">
+  ...loading...
+</div>
+
+<div class="page" *ngIf="dish">
+  <h2>Detail of {{dish.name}}</h2>
+  <a [routerLink]="['/']">back to list</a>
+  <p>Description: {{dish.description}}</p>
+  <img [src]="dish.image" />
+
+  <h3>Ingredients</h3>
+
+  <app-add-ingredient-form (submit)="handleAddIngredient($event)"></app-add-ingredient-form>
+
+  <ul class="ingredients">
+    <li *ngFor="let item of dish.ingredients">
+      <p>Quantity: {{item.quantity}}</p>
+      <p>of: {{item.ingredientId.name}}</p>
+    </li>
+  </ul>
+</div>
