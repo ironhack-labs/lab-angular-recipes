@@ -1,0 +1,17 @@
+<h1>NG Recipies</h1>
+
+<button (click)="show = !show">Add New Recipe</button>
+<div *ngIf="show">
+  <h3>New Recipe</h3>
+  Name: <input type="text" [(ngModel)]="newRecipe.name"> <br><br>
+  Description: <br>
+  <textarea cols="30" rows="10" [(ngModel)]="newRecipe.description"></textarea> <br><br>
+  Image: <input type="text" [(ngModel)]="newRecipe.image"> <br><br>
+  <button (click)="createRecipe()">Create Recipe</button>
+</div>
+
+<div *ngFor="let dish of dishes">
+  <img src="{{dish.image}}" alt="" width="100">
+  <h3><a [routerLink]="['dish', dish._id]">{{dish.name}}</a></h3>
+  <p>{{dish.description}}</p>
+</div>
